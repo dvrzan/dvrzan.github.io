@@ -1,0 +1,103 @@
+//
+//  PortfolioDataStore.swift
+//  
+//
+//  Created by Danijela Vrzan on 2022-03-11.
+//
+
+import Foundation
+
+//MARK: - Conference
+struct Conference {
+  let name: String
+  let website: String
+  let dateAndCity: String
+  let talkTitle: String
+  let talkDescription: String
+  let image: String
+  let imageAlt: String
+  let talkURL: String
+
+  static let conferences = [
+    Conference(
+      name: "iOS Conf SG",
+      website: "https://iosconf.sg",
+      dateAndCity: "January 2022 - Remote Edition",
+      talkTitle: "VIP, not a VIPER, Clean Swift Architecture",
+      talkDescription: "VIP and VIPER, while having the same basic components, are quite different in their implementation. They both follow Uncle Bob's Clean Architecture principles and often tend to be mixed up due to their name similarities. This talk will introduce you to the VIP architecture and it’s principles. While specifically made for UIKit apps to fix the MVC problem (Massive View Controllers), we'll take a look at how we could implement it in SwiftUI apps.",
+      image: "",
+      imageAlt: "",
+      talkURL: "https://www.youtube.com/watch?v=Szlgqnk6gHg"
+    ),
+    Conference(
+      name: "NSSpain",
+      website: "https://2021.nsspain.com/index.html",
+      dateAndCity: "November 2021 - Remote Edition",
+      talkTitle: "There's no IF or ELSE. It's all about YOU.",
+      talkDescription: "This talk is my personal story of how I decided to switch my career from Civil Engineering to iOS Development. With no previous programming experience. Following a structured timeline, I talk about some personal successes and all the fears and failures I had to overcome. Finally, I share all the lessons I learned along the way and inspire others to take action. Changing your career doesn’t mean you have failed.",
+      image: "",
+      imageAlt: "",
+      talkURL: ""
+    ),
+    Conference(
+      name: "SwiftLeeds",
+      website: "https://swiftleeds.co.uk",
+      dateAndCity: "October 2021 - Leeds, United Kingdom",
+      talkTitle: "There's no IF or ELSE. It's all about YOU.",
+      talkDescription: "",
+      image: "../../images/portfolio/conferences/2021/swiftleeds-talk.jpeg",
+      imageAlt: "Danijela on stage at SwiftLeeds conference giving a talk with a large panel of her slides in the background.",
+      talkURL: ""
+    )
+  ]
+}
+
+//MARK: - Interview
+struct Interview {
+  let headline: String
+  let name: String
+  let website: String
+  let host: String
+  let description: String
+  let url: String
+
+  static let interviews = [
+    Interview(
+      headline: "iOS Chat with Danijela Vrzan",
+      name: "iOS Chats",
+      website: "https://nemecek.be/chats/",
+      host: "Filip Němeček",
+      description: "In this iOS Chat, Filip and I talk about my career switch from Civil Engineering to becoming an iOS Developer, about attending first ever raywenderlich.com iOS bootcamp, and more!",
+      url: "https://nemecek.be/chats/danijela-vrzan"
+    )
+  ]
+}
+
+//MARK: - Podcast
+struct Podcast {
+  let headline: String
+  let name: String
+  let website: String
+  let host: String
+  let description: String
+  let url: String
+
+  static let podcasts = [
+    Podcast(
+      headline: "Danijela Vrzan, 1st a civil engineer then a software engineer",
+      name: "AppForce1",
+      website: "https://appforce1.net",
+      host: "Jeroen Leenarts",
+      description: "In this episode of AppForce1 podcast, Jeroen and I talk about my career as a software developer and why I decided to move away from Civil Engineering. We talk about writing articles for raywenderlich.com and programming in general.",
+      url: "https://appforce1.net/podcast/shownotes/?episode=Danijela+Vrzan%2C+1st+a+civil+engineer+then+a+software+engineer"
+    ),
+    Podcast(
+      headline: "A creative mind with Danijela Vrzan",
+      name: "Everyday Robots",
+      website: "https://everydayrobots.tech/",
+      host: "Jonathan Ruiz",
+      description: "In this episode, Jonathan and I talk about getting into iOS Development and learning how to code. We talk about SwiftUI, UIKit, and about writing articles for raywenderlich.com.",
+      url: "https://everydayrobots.tech/posts/ep78/"
+    )
+  ]
+}
