@@ -435,6 +435,7 @@ struct MyHTMLFactory<Site: Website>: HTMLFactory {
   func makeIndexHTML(for index: Index, context: PublishingContext<Site>) throws -> HTML {
     HTML(
       .head(for: index, on: context.site),
+      .googleAnalytics(),
       .body {
         //Header
         SiteHeader(context: context, selectedSelectionID: nil)
@@ -477,6 +478,7 @@ struct MyHTMLFactory<Site: Website>: HTMLFactory {
   func makeSectionHTML(for section: Section<Site>, context: PublishingContext<Site>) throws -> HTML {
     HTML(
       .head(for: section, on: context.site),
+      .googleAnalytics(),
       .body {
         //Header
         SiteHeader(context: context, selectedSelectionID: section.id)
@@ -497,6 +499,7 @@ struct MyHTMLFactory<Site: Website>: HTMLFactory {
   func makeItemHTML(for item: Item<Site>, context: PublishingContext<Site>) throws -> HTML {
     HTML(
       .head(for: item, on: context.site),
+      .googleAnalytics(),
       .body {
         //Header
         SiteHeader(context: context, selectedSelectionID: item.sectionID)
@@ -527,6 +530,7 @@ struct MyHTMLFactory<Site: Website>: HTMLFactory {
   func makePageHTML(for page: Page, context: PublishingContext<Site>) throws -> HTML {
     HTML(
       .head(for: page, on: context.site),
+      .googleAnalytics(),
       .body {
         SiteHeader(context: context, selectedSelectionID: nil)
         Wrapper(page.body)
@@ -541,6 +545,7 @@ struct MyHTMLFactory<Site: Website>: HTMLFactory {
     HTML(
       .lang(context.site.language),
       .head(for: page, on: context.site),
+      .googleAnalytics(),
       .body {
         //Header
         SiteHeader(context: context, selectedSelectionID: nil)
@@ -570,6 +575,7 @@ struct MyHTMLFactory<Site: Website>: HTMLFactory {
     HTML(
       .lang(context.site.language),
       .head(for: page, on: context.site),
+      .googleAnalytics(),
       .body {
         //Header
         SiteHeader(context: context, selectedSelectionID: nil)
