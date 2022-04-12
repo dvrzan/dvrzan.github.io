@@ -9,8 +9,7 @@ import Plot
 
 public extension Node where Context == HTML.DocumentContext {
   static func googleAnalytics() -> Node {
-    .head(
-      .script(
+    .raw(
         """
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-B5B41JSFC7"></script>
@@ -22,7 +21,6 @@ public extension Node where Context == HTML.DocumentContext {
           gtag('config', 'G-B5B41JSFC7');
         </script>
         """
-      )
     )
   }
 }
