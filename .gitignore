@@ -90,5 +90,10 @@ fastlane/test_output
 iOSInjectionProject/
 
 # Other
-
 *.DS_Store
+
+# Publish
+.publish/*
+
+# Swift Package Manager
+.swiftpm/*
