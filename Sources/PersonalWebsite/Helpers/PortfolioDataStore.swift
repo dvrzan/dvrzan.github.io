@@ -20,11 +20,11 @@ struct Conference {
 
   static let conferences = [
     Conference(
-      name: "iOS Conf SG",
+      name: "iOSConfSG",
       website: "https://iosconf.sg",
       dateAndCity: "January 2022 - Remote Edition",
       talkTitle: "VIP, not a VIPER, Clean Swift Architecture",
-      talkDescription: "VIP and VIPER, while having the same basic components, are quite different in their implementation. They both follow Uncle Bob's Clean Architecture principles and often tend to be mixed up due to their name similarities. This talk will introduce you to the VIP architecture and it’s principles. While specifically made for UIKit apps to fix the MVC problem (Massive View Controllers), we'll take a look at how we could implement it in SwiftUI apps.",
+      talkDescription: "VIP and VIPER, while having the same basic components, are quite different in their implementation. They both follow Uncle Bob's Clean Architecture principles and often tend to be mixed up due to their name similarities. This talk will introduce you to the VIP architecture and its principles. While specifically made for UIKit apps to fix the MVC problem (Massive View Controllers), we'll take a look at how we could implement it in SwiftUI apps.",
       image: "",
       imageAlt: "",
       talkURL: "https://www.youtube.com/watch?v=Szlgqnk6gHg"
@@ -34,7 +34,7 @@ struct Conference {
       website: "https://2021.nsspain.com/index.html",
       dateAndCity: "November 2021 - Remote Edition",
       talkTitle: "There's no IF or ELSE. It's all about YOU.",
-      talkDescription: "This talk is my personal story of how I decided to switch my career from Civil Engineering to iOS Development. With no previous programming experience. Following a structured timeline, I talk about some personal successes and all the fears and failures I had to overcome. Finally, I share all the lessons I learned along the way and inspire others to take action. Changing your career doesn’t mean you have failed.",
+      talkDescription: "This talk is my personal story of how I decided to switch my career from Civil Engineering to iOS Development; with no previous programming experience. Following a structured timeline, I talk about some personal successes and all the fears and failures I had to overcome. Finally, I share all the lessons I learned along the way and inspire others to take action. Changing your career doesn’t mean you have failed.",
       image: "",
       imageAlt: "",
       talkURL: ""

@@ -218,6 +218,7 @@ private struct SiteFooter: Component {
       Paragraph {
         Text(Constants.Footer.generatedUsing)
         Link(Constants.Footer.publish, url: Constants.Footer.publishURL)
+          .linkTarget(.blank)
       }
     }
   }
@@ -273,11 +274,13 @@ private struct ConferenceList: Component {
           conference.talkURL == ""
           ? Text(conference.talkTitle)
           : Link(conference.talkTitle, url: conference.talkURL)
+            .linkTarget(.blank)
         )
 
         //Conference information (name, date, place, website)
         Paragraph {
           Link("\(conference.name) - \(conference.dateAndCity)", url: conference.website)
+            .linkTarget(.blank)
         }
 
         //Conference talk description
@@ -304,11 +307,15 @@ private struct InterviewList: Component {
     List(Interview.interviews) { interview in
       Div {
         //Interview title and URL
-        H2(Link(interview.headline, url: interview.url))
+        H2(
+          Link(interview.headline, url: interview.url)
+            .linkTarget(.blank)
+        )
 
         //Interview information (name, host and website)
         Paragraph {
           Link("\(interview.name) by \(interview.host)", url: interview.website)
+            .linkTarget(.blank)
         }
 
         //Interview description
@@ -329,11 +336,15 @@ private struct PodcastList: Component {
     List(Podcast.podcasts) { podcast in
       Div {
         //Podcast title and URL
-        H2(Link(podcast.headline, url: podcast.url))
+        H2(
+          Link(podcast.headline, url: podcast.url)
+            .linkTarget(.blank)
+        )
 
         //Podcast information (name, host and website)
         Paragraph {
           Link("\(podcast.name) by \(podcast.host)", url: podcast.website)
+            .linkTarget(.blank)
         }
 
         //Podcast description
@@ -367,6 +378,7 @@ private struct AboutPage: Component {
             Constants.About.introAboutCompanyLink,
             url: Constants.URL.company
           )
+          .linkTarget(.blank)
           Text(Constants.About.introAboutExperience)
         }
 
@@ -403,21 +415,25 @@ private struct AboutPage: Component {
         Link(url: Constants.URL.twitter) {
           Image(url: Constants.Image.twitter, description: "Twitter logo")
         }
+        .linkTarget(.blank)
 
         //Linkedin
         Link(url: Constants.URL.linkedin) {
           Image(url: Constants.Image.linkedin, description: "LinkedIn logo")
         }
+        .linkTarget(.blank)
 
         //Github
         Link(url: Constants.URL.github) {
           Image(url: Constants.Image.github, description: "Github logo")
         }
+        .linkTarget(.blank)
 
         //raywenderlich.com
         Link(url: Constants.URL.raywenderlich) {
           Image(url: Constants.Image.raywenderlich, description: "Raywenderlich logo")
         }
+        .linkTarget(.blank)
       }
       .class("about-contact-images")
     }
@@ -450,6 +466,7 @@ struct MyHTMLFactory<Site: Website>: HTMLFactory {
               Image(Constants.Image.rss)
               Text(Constants.IndexPage.subscribe)
             }
+            .linkTarget(.blank)
           }
           .class("rss")
 
