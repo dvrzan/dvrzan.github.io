@@ -1,0 +1,6 @@
+*.build/
+*.publish/
+*.swiftpm/
+Content/
+Resources/
+*.DS_Store
