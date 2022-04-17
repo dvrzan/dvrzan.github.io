@@ -406,8 +406,15 @@ private struct AboutPage: Component {
         .class("middle-divider")
 
       //Contact title
-      H2(Constants.About.contactTitle)
-        .class("about-me-contact-info")
+      Paragraph {
+        Text(Constants.About.contactTitle)
+        Link(
+          Constants.About.contactLink,
+          url: "mailto:contact@vrzandanijela.com"
+        )
+        Text(Constants.About.contactTitleEnd)
+      }
+      .class("about-me-contact-info")
 
       //Contact me
       Paragraph {

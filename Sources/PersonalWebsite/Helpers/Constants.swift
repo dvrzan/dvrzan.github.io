@@ -31,7 +31,9 @@ struct Constants {
     static let introAboutExperience = ", and I've been making apps since 2019."
     static let firstParagraph = "I was a Civil Engineer for two years when I decided it wasn't the right career choice for me. I picked up my laptop and decided to learn how to code. Being able to create something out of nothing was what got me interested in programming. I find creativity in the process of thinking about a problem and finding a way to solve it. I went back to University to get my Computer Science degree, and after graduating, moved from Croatia to Canada."
     static let secondParagraph = "When not working, I write technical articles and when not writing code, I love speaking about it. I speak at conferences around the world to pass the knowledge I've learned. In my free time, you can find me playing video games, lifting heavy weights, and exploring outdoors."
-    static let contactTitle = "Feel free to contact me or take a look at my work"
+    static let contactTitle = "Feel free to "
+    static let contactLink = "contact me"
+    static let contactTitleEnd = " or take a look at my work"
   }
 
   struct Tags {
