@@ -25,9 +25,9 @@ struct PersonalWebsite: Website {
   // Update these properties to configure your website:
   var url = URL(string: "https://danijelavrzan.com")!
   var name = "Danijela's blog"
-  var description = "All things Swift"
+  var description = "All things Swift and more"
   var language: Language { .english }
-  var imagePath: Path? { "images/logo.png" }
+  var imagePath: Path? { "images/social.png" }
   var twitterCard: TwitterCardType { .summaryLargeImage }
 }
 
