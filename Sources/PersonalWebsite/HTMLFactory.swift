@@ -595,7 +595,7 @@ struct MyHTMLFactory<Site: Website>: HTMLFactory {
 
   // MARK: Make Tag Details Page
   // Tag Details Page: Page that shows a list of posts with a specified <tag>
-  func makeTagDetailsHTML(for page: otTagDetailsPage, context: PublishingContext<Site>) throws -> HTML? {
+  func makeTagDetailsHTML(for page: TagDetailsPage, context: PublishingContext<Site>) throws -> HTML? {
     HTML(
       .lang(context.site.language),
       .head(for: page, on: context.site),
