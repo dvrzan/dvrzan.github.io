@@ -663,5 +663,9 @@ footer {
 }
 
 .unittest-tag {
+  background-color: #FFC600;
+}
+
+.swiftui-tag {
   background-color: #4F3B78;
 }
