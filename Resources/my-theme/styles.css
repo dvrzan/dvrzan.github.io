@@ -555,6 +555,11 @@ nav li a.selected {
   margin-bottom: 30px;
 }
 
+.about-me-text a:hover,
+.about-me-contact-info a:hover {
+  color: #AA1945;
+}
+
 .about-me-text p {
   margin-bottom: 20px;
 }
