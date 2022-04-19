@@ -84,15 +84,19 @@ private struct ItemList<Site: Website>: Component {
         Paragraph()
           .class("small-divider")
 
-        //Blog metadata (reading time and date)
-        ItemMetadata(item: item, site: site)
+        Paragraph {
+          //Blog metadata (reading time and date)
+          ItemMetadata(item: item, site: site)
+          //List of tags for the blog
+          ItemTagList(item: item, site: site)
+        }
 
         //Blog short description
         Paragraph(item.description)
           .class("item-description")
 
-        //List of tags for the blog
-        ItemTagList(item: item, site: site)
+        //Read more
+        H3(Link("Read more →", url: item.path.absoluteString))
       }
     }
     .class("item-list")
@@ -120,15 +124,19 @@ private struct RecentItemList<Site: Website>: Component {
         Paragraph()
           .class("small-divider")
 
-        //Blog metadata (reading time and date)
-        ItemMetadata(item: item, site: site)
+        Paragraph {
+          //Blog metadata (reading time and date)
+          ItemMetadata(item: item, site: site)
+          //List of tags for the blog
+          ItemTagList(item: item, site: site)
+        }
 
         //Blog short decription
         Paragraph(item.description)
           .class("item-description")
 
-        //List of tags for the blog
-        ItemTagList(item: item, site: site)
+        //Read more
+        H3(Link("Read more →", url: item.path.absoluteString))
       }
     }
     .class("item-list")
@@ -279,7 +287,7 @@ private struct ConferenceList: Component {
 
         //Conference information (name, date, place, website)
         Paragraph {
-          Link("\(conference.name) - \(conference.dateAndCity)", url: conference.website)
+          Link("➔ \(conference.name) - \(conference.dateAndCity)", url: conference.website)
             .linkTarget(.blank)
         }
 
@@ -314,7 +322,7 @@ private struct InterviewList: Component {
 
         //Interview information (name, host and website)
         Paragraph {
-          Link("\(interview.name) by \(interview.host)", url: interview.website)
+          Link("➔ \(interview.name) by \(interview.host)", url: interview.website)
             .linkTarget(.blank)
         }
 
@@ -343,7 +351,7 @@ private struct PodcastList: Component {
 
         //Podcast information (name, host and website)
         Paragraph {
-          Link("\(podcast.name) by \(podcast.host)", url: podcast.website)
+          Link("➔ \(podcast.name) by \(podcast.host)", url: podcast.website)
             .linkTarget(.blank)
         }
 
