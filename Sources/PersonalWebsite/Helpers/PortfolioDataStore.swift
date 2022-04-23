@@ -9,6 +9,7 @@ import Foundation
 
 //MARK: - Conference
 struct Conference {
+  let past: Bool
   let name: String
   let website: String
   let dateAndCity: String
@@ -20,6 +21,7 @@ struct Conference {
 
   static let conferences = [
     Conference(
+      past: true,
       name: "iOSConfSG",
       website: "https://iosconf.sg",
       dateAndCity: "January 2022 - Remote Edition",
@@ -30,6 +32,7 @@ struct Conference {
       talkURL: "https://www.youtube.com/watch?v=Szlgqnk6gHg"
     ),
     Conference(
+      past: true,
       name: "NSSpain",
       website: "https://2021.nsspain.com/index.html",
       dateAndCity: "November 2021 - Remote Edition",
@@ -40,6 +43,7 @@ struct Conference {
       talkURL: ""
     ),
     Conference(
+      past: true,
       name: "SwiftLeeds",
       website: "https://swiftleeds.co.uk",
       dateAndCity: "October 2021 - Leeds, United Kingdom",
