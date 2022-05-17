@@ -7,11 +7,11 @@ tags: unit test, combine
 
 # How to test @Published property with XCTest
 
-How you're testing a functionality of your code depends on what you want to test and understanding how the code works, so lets start with a quick recap of `@Published` property.
+How you're testing a functionality of your code depends on what you want to test and understanding how the code works. Let's start with a quick recap of `@Published` property.
 
 ## @Published property
 
-`@Published` properties stream values over time. When the property's been marked as `@Published` it gets assigned a `willSet` observer, so that any changes on the property are immediately sent to all observers.
+`@Published` properties stream values over time. When the property's marked as `@Published` it gets assigned a `willSet` observer. Any changes on the property are immediately sent to all observers.
 
 ```swift
 class VideoListViewModel {
@@ -19,7 +19,7 @@ class VideoListViewModel {
 }
 ```
 
-Observers are views that watch for any upcoming changes on the property in order to decide if they need to redraw themselves to display newest data. For view to receive any upcoming updates, you need to mark the object you want to observe with `@ObservedObject`.
+Observers are views that watch for any upcoming changes on the property to decide if they need to redraw themselves to display newest data. For view to receive any upcoming updates, you need to mark the object you want to observe with `@ObservedObject`.
 
 ```swift
 struct ContentView: View {
@@ -31,7 +31,7 @@ struct ContentView: View {
 }
 ```
 
-Then any type marked as `@ObservedObject` needs to conform to **ObservableObject** protocol. Conforming to this protocol creates an `objectWillChange` publisher that allows observes to watch for any future changes to its `@Published` properties.
+Then any type marked as `@ObservedObject` needs to conform to **ObservableObject** protocol. Conforming to this protocol creates an `objectWillChange` publisher. It allows observes to watch for any future changes to its `@Published` properties.
 
 ```swift
 class VideoListViewModel: ObservableObject {
@@ -68,7 +68,7 @@ func appendVideos() {
 }
 ```
 
-When the function completes, all values will be added. Then you can assert its current value. 
+You can assert property's current value after the function gets called. The operation will complete before the assertion. 
 
 ```swift
 func test_videos_whenAppendVideosCalled_hasFiveVideos() {
@@ -81,7 +81,7 @@ func test_videos_whenAppendVideosCalled_hasFiveVideos() {
 }
 ```
 
-The whole point of `@Published` properties is to stream any changes to the view before the value is set. It's like giving someone a heads up something will happen before it does. In that case, you'd want to test what values will be sent to the view.
+The whole point of `@Published` properties is to stream any changes to the view before the value is set. It's like giving someone a heads up something will happen before it does. In that case, you'd want to test the values sent to the view.
 
 ## Testing published value by subscribing to it
 
@@ -93,7 +93,7 @@ The whole point of `@Published` properties is to stream any changes to the view 
 >
 > In **Combine**, reactive stream flows towards `.sink(receiveValue:)`. 
 
-To fetch data for the `@Published` property you'll likely have an asynchronous operation, so you need to use test expectations in your unit tests.
+To fetch data for the `@Published` property you'll likely have an asynchronous operation, so you need to use test expectations.
 
 ```swift
 func test_videos_whenFetchVideosCalled_hasFourVideos() async {
