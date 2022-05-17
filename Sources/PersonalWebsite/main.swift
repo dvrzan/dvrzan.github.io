@@ -42,7 +42,7 @@ extension Theme {
 // Generate website using my theme:
 try PersonalWebsite().publish(using: [
   .installPlugin(.splash(withClassPrefix: "")),
-//  .addMarkdownFiles(),
+  .addMarkdownFiles(),
   .copyResources(),
   .installPlugin(.darkImage()),
   .installPlugin(.readingTime()),

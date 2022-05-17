@@ -21,6 +21,17 @@ struct Conference {
 
   static let conferences = [
     Conference(
+      past: false,
+      name: "iOSDevUK",
+      website: "https://www.iosdevuk.com/",
+      dateAndCity: "September 2022 - Aberystwyth, United Kingdom",
+      talkTitle: "UPCOMING: Swift your personal website using Publish",
+      talkDescription: "",
+      image: "",
+      imageAlt: "",
+      talkURL: ""
+    ),
+    Conference(
       past: true,
       name: "iOSConfSG",
       website: "https://iosconf.sg",
@@ -40,7 +51,7 @@ struct Conference {
       talkDescription: "This talk is my personal story of how I decided to switch my career from Civil Engineering to iOS Development; with no previous programming experience. Following a structured timeline, I talk about some personal successes and all the fears and failures I had to overcome. Finally, I share all the lessons I learned along the way and inspire others to take action. Changing your career doesn’t mean you have failed.",
       image: "",
       imageAlt: "",
-      talkURL: ""
+      talkURL: "https://vimeo.com/646517989"
     ),
     Conference(
       past: true,
