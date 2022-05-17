@@ -43,7 +43,7 @@
   <span class="keyword">let</span> viewModel = <span class="type">VideoListViewModel</span>()
   <span class="keyword">let</span> expectation = <span class="type">XCTestExpectation</span>(description: <span class="string">"Publishes 4 videos"</span>)
 
-  sut.<span class="property">$videos</span>
+  viewModel.<span class="property">$videos</span>
     <span class="comment">// Remove the first (initial) value - we don't need it</span>
     .<span class="call">dropFirst</span>()
     .<span class="call">sink</span>(receiveValue: {
@@ -55,7 +55,7 @@
     .<span class="call">store</span>(in: &amp;cancellables)
 
   <span class="comment">//When</span>
-  <span class="keyword">await</span> sut.<span class="call">fetchVideos</span>()
+  <span class="keyword">await</span> viewModel.<span class="call">fetchVideos</span>()
 
   <span class="comment">//Then</span>
   <span class="call">wait</span>(for: [expectation], timeout: <span class="number">1</span>)
