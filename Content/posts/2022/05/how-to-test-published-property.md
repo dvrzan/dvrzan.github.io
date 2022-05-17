@@ -101,7 +101,7 @@ func test_videos_whenFetchVideosCalled_hasFourVideos() async {
   let viewModel = VideoListViewModel()
   let expectation = XCTestExpectation(description: "Publishes 4 videos")
 
-  sut.$videos
+  viewModel.$videos
     // Remove the first (initial) value - we don't need it
     .dropFirst()
     .sink(receiveValue: {
@@ -113,7 +113,7 @@ func test_videos_whenFetchVideosCalled_hasFourVideos() async {
     .store(in: &cancellables)
 
   //When
-  await sut.fetchVideos()
+  await viewModel.fetchVideos()
 
   //Then
   wait(for: [expectation], timeout: 1)
