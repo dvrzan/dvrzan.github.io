@@ -64,19 +64,20 @@ func appendVideos() {
   videos.append(Video(name:"My Second Video"))
   videos.append(Video(name:"My Third Video"))
   videos.append(Video(name:"My Fourth Video"))
+  videos.append(Video(name:"My Fifth Video"))
 }
 ```
 
 You can assert property's current value after the function gets called. The operation will complete before the assertion. 
 
 ```swift
-func test_videos_whenAppendVideosCalled_hasFourVideos() {
+func test_videos_whenAppendVideosCalled_hasFiveVideos() {
   //Given
   let viewModel = VideoListViewModel()
   //When
   viewModel.appendVideos()
   //Then
-  XCTAssertEqual(viewModel.videos.count, 4)
+  XCTAssertEqual(viewModel.videos.count, 5)
 }
 ```
 
