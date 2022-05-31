@@ -28,15 +28,14 @@
   videos.<span class="call">append</span>(<span class="type">Video</span>(name:<span class="string">"My Second Video"</span>))
   videos.<span class="call">append</span>(<span class="type">Video</span>(name:<span class="string">"My Third Video"</span>))
   videos.<span class="call">append</span>(<span class="type">Video</span>(name:<span class="string">"My Fourth Video"</span>))
-  videos.<span class="call">append</span>(<span class="type">Video</span>(name:<span class="string">"My Fifth Video"</span>))
 }
-</code></pre><p>You can assert property's current value after the function gets called. The operation will complete before the assertion.</p><pre><code><span class="keyword">func</span> test_videos_whenAppendVideosCalled_hasFiveVideos() {
+</code></pre><p>You can assert property's current value after the function gets called. The operation will complete before the assertion.</p><pre><code><span class="keyword">func</span> test_videos_whenAppendVideosCalled_hasFourVideos() {
   <span class="comment">//Given</span>
   <span class="keyword">let</span> viewModel = <span class="type">VideoListViewModel</span>()
   <span class="comment">//When</span>
   viewModel.<span class="call">appendVideos</span>()
   <span class="comment">//Then</span>
-  <span class="call">XCTAssertEqual</span>(viewModel.<span class="property">videos</span>.<span class="property">count</span>, <span class="number">5</span>)
+  <span class="call">XCTAssertEqual</span>(viewModel.<span class="property">videos</span>.<span class="property">count</span>, <span class="number">4</span>)
 }
 </code></pre><p>The whole point of <code>@Published</code> properties is to stream any changes to the view before the value is set. It's like giving someone a heads up something will happen before it does. In that case, you'd want to test the values sent to the view.</p><h2>Testing published value by subscribing to it</h2><p><code>@Published</code> properties stream values over time. To get the published (projected) value of the property, you need to subscribe to it with <code>.sink(receiveValue:)</code>.</p><blockquote><p>While word <strong>sink</strong> might sound confusing at first, it's a common math term. It's often used in engineering and refers to end location of anything that flows (water, data, time, heat etc.). <strong>Source</strong> is where the flow starts and <strong>sink</strong> is where the flow ends. In graph theory, sink is a node of a directed graph with no exiting edges; meaning all directed edges flow towards it. In <strong>Combine</strong>, reactive stream flows towards <code>.sink(receiveValue:)</code>.</p></blockquote><p>To fetch data for the <code>@Published</code> property you'll likely have an asynchronous operation, so you need to use test expectations.</p><pre><code><span class="keyword">func</span> test_videos_whenFetchVideosCalled_hasFourVideos() <span class="keyword">async</span> {
   <span class="comment">//Given</span>

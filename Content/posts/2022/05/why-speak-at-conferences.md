@@ -11,21 +11,15 @@ tags: non-technical skills
 
 Conference speaking is one of the things I've never expected to do myself. At least not this early in my career. The thought never even crossed my mind. 
 
-I got invited to speak at my first conference and things went on from there. Now, almost a year later, I love speaking at conferences. It's a different world from being an attendee. You get to do everything other attendees do; listen to other talks, learn, and meet new people. But you also get a sneak peak peek behind the curtains. You get to hang out with other speakers and have an amazing opportunity of sharing your experience with others.
+I got invited to speak at my first conference and things went on from there. Now, almost a year later, I love speaking at conferences. It's a different world from being an attendee. You get to do everything other attendees do; listen to other talks, learn, and meet new people. But you also get a sneak peak behind the curtains. You get to hang out with other speakers and have an amazing opportunity of sharing your experience with others.
 
 ## Overcoming Impostor Syndrome
 
-Who would want to listen to me? What do I have to offer that another more experienced developer cannot? Everyone is going to see that I know nothing and they'll call me an impostor. 
+Who would want to listen to me? What do I have to offer that another more experienced developer cannot? Everyone is going to see that I know nothing and they'll call me an impostor. We've all been there.
 
-We've all been there.
+Nobody knows everything. When you learn a new concept and do something practical with it, you gain experience. Experience is what matters and no one can argue your experience is wrong. Take that personal experience to your advantage and make a talk about it. You've find a cool new concept to implement navigation in SwiftUI? Talk about it! Share it with other developers. 
 
-Nobody knows everything. When you learn a new concept and do something practical with it, you gain experience. Experience is what matters and no one can argue your experience is wrong.
-
-Take that personal experience to your advantage and make a talk about it. You've find a cool new concept to implement navigation in SwiftUI? Talk about it! Share it with other developers. 
-
-Talk about topics that interest you; that you're passionate about. You don't have to be an expert on the topic to give a talk about it. The secret is to make others reconsider their perspective through yours.
-
-The only difference between speakers and other attendees is they have learned something well and they are willing to talk about it.
+Talk about topics that interest you; that you're passionate about. You don't have to be an expert on the topic to give a talk about it. The secret is to make others reconsider their perspective through yours. The only difference between speakers and other attendees is they have learned something well and they are willing to talk about it.
 
 ## Coming up with an idea
 
@@ -67,9 +61,7 @@ Talk description should answer the following questions:
 - What is the purpose of the talk?
 - What will the audience take away from it?
 
-This doesn't mean the description should be a massive block of text. If there is no requirement in the CFP form, keep it around 100 - 150 words long. Nobody likes to read a wall of text.
-
-The person reading the description should be able to have answers to the above questions. The idea is to make it interesting so people want to see your talk. Especially if a conference has more tracks.
+This doesn't mean the description should be a massive block of text. If there is no requirement in the CFP form, keep it around 100 - 150 words long. Nobody likes to read a wall of text. The person reading the description should be able to have answers to the above questions. The idea is to make it interesting so people want to see your talk. Especially if a conference has more tracks.
 
 This part of application is also called an **abstract**, which means that your talk description should be exactly that. If you know what you want to talk about, then write specific things. But if you have an idea or are not quite sure what approach you want to take, try to write it without anything specific so you have some room to change it up later. 
 
@@ -81,44 +73,17 @@ You wrote the hardest part of application, well done! Now's the time to think ab
 
 ### About Yourself
 
-It may sound simple, but I always spend so much time writing and changing the **About Me** part. 
+It may sound simple, but I always spend so much time writing and changing the **About Me** part. Use this part of application to tell people a little about yourself. I've seen developers write around 100-150 words. Or you can make it as short as you'd like. I've even seen conferences asking for 200 words of text.
 
-Use this part of application to tell people a little about yourself. I've seen developers write around 100-150 words. Or you can make it as short as you'd like. I've even seen conferences asking for 200 words of text.
-
-Mention what you do, where you're from and where you work. Add a little bit about your personal life, like hobbies or fun facts. Write anything you want to share with attendee so they get to know you.
-
-If there's no requirement, choose whether you want to write it in first or third person. I've seen different approaches on this. It's up to you.
+Mention what you do, where you're from and where you work. Add a little bit about your personal life, like hobbies or fun facts. Write anything you want to share with attendee so they get to know you. If there's no requirement, choose whether you want to write it in first or third person. I've seen different approaches on this. It's up to you.
 
 ### Final thoughts
 
-Talk title and description are what conference organizers look at when deciding whether to accept your talk proposal. Make it count!
-
-Take time to refine your idea. You have more than enough time to submit a talk proposal.
-
-I like to take notes on things I've learned and later revisit them to see if they'd make a great conference talk or a blog post. 
+Talk title and description are what conference organizers look at when deciding whether to accept your talk proposal. Make it count! Take time to refine your idea. You have more than enough time to submit a talk proposal. I like to take notes on things I've learned and later revisit them to see if they'd make a great conference talk or a blog post. 
 
 Finally, get excited, you submitted your first talk!
 
-Don't get discouraged if your talk doesn't get accepted. Conferences get hundreds of applications and have to make a choice what would be of most interest to all attendees. You're always welcome to submit multiple applications and apply to more than one conference. 
-
-### Application Example
-
-The example below is from my talk at iOSConfSG '21 about VIP Architecture in Swift. You can watch the talk [here](https://www.youtube.com/watch?v=Szlgqnk6gHg).
-
-```
-Talk Title: 
-VIP, not a VIPER, Clean Swift Architecture
-
-Talk Description: 
-VIP and VIPER, while having the same basic components, are quite different in their implementation. They both follow Uncle Bob's Clean Architecture principles and often tend to be mixed up due to their name similarities. This talk will introduce you to the VIP architecture and its principles. While specifically made for UIKit apps to fix the MVC problem (Massive View Controllers), we'll take a look at how we could implement it in SwiftUI apps.
-
-About Me:
-Danijela is an iOS Developer from Croatia, living in Toronto, Canada. She was a Civil Engineer for two years when she decided it wasn't the right career choice for her. She picked up her laptop and decided to learn how to code. Being able to create something out of nothing was what got her interested in programming. She finds creativity in thinking about a problem and finding a way to solve it.
-
-When not fixing bugs, she writes technical articles for raywenderlich.com. When not writing code, she found it interesting to speak about it.
-
-In her free time, you can find her lifting heavy things, playing video-games, cooking, and trying to keep up with Swift updates.
-```
+Don't get discouraged if your talk doesn't get accepted. Conferences get hundreds of applications and have to make a choice what would be of most interest to all attendees. You're always welcome to submit multiple applications and apply to more than one conference.
 
 ***
 

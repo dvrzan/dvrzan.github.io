@@ -104,6 +104,10 @@ article h2 {
   margin-top: 30px;
 }
 
+article h3 {
+  margin-bottom: 20px;
+}
+
 article hr {
   border: 2px solid #AA1945;
   margin-bottom: 30px;
@@ -711,6 +715,6 @@ footer {
   background-color: #D59C00;
 }
 
-.swiftui-tag {
+.non-technicalskills-tag {
   background-color: #4F3B78;
 }
