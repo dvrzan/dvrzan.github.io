@@ -11,7 +11,7 @@ tags: non-technical skills
 
 Conference speaking is one of the things I've never expected to do myself. At least not this early in my career. The thought never even crossed my mind. 
 
-I got invited to speak at my first conference and things went on from there. Now, almost a year later, I love speaking at conferences. It's a different world from being an attendee. You get to do everything other attendees do; listen to other talks, learn, and meet new people. But you also get a sneak peak behind the curtains. You get to hang out with other speakers and have an amazing opportunity of sharing your experience with others.
+I got invited to speak at my first conference and things went on from there. Now, almost a year later, I love speaking at conferences. It's a different world from being an attendee. You get to do everything other attendees do; listen to other talks, learn, and meet new people. But you also get a sneak peek behind the curtains. You get to hang out with other speakers and have an amazing opportunity of sharing your experience with others.
 
 ## Overcoming Impostor Syndrome
 

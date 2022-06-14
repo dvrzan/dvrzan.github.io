@@ -24,6 +24,11 @@
  Code Style
  */
 
+/*pre[swift]::before {*/
+/*  content: attr(swift);*/
+/*  display: block;*/
+/*}*/
+
 pre {
   margin-bottom: 22px;
   background-color: #EEF1F3;
@@ -100,12 +105,22 @@ article p code {
   font-size: 17px;
 }
 
+article h1 {
+  margin-top: 20px;
+  color: #002271;
+  font-size: 40px;
+}
+
 article h2 {
   margin-top: 30px;
+  color: #002271;
+  font-size: 32px;
 }
 
 article h3 {
   margin-bottom: 20px;
+  color: #002271;
+  font-size: 28px;
 }
 
 article hr {
@@ -131,10 +146,6 @@ article p {
 /*  }*/
 /*}*/
 
-article h1 {
-  margin-top: 20px;
-}
-
 article ul {
   padding-left: 25px;
   padding-bottom: 10px;
@@ -150,6 +161,11 @@ article blockquote {
   margin-bottom: 20px;
 }
 
+article img {
+/*  width: 600px;*/
+  width: 100%;
+  margin-bottom: 15px;
+}
 
 /*
  Article Metadata
@@ -679,6 +695,12 @@ footer {
     border: 1px solid #656B91;
   }
 
+  article h1,
+  article h2,
+  article h3 {
+    color: #35a7e2;
+  }
+
   article blockquote {
     background-color: #000;
   }
@@ -717,4 +739,12 @@ footer {
 
 .non-technicalskills-tag {
   background-color: #4F3B78;
+}
+
+.webdevelopment-tag {
+  background-color: #008040;
+}
+
+.publish-tag {
+  background-color: #800080;
 }
