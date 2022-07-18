@@ -115,6 +115,14 @@ struct Podcast {
       url: "https://www.youtube.com/watch?v=AbK1n_WHsZM"
     ),
     Podcast(
+      headline: "WWDC expectations and predictions Twitter Space",
+      name: "AppForce1",
+      website: "https://appforce1.net",
+      host: "Jeroen Leenarts",
+      description: "In this episode, Jeroen and Stefan have hosted Mikaela, Malin, Josh, Jordi, Rudrank and me to talk about our expectations and predictions for WWDC 2022. This episode was hosted as a Twitter Space and published as a podcast episode.",
+      url: "https://appforce1.net/podcast/shownotes/?episode=WWDC+expectations+and+predictions+Twitter+Space"
+    ),
+    Podcast(
       headline: "1st a civil engineer then a software engineer",
       name: "AppForce1",
       website: "https://appforce1.net",
