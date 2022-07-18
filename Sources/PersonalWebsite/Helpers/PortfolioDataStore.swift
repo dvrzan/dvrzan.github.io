@@ -99,7 +99,23 @@ struct Podcast {
 
   static let podcasts = [
     Podcast(
-      headline: "Danijela Vrzan, 1st a civil engineer then a software engineer",
+      headline: "This is HOW you can become an iOS Developer",
+      name: "The Mayank Show",
+      website: "https://www.youtube.com/c/mayankIndia",
+      host: "Mayank Gupta",
+      description: "In this episode, Mayank and I talk about my professional experiences and perspective on iOS industry. We talk about attending WWDC 2022 without a ticket and how someone can become an iOS Developer irrespective of the field they are currently in.",
+      url: "https://www.youtube.com/watch?v=gZvGtbaDJp8"
+    ),
+    Podcast(
+      headline: "Coffee Chats",
+      name: "Empower Apps",
+      website: "https://www.empowerapps.show/",
+      host: "Leo Dion",
+      description: "In this episode of Empower Apps podcast, Leo and I talk about the importance of meeting with people 1-on-1. We also talk about my experience of meeting with folks at WWDC 2022.",
+      url: "https://www.youtube.com/watch?v=AbK1n_WHsZM"
+    ),
+    Podcast(
+      headline: "1st a civil engineer then a software engineer",
       name: "AppForce1",
       website: "https://appforce1.net",
       host: "Jeroen Leenarts",
@@ -107,7 +123,7 @@ struct Podcast {
       url: "https://appforce1.net/podcast/shownotes/?episode=Danijela+Vrzan%2C+1st+a+civil+engineer+then+a+software+engineer"
     ),
     Podcast(
-      headline: "A creative mind with Danijela Vrzan",
+      headline: "A creative mind",
       name: "Everyday Robots",
       website: "https://everydayrobots.tech/",
       host: "Jonathan Ruiz",
