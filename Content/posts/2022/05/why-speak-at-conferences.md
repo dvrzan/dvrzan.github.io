@@ -2,7 +2,7 @@
 date: 2022-05-31 08:45
 description: Attending conferences is a great way to learn new things, meet other developers, and promote your company or personal projects you've been working on. But have you ever wondered what it's like to be a speaker? Are you interested in speaking but don't know how or where to start? Impostor syndrome? You have more to offer than you think! Let's see why you should apply as a speaker and how to do that.
 image: /images/posts/2022/05/why-speak-at-conferences.png
-tags: non-technical skills
+tags: non-technical
 ---
 
 # Why speak at conferences and how to apply
