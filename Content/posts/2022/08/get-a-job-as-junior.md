@@ -23,7 +23,7 @@ I took an entire week to research how to create a good resume that stands out an
 ### Experience
 Since you're applying for your first job, you probably have no experience. If you have any internships, that's amazing. That will definitely set you apart from everyone. If you're like me and have no internships, maybe you've worked other jobs that are not strictly related to programming. Choose a few that are worth mentioning and add them to the experience section. You might have not done any programming, but maybe in your previous career you were an engineer and did some other cool stuff you can mention? Or you worked in a call-centre or as a bartender and know how to deal with customers. 
 
-On different jobs you learn different skills. It's not all about coding. If you've worked on any customer facing jobs, you gained the mort important skill to have as a developer - how to communicate. 
+On different jobs you learn different skills. It's not all about coding. If you've worked on any customer facing jobs, you gained the most important skill to have as a developer - how to communicate. 
 
 ### Volunteering
 You can add any volunteer work under experience or add it as a separate section. You did some work to help someone out but weren't paid for it? No shame in that. You organized a meetup or a conference? Awesome, you probably picked a few organizational skills! You lead summer guitar workshops in your local community? Cool, it means you know how to approach teaching others. 
