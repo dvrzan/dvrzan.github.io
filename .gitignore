@@ -97,3 +97,6 @@ iOSInjectionProject/
 
 # Swift Package Manager
 .swiftpm/*
+
+# Obsidian
+Content/posts/.obsidian/
