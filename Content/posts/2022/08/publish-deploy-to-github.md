@@ -1,7 +1,7 @@
 ---
 date: 2022-08-23 08:45
 description: You've created your website and you're ready to show it off to the world. Next thing on your list is to choose where to host it. In this post, I'll show you how to deploy your Publish website on GitHub Pages.
-image: /images/posts/2022/08/publish-deploy-on-github-pages.png
+image: /images/posts/2022/08/publish-deploy-to-github.png
 tags: publish, web development
 ---
 
