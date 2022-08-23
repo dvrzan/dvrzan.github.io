@@ -98,4 +98,4 @@ We'll talk about automation process in another post.
 
 Please feel free to reach out on [Twitter](https://twitter.com/dvrzan) if you have any questions, comments, or feedback.
 
-Thank you for reading and good luck in your job search!
+Thank you for reading and happy coding!
