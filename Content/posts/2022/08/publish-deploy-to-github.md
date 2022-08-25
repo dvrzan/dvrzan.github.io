@@ -6,6 +6,7 @@ tags: publish, web development
 ---
 
 # Publish: Deploying your website on GitHub Pages
+
 So you've learned [how to create a personal website in Swift using Publish](https://danijelavrzan.com/posts/2022/06/create-portfolio-website-using-publish/) and you're ready to show it off to the world! 
 
 > We'll use the website called **MyWebsite** we created in the previous post for this and all other posts on Publish.
