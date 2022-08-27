@@ -1,7 +1,6 @@
 import Foundation
 import Publish
 import Plot
-import DarkImagePublishPlugin
 import SplashPublishPlugin
 import ReadingTimePublishPlugin
 
@@ -44,7 +43,6 @@ try PersonalWebsite().publish(using: [
   .installPlugin(.splash(withClassPrefix: "")),
   .addMarkdownFiles(),
   .copyResources(),
-  .installPlugin(.darkImage()),
   .installPlugin(.readingTime()),
   .generateHTML(withTheme: .myTheme),
   .generateRSSFeed(including: [.posts]),
