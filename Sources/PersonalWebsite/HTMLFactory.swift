@@ -475,7 +475,7 @@ struct MyHTMLFactory<Site: Website>: HTMLFactory {
           H1(Constants.IndexPage.recentPosts)
             .class("home-recent-posts-title")
           Paragraph {
-            Text("I started writing articles as my personal repository of knowledge for concepts and issues I've struggled with or wanted to learn more about. Writing and diving deep into a topic is a good practical way to learn something. I'm sharing my findings and learnings with you so that you can also learn with me. ")
+            Text(Constants.IndexPage.intro)
           }
 
           //Feed.rss subscription

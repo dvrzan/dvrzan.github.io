@@ -16,6 +16,7 @@ struct Constants {
   struct IndexPage {
     static let recentPosts = "Recent Posts"
     static let subscribe = "Subscribe to never miss an article!"
+    static let intro = "I started writing articles as my personal repository of knowledge for concepts and issues I've struggled with or wanted to learn more about. Writing and diving deep into a topic is a good practical way to learn something. I'm sharing my findings and learnings with you so that you can also learn with me. "
   }
 
   struct Portfolio {
