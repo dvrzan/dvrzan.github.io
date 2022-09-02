@@ -554,6 +554,7 @@ nav li a.selected {
 
 .portfolio-section li h2 {
   margin-bottom: 8px;
+  color: #002271;
 }
 
 .portfolio-section li p {
@@ -698,6 +699,10 @@ footer {
   article h1,
   article h2,
   article h3 {
+    color: #35a7e2;
+  }
+
+  .portfolio-section li h2 {
     color: #35a7e2;
   }
 
