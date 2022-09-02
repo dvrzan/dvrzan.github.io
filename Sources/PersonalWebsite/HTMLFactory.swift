@@ -255,6 +255,12 @@ private struct PortfolioPage: Component {
         .class("large-divider")
       ConferenceList()
 
+      //Meetups
+      H1(Constants.Portfolio.meetupTitle)
+      Paragraph()
+        .class("large-divider")
+      MeetupList()
+
       //Podcasts
       H1(Constants.Portfolio.podcastTitle)
       Paragraph()
@@ -300,6 +306,43 @@ private struct ConferenceList: Component {
         //Conference image if exists
         if !conference.image.isEmpty {
           Image(url: conference.image, description: conference.imageAlt)
+            .class("portfolio-image")
+        }
+      }
+    }
+    .class("portfolio-section")
+  }
+}
+
+// MARK: Meetups
+private struct MeetupList: Component {
+  var body: Component {
+    //List of conferences
+      List(Meetup.meetups) { meetup in
+      Div {
+        //Conference talk title and URL (if exists)
+        H2(
+          meetup.talkURL == ""
+          ? Text(meetup.talkTitle)
+          : Link(meetup.talkTitle, url: meetup.talkURL)
+            .linkTarget(.blank)
+        )
+
+        //Conference information (name, date, place, website)
+        Paragraph {
+          Link("➔ \(meetup.name) - \(meetup.dateAndCity)", url: meetup.website)
+            .linkTarget(.blank)
+        }
+
+        //Conference talk description
+        Paragraph {
+          Text(meetup.talkDescription)
+        }
+        .class("portfolio-description")
+
+        //Conference image if exists
+        if !meetup.image.isEmpty {
+          Image(url: meetup.image, description: meetup.imageAlt)
             .class("portfolio-image")
         }
       }

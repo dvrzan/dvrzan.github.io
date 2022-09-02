@@ -7,25 +7,26 @@
 
 import Foundation
 
-struct Constants {
-  struct Header {
+enum Constants {
+  enum Header {
     static let title = "IOS DEVELOPER"
     static let subtitle = "WRITER. SPEAKER."
   }
 
-  struct IndexPage {
+  enum IndexPage {
     static let recentPosts = "Recent Posts"
     static let subscribe = "Subscribe to never miss an article!"
     static let intro = "I started writing articles as my personal repository of knowledge for concepts and issues I've struggled with or wanted to learn more about. Writing and diving deep into a topic is a good practical way to learn something. I'm sharing my findings and learnings with you so that you can also learn with me. "
   }
 
-  struct Portfolio {
+  enum Portfolio {
     static let conferenceTitle = "Conferences"
+    static let meetupTitle = "Meetups"
     static let podcastTitle = "Podcasts"
     static let interviewTitle = "Interviews"
   }
 
-  struct About {
+  enum About {
     static let introTitle = "Hi, I'm Danijela! 👋"
     static let introAboutFirst = "I'm an iOS Developer on Native team at "
     static let introAboutCompanyLink = "Bally's Interactive"
@@ -37,19 +38,19 @@ struct Constants {
     static let contactTitleEnd = " or take a look at my work"
   }
 
-  struct Tags {
+  enum Tags {
     static let browseAll = "Browse all tags"
     static let taggedWith = "Tagged with "
   }
 
-  struct Footer {
+  enum Footer {
     static let copyright = "Copyright © 2022 Danijela Vrzan. All Rights Reserved."
     static let generatedUsing = "Built in Swift using "
     static let publish = "Publish."
     static let publishURL = "https://github.com/johnsundell/publish"
   }
 
-  struct Image {
+  enum Image {
     static let header = "/images/logo.png"
     static let rss = "/images/utils/rss.png"
     static let torontoNature = "/images/about/toronto-nature.png"
@@ -59,7 +60,7 @@ struct Constants {
     static let raywenderlich = "/images/about/contact/raywenderlich.png"
   }
 
-  struct URL {
+  enum URL {
     static let homeURL = "/"
     static let rss = "/feed.rss"
     static let company = "https://www.ballys.com/ballys-interactive.htm"

@@ -67,6 +67,33 @@ struct Conference {
   ]
 }
 
+//MARK: - Meetup
+struct Meetup {
+  let past: Bool
+  let name: String
+  let website: String
+  let dateAndCity: String
+  let talkTitle: String
+  let talkDescription: String
+  let image: String
+  let imageAlt: String
+  let talkURL: String
+
+  static let meetups = [
+      Meetup(
+        past: true,
+        name: "CocoaHeads Hamburg",
+        website: "https://twitter.com/cocoaheads_hh",
+        dateAndCity: "June 2022 - Remote Edition",
+        talkTitle: "Server driven UI with JudoSDK",
+        talkDescription: "",
+        image: "",
+        imageAlt: "",
+        talkURL: ""
+      )
+    ]
+}
+
 //MARK: - Interview
 struct Interview {
   let headline: String
