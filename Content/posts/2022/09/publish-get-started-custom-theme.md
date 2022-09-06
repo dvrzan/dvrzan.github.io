@@ -1,6 +1,6 @@
 ---
-date: 2022-09-05 08:45
-description: After you've learned how to generate a website in Publish, before you deploy it and show it off to the world, you might want to change the default theme and create your own. Publish comes with a default theme called Foundation, but it's only for demonstration purposes and it's suggested to create a new one for your website. This post will show you how.
+date: 2022-09-06 08:45
+description: Publish has a default HTML theme called Foundation. But it serves as a guideline and a point of reference to creating your own theme. So your next step, before deploying your website, is to change the default theme and create your own.
 image: /images/posts/2022/09/publish-get-started-custom-theme.png
 tags: publish, web development
 ---
@@ -15,7 +15,7 @@ Before [deploying your website](https://danijelavrzan.com/posts/2022/08/publish-
 
 ## Theme
 
-Publish uses a default theme to render your website called **Foundation**. While you're welcome to use it, the documentations suggests that you create your own theme. Default theme is there to guide you and should be used as a point of reference for creating your own.
+Publish uses a default theme to render your website called **Foundation**. It exists as a guide and a point of reference for creating your own theme.
 
 Under **Package Dependencies**, find **Publish** and expand it. Go to **Sources** -> **Publish** -> **API** and open **Theme+Foundation** file. At the top you'll find the foundation theme:
 
@@ -32,7 +32,7 @@ public extension Theme {
 }
 ```
 
-Theme consists of two parts. First, you have the **HTMLFactory** where you define the HTML components and create your header, navigation, footer, and other needed elements. Then, you need the **styles.css** file to style your website.
+Theme consists of two parts. First, you have the **HTMLFactory** where you define the HTML components and create your header, navigation, footer, and other basic HTML elements. Then, you have the **styles.css** file to style your website.
 
 > You write your website's components in a SwiftUI-like syntax using Swift language. However, it's good to be familiar with both HTML and CSS. If you've never worked with them before, getting familiar with both and learning some basics will help you design and style your components faster.
 
@@ -48,13 +48,13 @@ Copy the above code and paste it in your **main.swift** file, above `.publish(wi
 try MyWebsite().publish(withTheme: .foundation)
 ```
 
-Xcode will complain it *Cannot find FoundationHTMLFactory in the scope* and it's correct. You need to create it. But before you do that, change the name of your new HTMLFactory to whatever name you'd like. I'll name it **MyThemeHTMLFactory()**.
+Xcode will complain it *Cannot find FoundationHTMLFactory in the scope* and it's not wrong (this time). You need to create it. But before you do that, change the name of your new HTMLFactory inside the theme extension to whatever name you'd like. I'll name it **MyThemeHTMLFactory()**.
 
 ## Styling
 
 To create your own custom theme, you need to create a CSS file.
 
-The theme you defined in **main.swift** is still pointing to foundation theme's **styles.css** file and if you try and build the website, it will fail.
+The theme you defined in **main.swift** is still pointing to foundation theme's **styles.css** file and you need to create your own.
 
 In your Xcode project, under **Resources**, create a new folder and name it **MyTheme**.
 
@@ -87,7 +87,7 @@ private struct MyThemeHTMLFactory<Site: Website>: HTMLFactory {
 
 All the errors are now gone and you're ready to customize your theme.
 
-You can take a closer look what methods define the HTMLFactory by jumping to it's definition.
+You can take a closer look what methods define the HTMLFactory by jumping to its definition.
 
 > To read the definition of a code component in Xcode, whether from a third party or Apple's API, right-click on the code you want to learn more about and click **Jump to Definition**.
 
@@ -110,9 +110,9 @@ public protocol HTMLFactory {
 }
 ```
 
-There are six methods used to define the HTMLFactory. Each method defines a larger HTML component of your website, like the index page (your homepage), sections, pages, items (your blog posts), tag list and tag details.
+There are six methods used to define the HTMLFactory. Each method defines a larger HTML component of your website, for example, the index page (your homepage), sections, pages, items (your blog posts), tag list and tag details.
 
-> Tags are used to filter your blog posts by a category you specify. Publish creates an new page that has a list of all the tags you define in your blog posts. This list is generated automatically. All tags are defined in the metadata section of a blog post. We'll take a look at this in the future post.
+> Use tags to filter your blog posts by a category. Publish creates an new page that has a list of all the tags you define in your blog posts. This list is generated automatically. All tags are defined in the metadata section of a blog post. We'll take a look at this in the future post.
 
 ## Standalone Components
 
@@ -166,7 +166,7 @@ We won't go into details on every component and every makeHTML method. I've show
 
 ## Final Thoughts
 
-This is where things get more complex when using Publish. You have to explore on your own. You have to read both Publish and Plot API's code to figure out how to create components and how they fit together. 
+This is where things get more complex when using Publish. You have to explore on your own. You have to read both Publish and Plot APIs code to figure out how to create components and how they fit together. 
 
 There will be more posts on this topic and how to work with the CSS file as well. This is just to get you started creating your own custom theme. I suggest you explore on your own and figure things out as you go along. 
 
