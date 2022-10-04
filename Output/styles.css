@@ -152,6 +152,16 @@ article ul {
   line-height: 1.4;
 }
 
+article ul code {
+  background: #F2F5F7;
+  border: 1px solid #D6E0EF;
+  border-radius: 6px;
+  padding: 1px 4px 1px 4px;
+  margin-left: 2px;
+  margin-right: 2px;
+  font-size: 17px;
+}
+
 article blockquote {
   background-color: #EFEFEF;
   padding: 10px 20px 0px 20px;
@@ -696,6 +706,11 @@ footer {
     border: 1px solid #656B91;
   }
 
+  article ul code {
+    background: #2E333A;
+    border: 1px solid #656B91;
+  }
+
   article h1,
   article h2,
   article h3 {
@@ -756,4 +771,12 @@ footer {
 
 .codable-tag {
   background-color: #4A6D88;
+}
+
+.other-technical-tag {
+  background-color: #FF0066;
+}
+
+.interview-tag {
+  background-color: #666666;
 }
