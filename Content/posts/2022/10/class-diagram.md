@@ -92,7 +92,7 @@ The default access control for Swift types is `internal` and there's no notation
 
 An **implementation relationship** is a relationship between two models, in which one model implements the behavior that the other model specifies. It's used for protocol conformance. The graphical representation of the relationship is a dashed line with an empty triangle arrow pointing towards the protocol.
 
-For default protocols you don't need to add any properties or methods on the protocol diagram, only its name in bold and the **<<protocol>>** notation. For custom protocols, you can decide whether you want to add the properties and methods that your protocol defines.
+For default protocols you don't need to add any properties or methods on the protocol diagram, only its name in bold and the `<<protocol>>` notation. For custom protocols, you can decide whether you want to add the properties and methods that your protocol defines.
 
 ## Adding other models and their relationships
 

@@ -20,67 +20,31 @@
     <span class="keyword">return</span> type.<span class="property">herbivore</span>
   }
 }
-</code></pre><p>It has a few properties describing the object and two methods, one of which is <code>private</code>. It also has an <strong>id</strong> of type <code>UUID</code> and conforms to <code>Identifiable</code> protocol.</p><blockquote><p>I'm using <a href="https://app.diagrams.net">draw.io</a> to create the class diagram and it's a simple free website that lets you create UML diagrams and then export them into any format you'd like. There are other websites, like <a href="https://www.lucidchart.com/pages/">Lucidchart</a>, which is widely used by companies. It has a free tier but requires an account.</p></blockquote><p>This is how the class diagram of a <strong>Pet</strong> looks like:</p><img src="/images/posts/2022/10/class-diagram02.png "A class diagram showing the Pet struct"" alt="A class diagram showing the Pet struct"/><p>The default access control for Swift types is <code>internal</code> and there's no notation in UML for that specific access control type. Most developers omit the access control for it or make up their own sign. <code>isHerbivore()</code> is marked with <code>-</code> as a <code>private</code> method.</p><h2>Adding protocols and implementation relationships</h2><p><strong>Pet</strong> conforms to <code>Identifiable</code> so it can implement the unique identifier. To show this type of relationship in your diagram, create a diagram with a single box for the protocol and add the relationship:</p><img src="/images/posts/2022/10/class-diagram03.png "A class diagram showing the Pet struct and conformance to Identifiable with an implementation relationship"" alt="A class diagram showing the Pet struct and conformance to Identifiable with an implementation relationship"/><p>An <strong>implementation relationship</strong> is a relationship between two models, in which one model implements the behavior that the other model specifies. It's used for protocol conformance. The graphical representation of the relationship is a dashed line with an empty triangle arrow pointing towards the protocol.</p><p>For default protocols you don't need to add any properties or methods on the protocol diagram, only its name in bold and the **<<protocol>>** notation. For custom protocols, you can decide whether you want to add the properties and methods that your protocol defines.
+</code></pre><p>It has a few properties describing the object and two methods, one of which is <code>private</code>. It also has an <strong>id</strong> of type <code>UUID</code> and conforms to <code>Identifiable</code> protocol.</p><blockquote><p>I'm using <a href="https://app.diagrams.net">draw.io</a> to create the class diagram and it's a simple free website that lets you create UML diagrams and then export them into any format you'd like. There are other websites, like <a href="https://www.lucidchart.com/pages/">Lucidchart</a>, which is widely used by companies. It has a free tier but requires an account.</p></blockquote><p>This is how the class diagram of a <strong>Pet</strong> looks like:</p><img src="/images/posts/2022/10/class-diagram02.png "A class diagram showing the Pet struct"" alt="A class diagram showing the Pet struct"/><p>The default access control for Swift types is <code>internal</code> and there's no notation in UML for that specific access control type. Most developers omit the access control for it or make up their own sign. <code>isHerbivore()</code> is marked with <code>-</code> as a <code>private</code> method.</p><h2>Adding protocols and implementation relationships</h2><p><strong>Pet</strong> conforms to <code>Identifiable</code> so it can implement the unique identifier. To show this type of relationship in your diagram, create a diagram with a single box for the protocol and add the relationship:</p><img src="/images/posts/2022/10/class-diagram03.png "A class diagram showing the Pet struct and conformance to Identifiable with an implementation relationship"" alt="A class diagram showing the Pet struct and conformance to Identifiable with an implementation relationship"/><p>An <strong>implementation relationship</strong> is a relationship between two models, in which one model implements the behavior that the other model specifies. It's used for protocol conformance. The graphical representation of the relationship is a dashed line with an empty triangle arrow pointing towards the protocol.</p><p>For default protocols you don't need to add any properties or methods on the protocol diagram, only its name in bold and the <code>&lt;&lt;protocol&gt;&gt;</code> notation. For custom protocols, you can decide whether you want to add the properties and methods that your protocol defines.</p><h2>Adding other models and their relationships</h2><p>The rest of the code defining our models:</p><pre><code><span class="keyword">struct</span> Owner: <span class="type">Experienced</span> {
+  <span class="keyword">let</span> name: <span class="type">String</span>
 
-## Adding other models and their relationships
-
-The rest of the code defining our models:
-
-```swift
-struct Owner: Experienced {
-  let name: String
-
-  func isExperienced() {
-    print("Maybe")
+  <span class="keyword">func</span> isExperienced() {
+    <span class="call">print</span>(<span class="string">"Maybe"</span>)
   }
 }
 
-protocol Experienced {
-  func isExperienced()
+<span class="keyword">protocol</span> Experienced {
+  <span class="keyword">func</span> isExperienced()
 }
 
-struct Animal {
-  let type: String
-  let breed: String
-  let herbivore: Bool
+<span class="keyword">struct</span> Animal {
+  <span class="keyword">let</span> type: <span class="type">String</span>
+  <span class="keyword">let</span> breed: <span class="type">String</span>
+  <span class="keyword">let</span> herbivore: <span class="type">Bool</span>
 }
 
-struct PetInformation {
-  let traits: [String]
-  let vaccines: [Vaccine]
+<span class="keyword">struct</span> PetInformation {
+  <span class="keyword">let</span> traits: [<span class="type">String</span>]
+  <span class="keyword">let</span> vaccines: [<span class="type">Vaccine</span>]
 }
 
-struct Vaccine {
-  let name: String
-  let type: String
+<span class="keyword">struct</span> Vaccine {
+  <span class="keyword">let</span> name: <span class="type">String</span>
+  <span class="keyword">let</span> type: <span class="type">String</span>
 }
-```
-
-And the class diagram looks like this:
-
-![A class diagram](/images/posts/2022/10/class-diagram04.png "A class diagram")
-
-The solid line with an open arrow pointing towards the class that supplies the property is a graphical representation of an **association relationship** and is used to link any number of classes.
-
-The text on the relationship arrows is optional and is not required. But it can sometimes be very useful.
-
-This is how the basic class diagram looks like from the given code. You should also be able to write the code given the class diagram, following the same principles. There are a few notations and relationship to learn that keep repeating all the time. Once you've learned them, you'll be able to create any class diagram for a system.
-
-## What about a ViewModel?
-
-A ViewModel is a class that you can add as a diagram like any other diagram you've added. Let's say you have a PetViewModel with pets property and an initializer. Your class diagram would now look like the following:
-
-![A class diagram with a ViewModel](/images/posts/2022/10/class-diagram05.png "A class diagram with a ViewModel")
-
-## Final Thoughts
-
-Class diagrams are common in programming and it's worth knowing how to create and read them. It's one of the overlooked skills that might give you an advantage knowing how it works.
-
-This is not the ultimate guide on how to create UML or class diagrams, but it should be enough to get you started on your own. 
-
-***
-
-Please feel free to reach out on [Twitter](https://twitter.com/dvrzan) if you have any questions, comments, or feedback.
-
-Thank you for reading and happy coding!
-</p></div></article></div><footer><p>Copyright © 2022 Danijela Vrzan. All Rights Reserved.</p><p>Built in Swift using <a href="https://github.com/johnsundell/publish" target="_blank">Publish.</a></p></footer></body></html>
+</code></pre><p>And the class diagram looks like this:</p><img src="/images/posts/2022/10/class-diagram04.png "A class diagram"" alt="A class diagram"/><p>The solid line with an open arrow pointing towards the class that supplies the property is a graphical representation of an <strong>association relationship</strong> and is used to link any number of classes.</p><p>The text on the relationship arrows is optional and is not required. But it can sometimes be very useful.</p><p>This is how the basic class diagram looks like from the given code. You should also be able to write the code given the class diagram, following the same principles. There are a few notations and relationship to learn that keep repeating all the time. Once you've learned them, you'll be able to create any class diagram for a system.</p><h2>What about a ViewModel?</h2><p>A ViewModel is a class that you can add as a diagram like any other diagram you've added. Let's say you have a PetViewModel with pets property and an initializer. Your class diagram would now look like the following:</p><img src="/images/posts/2022/10/class-diagram05.png "A class diagram with a ViewModel"" alt="A class diagram with a ViewModel"/><h2>Final Thoughts</h2><p>Class diagrams are common in programming and it's worth knowing how to create and read them. It's one of the overlooked skills that might give you an advantage knowing how it works.</p><p>This is not the ultimate guide on how to create UML or class diagrams, but it should be enough to get you started on your own.</p><hr><p>Please feel free to reach out on <a href="https://twitter.com/dvrzan">Twitter</a> if you have any questions, comments, or feedback.</p><p>Thank you for reading and happy coding!</p></div></article></div><footer><p>Copyright © 2022 Danijela Vrzan. All Rights Reserved.</p><p>Built in Swift using <a href="https://github.com/johnsundell/publish" target="_blank">Publish.</a></p></footer></body></html>
