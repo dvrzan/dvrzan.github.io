@@ -82,17 +82,17 @@ This is how the class diagram of a **Pet** looks like:
 
 ![A class diagram showing the Pet struct](/images/posts/2022/10/class-diagram02.png "A class diagram showing the Pet struct")
 
-The default access control for Swift types is internal and there's no notation in UML for that specific access control. Most developers omit the access control for an internal type or make up their own sign. `isHerbivore()` is marked with `-` as a `private` method.
+The default access control for Swift types is `internal` and there's no notation in UML for that specific access control type. Most developers omit the access control for it or make up their own sign. `isHerbivore()` is marked with `-` as a `private` method.
 
 ## Adding protocols and implementation relationships
 
-**Pet** conforms to `Identifiable` so it can implement the unique identifier. To show this type of relationship in your diagram, create a diagram with a single box for the protocol and add an *implementation* relationship:
+**Pet** conforms to `Identifiable` so it can implement the unique identifier. To show this type of relationship in your diagram, create a diagram with a single box for the protocol and add the relationship:
 
 ![A class diagram showing the Pet struct and conformance to Identifiable with an implementation relationship](/images/posts/2022/10/class-diagram03.png "A class diagram showing the Pet struct and conformance to Identifiable with an implementation relationship")
 
 An **implementation relationship** is a relationship between two models, in which one model implements the behavior that the other model specifies. It's used for protocol conformance. The graphical representation of the relationship is a dashed line with an empty triangle arrow pointing towards the protocol.
 
-For default protocols you don't need to add any properties or methods on the protocol diagram, only its name in bold and the `<<protocol>>` notation. For protocols you create yourself, you can decide whether you want to add the properties and methods the protocol defines.
+For default protocols you don't need to add any properties or methods on the protocol diagram, only its name in bold and the **<<protocol>>** notation. For custom protocols, you can decide whether you want to add the properties and methods that your protocol defines.
 
 ## Adding other models and their relationships
 
