@@ -1,5 +1,5 @@
 ---
-date: 2022-10-17 08:45
+date: 2022-10-18 08:45
 description: You're working on your website and making changes, but nothing has changed. You refresh the browser and yet nothing happens. In this post, learn how to use the tools available to refresh your website and see the changes you've made, applied instantly.
 image: /images/posts/2022/10/publish-automatic-local-changes.png
 tags: publish, web development
