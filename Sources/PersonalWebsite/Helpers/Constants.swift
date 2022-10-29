@@ -57,7 +57,7 @@ enum Constants {
     static let twitter = "/images/about/contact/twitter.png"
     static let linkedin = "/images/about/contact/linkedin.png"
     static let github = "/images/about/contact/github.png"
-    static let raywenderlich = "/images/about/contact/raywenderlich.png"
+    static let raywenderlich = "/images/about/contact/kodeco.png"
   }
 
   enum URL {
@@ -67,6 +67,6 @@ enum Constants {
     static let twitter = "https://twitter.com/dvrzan"
     static let linkedin = "https://www.linkedin.com/in/dvrzan"
     static let github = "https://github.com/dvrzan"
-    static let raywenderlich = "https://www.raywenderlich.com/u/dvrzan"
+    static let raywenderlich = "https://www.kodeco.com/u/dvrzan"
   }
 }
