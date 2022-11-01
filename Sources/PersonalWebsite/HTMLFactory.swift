@@ -30,9 +30,10 @@ private struct SiteHeader<Site: Website>: Component {
       Wrapper {
         //Header banner image
         Link(url: Constants.URL.homeURL) {
-          Image(Constants.Image.header)
+            Image(Constants.Image.header)
+                .accessibilityLabel("Danijela Vrzan text header")
             .class("banner-img")
-        }
+        }.accessibilityLabel("Link to home index page")
 
         //Header title
         Paragraph {
@@ -524,7 +525,8 @@ struct MyHTMLFactory<Site: Website>: HTMLFactory {
           //Feed.rss subscription
           Paragraph {
             Link(url: Constants.URL.rss) {
-              Image(Constants.Image.rss)
+                Image(Constants.Image.rss)
+                    .accessibilityLabel("")
               Text(Constants.IndexPage.subscribe)
             }
             .linkTarget(.blank)

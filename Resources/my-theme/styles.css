@@ -742,7 +742,7 @@ footer {
  Tag Colors
  */
 .swift-tag {
-  background-color: #CA3E47;
+  background-color: #800040;
 }
 
 .xcode-tag {
@@ -774,9 +774,13 @@ footer {
 }
 
 .other-technical-tag {
-  background-color: #FF0066;
+  background-color: #0080ff;
 }
 
 .interview-tag {
   background-color: #666666;
+}
+
+.swiftUI-tag {
+    background-color: #ff0080;
 }
