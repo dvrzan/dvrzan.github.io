@@ -58,7 +58,7 @@ To use network monitor in your app, instantiate it in the `@main` app struct and
 ```swift
 @main
 struct MyApp: App {
-    let networkMonitor = NetworkMonitor()
+    @StateObject var networkMonitor = NetworkMonitor()
 
     var body: some Scene {
         WindowGroup {
@@ -94,12 +94,12 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
-	        // If monitor detects valid network connection
+	      // If monitor detects valid network connection
             if networkMonitor.isConnected {
-	            // Show home view
+	          // Show home view
                 HomeView()
             } else {
-	            // Otherwise, show something else
+	          // Otherwise, show something else
                 NoNetworkView()
             }
         }
