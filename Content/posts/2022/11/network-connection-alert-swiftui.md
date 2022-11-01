@@ -191,7 +191,7 @@ Implementing network connectivity monitor doesn't require a lot of code. But it 
 
 Crafting delightful user experiences is part of what we do every day and also the reason why users keep coming back to our apps. We want them to come back.
 
-You can have the best error handling code in your app and still have users leaving 1* reviews titled *"sucks"*. Where there should have been an amazing UI, was an empty screen, because, well, the user didn't realize their network connection was lost or the server decided to become a [teapot](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/418). 
+You can have the best error handling code in your app and still have users leaving 1 star reviews titled *"sucks"*. Where there should have been an amazing UI, was an empty screen, because, well, the user didn't realize their network connection was lost or the server decided to become a [teapot](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/418). 
 
 ***
 
