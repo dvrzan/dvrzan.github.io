@@ -47,7 +47,7 @@ Next, create an initializer and call the `.pathUpdateHandler` on the path monito
 
 Finally, start the monitoring on the specified queue.
 
-> Our network monitor uses a Combine publisher so it can be used in both UIKit and SwiftUI views.
+> Our network monitor can be used in both UIKit and SwiftUI views.
 
 Now the fun part.
 
@@ -69,7 +69,7 @@ struct MyApp: App {
 }
 ```
 
-Then you call it anywhere in your app. 
+Then you can call it anywhere in your app. 
 
 ## Update UI
 
