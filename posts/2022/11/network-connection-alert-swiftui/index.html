@@ -21,7 +21,7 @@
 }
 </code></pre><p>NetworkMonitor conforms to @ObservableObject protocol so we can listen for any changes and update the UI accordingly.</p><p>First, create two private properties, an <code>NWPathMonitor</code> observer and a <code>DispatchQueue</code> where the monitor will do its work. The third property is a <code>Boolean</code> value we'll call in the View to check for network connectivity. The initial value is <strong>false</strong>.</p><p>Next, create an initializer and call the <code>.pathUpdateHandler</code> on the path monitor to handle the changes. Update <code>isConnected</code> to <strong>true</strong> when the path status is satisfied (connection is available) and notify observers for any changes with <code>objectWillChange.send()</code>.</p><p>Finally, start the monitoring on the specified queue.</p><blockquote><p>Our network monitor uses a Combine publisher so it can be used in both UIKit and SwiftUI views.</p></blockquote><p>Now the fun part.</p><h2>Inject into SwiftUI environment</h2><p>To use network monitor in your app, instantiate it in the <code>@main</code> app struct and inject as an environment object:</p><pre><code><span class="keyword">@main
 struct</span> MyApp: <span class="type">App</span> {
-    <span class="keyword">let</span> networkMonitor = <span class="type">NetworkMonitor</span>()
+    <span class="keyword">@StateObject var</span> networkMonitor = <span class="type">NetworkMonitor</span>()
 
     <span class="keyword">var</span> body: <span class="keyword">some</span> <span class="type">Scene</span> {
         <span class="type">WindowGroup</span> {
@@ -39,12 +39,12 @@ struct</span> MyApp: <span class="type">App</span> {
 
     <span class="keyword">var</span> body: <span class="keyword">some</span> <span class="type">View</span> {
         <span class="type">NavigationView</span> {
-	        <span class="comment">// If monitor detects valid network connection</span>
+	      <span class="comment">// If monitor detects valid network connection</span>
             <span class="keyword">if</span> networkMonitor.<span class="property">isConnected</span> {
-	            <span class="comment">// Show home view</span>
+	          <span class="comment">// Show home view</span>
                 <span class="type">HomeView</span>()
             } <span class="keyword">else</span> {
-	            <span class="comment">// Otherwise, show something else</span>
+	          <span class="comment">// Otherwise, show something else</span>
                 <span class="type">NoNetworkView</span>()
             }
         }
