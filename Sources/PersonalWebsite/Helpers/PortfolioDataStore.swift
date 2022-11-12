@@ -21,6 +21,17 @@ struct Conference {
 
   static let conferences = [
     Conference(
+        past: false,
+        name: "DeepDishSwift",
+        website: "https://deepdishswift.com",
+        dateAndCity: "May 2023 - Chicago",
+        talkTitle: "UPCOMING: TBA",
+        talkDescription: "",
+        image: "",
+        imageAlt: "",
+        talkURL: ""
+    ),
+    Conference(
       past: false,
       name: "iOSConfSG",
       website: "https://iosconf.sg",
@@ -32,12 +43,12 @@ struct Conference {
       talkURL: ""
     ),
     Conference(
-      past: false,
+      past: true,
       name: "Do iOS",
       website: "https://do-ios.com",
       dateAndCity: "November 2022 - Amsterdam, NL",
-      talkTitle: "UPCOMING: Swift your personal website using Publish",
-      talkDescription: "",
+      talkTitle: "Swift your personal website using Publish",
+      talkDescription: "It's become a norm to own a personal website. For showcasing your portfolio to future employers or sharing knowledge writing blogs; there are many options to choose from. Publish is a framework created by John Sundell that allows you to build static websites using Swift. In this talk, you'll learn everything you wanted to know about Publish to get started building your own website. It's so Swift!",
       image: "",
       imageAlt: "",
       talkURL: ""
@@ -48,7 +59,7 @@ struct Conference {
       website: "https://www.iosdevuk.com/",
       dateAndCity: "September 2022 - Aberystwyth, United Kingdom",
       talkTitle: "Swift your personal website using Publish",
-      talkDescription: "It's become a norm to own a personal website. Whether for showcasing your portfolio to future employers or sharing knowledge writing blogs; there are many options to choose from. If you're more technically savvy you may choose to build your own website from scratch. Or you don't feel like learning a new web technology so you go with a simple template that works just fine. But what if you don't have to learn anything new? What if you can use what you already know and have a lot of fun along the way? Enter - Publish. Publish is a framework created by John Sundell that allows you to build static websites using Swift. In this talk, you'll learn how to build a simple static website to show off your amazing portfolio. It's so Swift!",
+      talkDescription: "It's become a norm to own a personal website. Whether for showcasing your portfolio to future employers or sharing knowledge writing blogs; there are many options to choose from. Publish is a framework created by John Sundell that allows you to build static websites using Swift. In this talk, you'll learn how to build a simple static website to show off your amazing portfolio. It's so Swift!",
       image: "",
       imageAlt: "",
       talkURL: ""

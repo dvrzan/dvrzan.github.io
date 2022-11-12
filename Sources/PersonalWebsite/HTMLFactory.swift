@@ -10,15 +10,6 @@ import Publish
 import Plot
 import ReadingTimePublishPlugin
 
-// MARK: - HTML Components
-private struct Wrapper: ComponentContainer {
-  @ComponentBuilder var content: ContentProvider
-
-  var body: Component {
-    Div(content: content).class("wrapper")
-  }
-}
-
 
 // MARK: Header
 private struct SiteHeader<Site: Website>: Component {
@@ -31,9 +22,9 @@ private struct SiteHeader<Site: Website>: Component {
         //Header banner image
         Link(url: Constants.URL.homeURL) {
             Image(Constants.Image.header)
-                .accessibilityLabel("Danijela Vrzan text header")
+                .accessibilityLabel("Danijela Vrzan text logo header")
             .class("banner-img")
-        }.accessibilityLabel("Link to home index page")
+        }
 
         //Header title
         Paragraph {
@@ -82,8 +73,7 @@ private struct ItemList<Site: Website>: Component {
         H1(Link(item.title, url: item.path.absoluteString))
 
         //Small divider
-        Paragraph()
-          .class("small-divider")
+        SmallDivider()
 
         Paragraph {
           //Blog metadata (reading time and date)
@@ -97,7 +87,7 @@ private struct ItemList<Site: Website>: Component {
           .class("item-description")
 
         //Read more
-        H3(Link("Read more →", url: item.path.absoluteString))
+          H3(Link(Constants.Components.readMore, url: item.path.absoluteString))
       }
     }
     .class("item-list")
@@ -122,8 +112,7 @@ private struct RecentItemList<Site: Website>: Component {
         H1(Link(item.title, url: item.path.absoluteString))
 
         //Small divider
-        Paragraph()
-          .class("small-divider")
+        SmallDivider()
 
         Paragraph {
           //Blog metadata (reading time and date)
@@ -137,7 +126,7 @@ private struct RecentItemList<Site: Website>: Component {
           .class("item-description")
 
         //Read more
-        H3(Link("Read more →", url: item.path.absoluteString))
+          H3(Link(Constants.Components.readMore, url: item.path.absoluteString))
       }
     }
     .class("item-list")
@@ -162,7 +151,7 @@ private struct ItemMetadata<Site: Website>: Component {
       Text(formattedDate)
 
       //Divider (circle dot)
-      Text(" • ")
+        Text(Constants.Components.circleDot)
 
       //Reading time
       Text("\(item.readingTime.minutes) minute read")
@@ -252,26 +241,22 @@ private struct PortfolioPage: Component {
     Div {
       //Conferences
       H1(Constants.Portfolio.conferenceTitle)
-      Paragraph()
-        .class("large-divider")
+      LargeDivider()
       ConferenceList()
 
       //Meetups
       H1(Constants.Portfolio.meetupTitle)
-      Paragraph()
-        .class("large-divider")
+      LargeDivider()
       MeetupList()
 
       //Podcasts
       H1(Constants.Portfolio.podcastTitle)
-      Paragraph()
-        .class("large-divider")
+      LargeDivider()
       PodcastList()
 
       //Interviews
       H1(Constants.Portfolio.interviewTitle)
-      Paragraph()
-        .class("large-divider")
+      LargeDivider()
       InterviewList()
     }
     .class("portfolio-page")
@@ -418,9 +403,7 @@ private struct AboutPage: Component {
       H1(Constants.About.introTitle)
         .class("home-intro-title")
 
-      //Large divider
-      Paragraph()
-        .class("large-divider")
+      LargeDivider()
 
       Div {
         //Introduction - company I work at, website, and years of experience
@@ -450,19 +433,18 @@ private struct AboutPage: Component {
           description: "Five photos of Toronto's ravines and natural parks showing rivers, forests, and flowers turned into one image collage."
         )
         .class("about-me-toronto-nature")
+        .accessibilityLabel("Five photos of Toronto's ravines and natural parks showing rivers, forests, and flowers turned into one image collage.")
       }
       .class("about-me-text")
 
-      //Middle divider
-      Paragraph()
-        .class("middle-divider")
+      MiddleDivider()
 
       //Contact title
       Paragraph {
         Text(Constants.About.contactTitle)
         Link(
           Constants.About.contactLink,
-          url: "mailto:contact@vrzandanijela.com"
+          url: Constants.URL.mailTo
         )
         Text(Constants.About.contactTitleEnd)
       }
@@ -473,24 +455,28 @@ private struct AboutPage: Component {
         //Twitter
         Link(url: Constants.URL.twitter) {
           Image(url: Constants.Image.twitter, description: "Twitter logo")
+                .accessibilityLabel("Twitter logo")
         }
         .linkTarget(.blank)
 
         //Linkedin
         Link(url: Constants.URL.linkedin) {
           Image(url: Constants.Image.linkedin, description: "LinkedIn logo")
+                .accessibilityLabel("LinkedIn logo")
         }
         .linkTarget(.blank)
 
         //Github
         Link(url: Constants.URL.github) {
           Image(url: Constants.Image.github, description: "Github logo")
+                .accessibilityLabel("Github logo")
         }
         .linkTarget(.blank)
 
-        //raywenderlich.com
-        Link(url: Constants.URL.raywenderlich) {
-          Image(url: Constants.Image.raywenderlich, description: "Raywenderlich logo")
+        //Kodeco
+        Link(url: Constants.URL.kodeco) {
+          Image(url: Constants.Image.kodeco, description: "Kodeco logo")
+                .accessibilityLabel("Kodeco logo")
         }
         .linkTarget(.blank)
       }
