@@ -1,6 +1,6 @@
 ---
 date: 2022-11-15 08:45
-description: To configure custom domain for websites hosted on GitHub Pages, your repository needs to contain a CNAME record file. This file can be added manually through GitHub, but it gets overwritten after deployment. Publish force pushes to the repository and overwrittes the content. In this post, learn how to persist the CNAME record and make sure it never gets deleted.
+description: To configure custom domain for websites hosted on GitHub Pages, your repository needs to contain a CNAME record file. You can add the file manually through GitHub, but it gets overwritten after deployment. Publish force pushes to the repository and overwrites the content. In this post, learn how to persist the CNAME record and make sure it never gets deleted.
 image: /images/posts/2022/11/publish-cname-record.png
 tags: publish, web development
 ---
@@ -41,7 +41,7 @@ And there's a better solution.
 
 ## Add CNAME to Resources
 
-You can't persist the **CNAME** record on the GitHub repository itself, because Publish force pushes and overwrittes the content. You can't add it to the **Output** folder in Xcode either, because when Xcode runs the build, it overwrittes the content of the folder every time as well. If you try adding it, when you run the build, it will get deleted.
+You can't persist the **CNAME** record on the GitHub repository itself, because Publish force pushes and overwrites the content. You can't add it to the **Output** folder in Xcode either, because when Xcode runs the build, it overwrittes the content of the folder every time as well. If you try adding it, when you run the build, it will get deleted.
 
 But, there is a way to persist the file on every build and make sure it gets pushed to your repository on every deployment. You need to add the **CNAME** record to the **Resources** folder. And you only need to do this once.
 
