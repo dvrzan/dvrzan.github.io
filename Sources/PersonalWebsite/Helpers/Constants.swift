@@ -68,7 +68,7 @@ enum Constants {
         static let linkedin = "https://www.linkedin.com/in/dvrzan"
         static let github = "https://github.com/dvrzan"
         static let kodeco = "https://www.kodeco.com/u/dvrzan"
-        static let mailTo = "mailto:contact@vrzandanijela.com"
+        static let mailTo = "mailto:contact@danijelavrzan.com"
     }
 
     enum Components {
