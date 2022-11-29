@@ -72,19 +72,19 @@ Create a new **Swift** file and name it any way you'd like. I'll name it **Envir
 import Foundation
 
 public struct Environment {
-// Define the properties
-    enum Keys {
-        static let baseURL = "BASE_URL"
-    }
-    // Get the BASE_URL
-    static let baseURL: String = {
-        guard let baseURLProperty = Bundle.main.object(
-			forInfoDictionaryKey: Keys.baseURL
-		) as? String else {
-            fatalError("BASE_URL not found")
-        }
-        return baseURLProperty
-    }()
+    enum Keys {
+        static let baseURL = "BASE_URL"
+    }
+    
+    // Get the BASE_URL
+    static let baseURL: String = {
+        guard let baseURLProperty = Bundle.main.object(
+            forInfoDictionaryKey: Keys.baseURL
+        ) as? String else {
+            fatalError("BASE_URL not found")
+        }
+        return baseURLProperty
+    }()
 }
 ```
 
