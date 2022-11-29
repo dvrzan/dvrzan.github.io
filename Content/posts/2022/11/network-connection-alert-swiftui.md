@@ -193,6 +193,8 @@ Crafting delightful user experiences is part of what we do every day and also th
 
 You can have the best error handling code in your app and still have users leaving 1 star reviews titled *"sucks"*. Where there should have been an amazing UI, was an empty screen. So, well, the user didn't realize their network connection was lost or the server decided to become a [teapot](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/418). 
 
+> Thanks to (@twannl)[https://twitter.com/twannl] for pointing out Apple's recommendation not to check for network connections and instead running requests and handling potential networking errors. **Network** framework can still be helpful to pro-actively inform users about a bad networking condition without blocking any UI.
+
 ***
 
 Please feel free to reach out on [Twitter](https://twitter.com/dvrzan) if you have any questions, comments, or feedback.
