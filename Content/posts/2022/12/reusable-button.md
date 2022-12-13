@@ -1,7 +1,7 @@
 ---
 date: 2022-12-13 08:45
 description: Oftentimes, when developing your apps, you create a specific button style with different labels and actions to keep your UI consistent across different screens. You'll learn how to create a button view you can reuse across your app instead of having to create a new one every time.
-image: /images/posts/2022/12/reusable-button.png
+image: https://www.danijelavrzan.com/images/posts/2022/12/reusable-button.png
 tags: swiftUI
 ---
 
@@ -141,7 +141,7 @@ You own your Previews. When you want to enable them for the specific View, you n
 
 Let's create two buttons with some styling. One with icon and text, and another with text only:
 
-![ContentView with two ButtonViews](/images/posts/2022/12/reusable-button1.png "ContentView with two ButtonViews")
+![ContentView with two ButtonViews](https://www.danijelavrzan.com/images/posts/2022/12/reusable-button1.png "ContentView with two ButtonViews")
 
 ## Button UI Code
 
