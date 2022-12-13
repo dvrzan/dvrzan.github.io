@@ -1,7 +1,7 @@
 ---
 date: 2022-12-13 08:45
 description: Oftentimes, when developing your apps, you create a specific button style with different labels and actions to keep your UI consistent across different screens. You'll learn how to create a button view you can reuse across your app instead of having to create a new one every time.
-image: https://www.danijelavrzan.com/images/posts/2022/12/reusable-button.png
+image: /images/posts/2022/12/reusable-button.png
 tags: swiftUI
 ---
 
