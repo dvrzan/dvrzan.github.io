@@ -1,5 +1,5 @@
 ---
-date: 2022-12-11 08:45
+date: 2022-12-13 08:45
 description: Oftentimes, when developing your apps, you create a specific button style with different labels and actions to keep your UI consistent across different screens. You'll learn how to create a button view you can reuse across your app instead of having to create a new one every time.
 image: /images/posts/2022/12/reusable-button.png
 tags: swiftUI
@@ -53,7 +53,7 @@ struct ButtonView: View {
 }
 ```
 
-Structs don't need initializers. They get them by default. However, we're creating a reusable button. While we might need a label for our button, the icon image is completely optional. Not every button will have one. We'll also make it easy for us by providing a default value of **nil**.
+Structs don't need initializers. They get them by default. However, we're creating a reusable button. While we might need a label for our button, the icon image is completely optional. Not every button will have one.
 
 ## Custom initializer for default parameters
 
@@ -119,13 +119,13 @@ struct ButtonView: View {
 }
 ```
 
-Then we need to update the `init()` and call the `action()` in the button's action. And voila! Pretty neat. You can now call this button anywhere you want to use it, define a label and pass any functionality to it.
+Then just update the `init()` and call the `action()` in the button's action. 
 
-You can customize the button to your preference and pass any other properties you might need.
+And voila! Pretty neat. You can now call this button anywhere you want to use it, define a label and pass any functionality to it. You can customize the button to your preference and pass any other properties you might need.
 
 ## Previews
 
-To make the **Previews** work for the **ButtonView**, you need to define all the properties in your `View`, including the **closure** you created:
+If you were wondering how to make the **Previews** work for the **ButtonView**, you need to define all the properties in your `View`, including the **closure** you created:
 
 ```swift
 struct ButtonView_Previews: PreviewProvider {
@@ -134,6 +134,8 @@ struct ButtonView_Previews: PreviewProvider {
     }
 }
 ```
+
+You own your Previews. When you want to enable them for the specific View, you need to add everything the View needs to display properly. 
 
 ## Seeing it in action
 
@@ -195,7 +197,7 @@ struct ButtonView: View {
 
 You can create custom view modifiers and apply the styling to the button. You could also create a custom button style. 
 
-There are different ways you can approach building customizable and reusable UI components. Use what works for you.
+There are different ways you can approach building customizable and reusable UI components. There's no definitive approach to take. Use what works for you.
 
 ***
 
