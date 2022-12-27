@@ -1,5 +1,5 @@
 ---
-date: 2022-12-13 08:45
+date: 2022-12-27 07:00
 description: Have you ever looked back a certain period of time; a week, a month, a year, and thought you haven't done anything? I have. We all have. Sometimes I think I haven't learned anything, looking at what's left to learn. Sometimes I think I haven't done anything looking at what's left undone.
 image: /images/posts/2022/12/year-wrap.png
 tags: non-technical
