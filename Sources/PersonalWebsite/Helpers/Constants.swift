@@ -9,7 +9,7 @@ import Foundation
 
 enum Constants {
     enum Header {
-        static let title = "IOS DEVELOPER"
+        static let title = "iOS DEVELOPER"
         static let subtitle = "WRITER. SPEAKER."
     }
 
