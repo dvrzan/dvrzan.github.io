@@ -44,7 +44,7 @@ enum Constants {
     }
 
     enum Footer {
-        static let copyright = "Copyright © 2022 Danijela Vrzan. All Rights Reserved."
+        static let copyright = "Copyright © 2022-2023 Danijela Vrzan. All Rights Reserved."
         static let generatedUsing = "Built in Swift using "
         static let publish = "Publish."
         static let publishURL = "https://github.com/johnsundell/publish"
