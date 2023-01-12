@@ -36,7 +36,7 @@ struct Conference {
       name: "iOSConfSG",
       website: "https://iosconf.sg",
       dateAndCity: "January 2023 - Singapore",
-      talkTitle: "UPCOMING: TBA",
+      talkTitle: "Improve User Experience with Firebase Dynamic Links",
       talkDescription: "",
       image: "",
       imageAlt: "",
@@ -51,7 +51,7 @@ struct Conference {
       talkDescription: "It's become a norm to own a personal website. For showcasing your portfolio to future employers or sharing knowledge writing blogs; there are many options to choose from. Publish is a framework created by John Sundell that allows you to build static websites using Swift. In this talk, you'll learn everything you wanted to know about Publish to get started building your own website. It's so Swift!",
       image: "",
       imageAlt: "",
-      talkURL: ""
+      talkURL: "https://www.youtube.com/watch?v=0gPyM-xKRvM"
     ),
     Conference(
       past: true,
@@ -59,7 +59,7 @@ struct Conference {
       website: "https://www.iosdevuk.com/",
       dateAndCity: "September 2022 - Aberystwyth, United Kingdom",
       talkTitle: "Swift your personal website using Publish",
-      talkDescription: "It's become a norm to own a personal website. Whether for showcasing your portfolio to future employers or sharing knowledge writing blogs; there are many options to choose from. Publish is a framework created by John Sundell that allows you to build static websites using Swift. In this talk, you'll learn how to build a simple static website to show off your amazing portfolio. It's so Swift!",
+      talkDescription: "",
       image: "",
       imageAlt: "",
       talkURL: ""
@@ -137,6 +137,14 @@ struct Interview {
   let url: String
 
   static let interviews = [
+    Interview(
+      headline: "Do iOS Panel hosted by Antoine van der Lee",
+      name: "Do iOS Panel",
+      website: "https://do-ios.com",
+      host: "Antoine van der Lee",
+      description: "What can we expect of future Swift version? Should I still learn UIKit as a new engineer? Is there still reason to use Combine while we have async/await? Those and other topics will be discussed in the Do iOS panel.",
+      url: "https://www.youtube.com/watch?v=JBGf0Pegs5E"
+    ),
     Interview(
       headline: "iOS Chat with Danijela Vrzan",
       name: "iOS Chats",
