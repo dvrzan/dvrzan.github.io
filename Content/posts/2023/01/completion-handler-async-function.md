@@ -73,13 +73,13 @@ With continuations, you're not completely rewriting your existing code, but rath
 
 There are a few different ways to implement continuations in your code:
 
-- withCheckedContinuation(), which we implemented above
-- withCheckedThrowingContinuation()
-- withUnsafeContinuation()
-- withUnsafeThrowingContinuation()
+- `withCheckedContinuation()`, which we implemented above
+- `withCheckedThrowingContinuation()`
+- `withUnsafeContinuation()`
+- `withUnsafeThrowingContinuation()`
 
 
-We've already mentioned you must resume your continuation **exactly once** on every execution path. `CheckedContinuation` performs runtime checks for you and makes sure there are no missing, or multiple, resume operations. It will log a message in the console if these are violated.
+We've already mentioned you must resume your continuation **exactly once** on every execution path. **CheckedContinuation** performs runtime checks for you and makes sure there are no missing, or multiple, resume operations. It will log a message in the console if these are violated.
 
 **UnsafeContinuation**, on the other hand, doesn't enforce these rules during runtime so make sure you're using it only if you have to and if it causes a runtime performance problem. 
 
@@ -87,9 +87,9 @@ We've already mentioned you must resume your continuation **exactly once** on ev
 
 There are also a few different ways to resume the task:
 
-- resume(returning:), resumes the tasks normally from suspension
-- resume(throwing:), resumes the task by throwing an error
-- resume(with:), resumes the task either normally or throws an error based on the given `Result` value
+- `resume(returning:)`, resumes the tasks normally from suspension
+- `resume(throwing:)`, resumes the task by throwing an error
+- `resume(with:)`, resumes the task either normally or throws an error based on the given `Result` value
 
 All of these are used depending on the type of continuation you're using and the return value.
 

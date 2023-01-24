@@ -96,10 +96,10 @@ article {
 }
 
 article p code {
-  background: #F2F5F7;
-  border: 1px solid #D6E0EF;
+  background: #e0e0dd;
+/*  border: 1px solid #D6E0EF;*/
   border-radius: 6px;
-  padding: 1px 4px 1px 4px;
+  padding: 1px 3px 1px 3px;
   margin-left: 2px;
   margin-right: 2px;
   font-size: 17px;
@@ -153,8 +153,8 @@ article ul {
 }
 
 article ul code {
-  background: #F2F5F7;
-  border: 1px solid #D6E0EF;
+  background: #e0e0dd;
+/*  border: 1px solid #D6E0EF;*/
   border-radius: 6px;
   padding: 1px 4px 1px 4px;
   margin-left: 2px;
@@ -703,12 +703,12 @@ footer {
 
   article p code {
     background: #2E333A;
-    border: 1px solid #656B91;
+/*    border: 1px solid #656B91;*/
   }
 
   article ul code {
     background: #2E333A;
-    border: 1px solid #656B91;
+/*    border: 1px solid #656B91;*/
   }
 
   article h1,
