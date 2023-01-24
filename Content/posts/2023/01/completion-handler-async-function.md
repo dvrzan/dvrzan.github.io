@@ -1,7 +1,7 @@
 ---
 date: 2023-01-24 08:45
 description: When the new Swift concurrency model was announced at WWDC 2021 we all wanted to jump on that wagon. However, rewriting your entire codebase might not be the best solution. Instead, you have the option to slowly start adapting the new model by bridging the old code with the new.
-image: https://www.danijelavrzan.com/images/posts/2023/01/completion-handler-async-function.png
+image: /images/posts/2023/01/completion-handler-async-function.png
 tags: swift, concurrency
 ---
 
