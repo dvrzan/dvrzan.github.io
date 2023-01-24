@@ -39,7 +39,7 @@ func getJokes(completion: @escaping ([Joke]) -> Void) {
 
 It's fetching 10 jokes from a Joke API using the `dataTask(with:)`, decoding them into an array, and returning with a completion handler. Your standard networking code.
 
-Completion handlers are not `async`, at least not in the new concurrency model way. You can't use them in the async/await context as-is. But there's a way to integrate them into the new model using **continuations**.
+Completion handlers are not *async*, at least not in the new concurrency model way. You can't use them in the async/await context as-is. But there's a way to integrate them into the new model using **continuations**.
 
 ## Continuations
 
@@ -73,23 +73,23 @@ With continuations, you're not completely rewriting your existing code, but rath
 
 There are a few different ways to implement continuations in your code:
 
-- **withCheckedContinuation()**, which we implemented above
-- **withCheckedThrowingContinuation()**
-- **withUnsafeContinuation()**
-- **withUnsafeThrowingContinuation()**
+- withCheckedContinuation(), which we implemented above
+- withCheckedThrowingContinuation()
+- withUnsafeContinuation()
+- withUnsafeThrowingContinuation()
 
 
 We've already mentioned you must resume your continuation **exactly once** on every execution path. `CheckedContinuation` performs runtime checks for you and makes sure there are no missing, or multiple, resume operations. It will log a message in the console if these are violated.
 
-`UnsafeContinuation`, on the other hand, doesn't enforce these rules during runtime so make sure you're using it only if you have to and if it causes a runtime performance problem. 
+**UnsafeContinuation**, on the other hand, doesn't enforce these rules during runtime so make sure you're using it only if you have to and if it causes a runtime performance problem. 
 
-`CheckedThrowingContinuation` and `UnsafeThrowingContinuation` let us create continuations that can throw errors. 
+**CheckedThrowingContinuation** and **UnsafeThrowingContinuation** let you create continuations that can throw errors. 
 
 There are also a few different ways to resume the task:
 
-- **resume(returning:)** resumes the tasks normally from suspension
-- **resume(throwing:)** resumes the task by throwing an error
-- **resume(with:)** resumes the task either normally or throws an error based on the given `Result` value
+- resume(returning:), resumes the tasks normally from suspension
+- resume(throwing:), resumes the task by throwing an error
+- resume(with:), resumes the task either normally or throws an error based on the given `Result` value
 
 All of these are used depending on the type of continuation you're using and the return value.
 
