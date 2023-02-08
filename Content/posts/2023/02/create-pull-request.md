@@ -1,8 +1,7 @@
 ---
 date: 2023-02-07 08:45
 description: Creating an reviewing pull requests (PRs) is an everyday part of our work. Why don't make it easier and more enjoyable for others reviewing your work? Your colleagues will thank you for it! Learn here how you can improve your pull requests in 5 tips.
-<!--image: /images/posts/2023/02/create-pull-request.png-->
-preview: https://www.danijelavrzan.com/images/posts/2023/02/create-pull-request.png
+image: /images/posts/2023/02/create-pull-request.png
 tags: non-technical
 ---
 
