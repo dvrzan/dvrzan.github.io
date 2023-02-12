@@ -25,8 +25,8 @@ struct Conference {
         name: "DeepDishSwift",
         website: "https://deepdishswift.com",
         dateAndCity: "May 2023 - Chicago",
-        talkTitle: "UPCOMING: TBA",
-        talkDescription: "",
+        talkTitle: "Algorithms - where no developer wants to go",
+        talkDescription: "We need to iterate over a collection of elements, so we write a for loop. It's simple, easy, and it works. And we know the syntax. We don't even think about it. The code flows right through our fingertips. We hold on to familiar. But we're also curious. We learn and investigate every day. Let's satisfy our curiosity and go on an adventure to explore the unfamiliar.",
         image: "",
         imageAlt: "",
         talkURL: ""
@@ -37,10 +37,10 @@ struct Conference {
       website: "https://iosconf.sg",
       dateAndCity: "January 2023 - Singapore",
       talkTitle: "Improve User Experience with Firebase Dynamic Links",
-      talkDescription: "",
+      talkDescription: "Learn how Firebase Dynamic Links can help you improve the user experience of your app. Dynamic Links work on top of Universal Links.",
       image: "",
       imageAlt: "",
-      talkURL: ""
+      talkURL: "https://www.youtube.com/watch?v=fGrjUeJq0xs"
     ),
     Conference(
       past: true,
