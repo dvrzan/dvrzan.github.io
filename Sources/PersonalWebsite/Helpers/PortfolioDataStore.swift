@@ -37,7 +37,7 @@ struct Conference {
       website: "https://iosconf.sg",
       dateAndCity: "January 2023 - Singapore",
       talkTitle: "Improve User Experience with Firebase Dynamic Links",
-      talkDescription: "Learn how Firebase Dynamic Links can help you improve the user experience of your app. Dynamic Links work on top of Universal Links.",
+      talkDescription: "Learn how Firebase Dynamic Links can help you improve the user experience of your app. Dynamic Links work on top of Universal Links and survive the installation process.",
       image: "",
       imageAlt: "",
       talkURL: "https://www.youtube.com/watch?v=fGrjUeJq0xs"
