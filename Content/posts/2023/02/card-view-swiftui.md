@@ -15,7 +15,7 @@ Let's see how to create it.
 
 Any view can be created as a card view. It only depends how you want to design your UI. Let's create a home page for a macronutrient tracking app. It has a title as a greeting, current day of the week, some information on user's activity and a breakdown of macronutrients.
 
-![Simulator screenshot of a home page for a macronutrient tracking app](/images/posts/2023/02/card-view-swiftui-01.png "Simulator screenshot of a home page for a macronutrient tracking app")
+![Simulator screenshot of a home page for a macronutrient tracking app](https://www.danijelavrzan.com/images/posts/2023/02/card-view-swiftui-01.png "Simulator screenshot of a home page for a macronutrient tracking app")
 
 It's a simple, flat UI, and it looks good. 
 
@@ -62,7 +62,7 @@ With the code above, you can now apply your modifier to any view with `.cardBack
 
 I'll apply it on the user's activity view and the macronutrient view. 
 
-![Simulator screenshot of a home page for a macronutrient tracking app with parts of UI created as cards](/images/posts/2023/02/card-view-swiftui-02.png "Simulator screenshot of a home page for a macronutrient tracking app with parts of UI created as cards")
+![Simulator screenshot of a home page for a macronutrient tracking app with parts of UI created as cards](https://www.danijelavrzan.com/images/posts/2023/02/card-view-swiftui-02.png "Simulator screenshot of a home page for a macronutrient tracking app with parts of UI created as cards")
 
 Look at that! Much better.
 
@@ -78,7 +78,7 @@ For light mode, that's **white**. But white doesn't work for dark mode.
 
 What about **black** color? If we use the same color for the card view as the color of the parent view's background, we lose our card view:
 
-![Simulator screenshot of a home page for a macronutrient tracking app in dark mode](/images/posts/2023/02/card-view-swiftui-03.png "Simulator screenshot of a home page for a macronutrient tracking app in dark mode")
+![Simulator screenshot of a home page for a macronutrient tracking app in dark mode](https://www.danijelavrzan.com/images/posts/2023/02/card-view-swiftui-03.png "Simulator screenshot of a home page for a macronutrient tracking app in dark mode")
 
 In this case, you just have to make sure you use a different color. Or a different shade of black, like a **dark gray**. I'm using the default **primary** color for the view's background, so I'll use a lighter version for the card view background.  
 
@@ -86,7 +86,7 @@ Create a new custom color in your **Assets** file called **CardBackground** or a
 
 Dark mode now looks like this:
 
-![Simulator screenshot of a home page for a macronutrient tracking app with parts of UI created as cards in dark mode](/images/posts/2023/02/card-view-swiftui-04.png "Simulator screenshot of a home page for a macronutrient tracking app with parts of UI created as cards in dark mode")
+![Simulator screenshot of a home page for a macronutrient tracking app with parts of UI created as cards in dark mode](https://www.danijelavrzan.com/images/posts/2023/02/card-view-swiftui-04.png "Simulator screenshot of a home page for a macronutrient tracking app with parts of UI created as cards in dark mode")
 
 Wow, look at that. Quite nice. But wait, where's the shadow?
 
