@@ -1,5 +1,5 @@
 ---
-date: 2023-02-22 08:45
+date: 2023-03-21 08:45
 description: In SwiftUI, you can use Link to let the user open a website in their default web browser. But sometimes you want them to stay in your app; to read privacy policy or similar. In that case, you have different options to present web content without the user ever leaving your app. 
 image: /images/posts/2023/03/in-app-safari-view.png
 tags: swift, swiftUI
@@ -64,12 +64,12 @@ struct SafariView: View {
     var url: String
     
     var body: some View {
-		Button(title) {
-			showSafari = true
-		}
-		.popover(isPresented: $showSafari) {
-			SafariViewWrapper(url: URL(string: url)!)
-		}
+        Button(title) {
+            showSafari = true
+        }
+        .popover(isPresented: $showSafari) {
+            SafariViewWrapper(url: URL(string: url)!)
+        }
     }
 }
 ```
@@ -86,7 +86,7 @@ SafariView(
 )
 ```
 
-Make sure to add the `@State private var showSafari = false` at the beginning of your view to pass in the state to the child view to present the popover.
+Add the `@State private var showSafari = false` at the beginning of your view to pass in the state to the child view to present the popover. Give the link an appropriate title and a url.
 
 When you tap the link, you'll see the website inside your app.
 
