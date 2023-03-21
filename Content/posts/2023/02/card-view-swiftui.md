@@ -104,4 +104,4 @@ It makes your UI look great and it doesn't require a lot of effort. It's easy to
 
 Please feel free to reach out on [Twitter](https://twitter.com/dvrzan) if you have any questions, comments, or feedback.
 
-Thank you for reading and happy reviewing!
+Thank you for reading and happy coding!

@@ -104,4 +104,4 @@ If you're interested in learning more how you can use both SwiftUI and UIKit to 
 
 Please feel free to reach out on [Twitter](https://twitter.com/dvrzan) if you have any questions, comments, or feedback.
 
-Thank you for reading and happy reviewing!
+Thank you for reading and happy coding!
