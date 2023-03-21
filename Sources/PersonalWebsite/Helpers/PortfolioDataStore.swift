@@ -32,7 +32,7 @@ struct Conference {
         talkURL: ""
     ),
     Conference(
-      past: false,
+      past: true,
       name: "iOSConfSG",
       website: "https://iosconf.sg",
       dateAndCity: "January 2023 - Singapore",
@@ -166,6 +166,14 @@ struct Podcast {
   let url: String
 
   static let podcasts = [
+    Podcast(
+      headline: "Danijela Vrzan",
+      name: "Slices: The Deep Dish Swift Podcast",
+      website: "https://deepdishswift.com",
+      host: "Malin Sundberg and Kai Dombrowski",
+      description: "In this episode of Slices: The Deep Dish Swift Podcast, Kai and Malin chat with Danijela Vrzan, iOS Developer, technical writer, speaker at the Deep Dish Swift Conference, and an overall terrific person",
+      url: "https://podcasts.apple.com/ca/podcast/slices-the-deep-dish-swift-podcast/id1670026071?i=1000601927719"
+    ),
     Podcast(
       headline: "This is HOW you can become an iOS Developer",
       name: "The Mayank Show",
