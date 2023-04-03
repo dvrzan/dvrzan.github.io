@@ -108,7 +108,13 @@ article p code {
 article h1 {
   margin-top: 20px;
   color: #002271;
-  font-size: 40px;
+  font-size: 32px;
+}
+
+@media(max-width: 730px) {
+  article h1 {
+    font-size: 27px;
+  }
 }
 
 article h2 {
