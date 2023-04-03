@@ -534,6 +534,9 @@ nav li a.selected {
 
 .content {
   margin-bottom: 40px;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -epub-hyphens: auto;
 }
 
 .browse-all {
