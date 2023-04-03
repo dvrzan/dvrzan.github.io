@@ -94,92 +94,52 @@ struct Conference {
 }
 
 
-//MARK: - Interview
-struct Interview {
-  let headline: String
-  let name: String
-  let website: String
-  let host: String
-  let description: String
-  let url: String
-
-  static let interviews = [
-    Interview(
-      headline: "Do iOS Panel hosted by Antoine van der Lee",
-      name: "Do iOS Panel",
-      website: "https://do-ios.com",
-      host: "Antoine van der Lee",
-      description: "What can we expect of future Swift version? Should I still learn UIKit as a new engineer? Is there still reason to use Combine while we have async/await? Those and other topics will be discussed in the Do iOS panel.",
-      url: "https://www.youtube.com/watch?v=JBGf0Pegs5E"
-    ),
-    Interview(
-      headline: "iOS Chat with Danijela Vrzan",
-      name: "iOS Chats",
-      website: "https://nemecek.be/chats/",
-      host: "Filip Němeček",
-      description: "In this iOS Chat, Filip and I talk about my career switch from Civil Engineering to becoming an iOS Developer, about attending first ever raywenderlich.com iOS bootcamp, and more!",
-      url: "https://nemecek.be/chats/danijela-vrzan"
-    )
-  ]
-}
-
-//MARK: - Podcast
+//MARK: - Podcasts and Interviews
 struct Podcast {
   let headline: String
-  let name: String
-  let website: String
-  let host: String
   let description: String
   let url: String
 
   static let podcasts = [
     Podcast(
-      headline: "Danijela Vrzan",
-      name: "Slices: The Deep Dish Swift Podcast",
-      website: "https://deepdishswift.com",
-      host: "Malin Sundberg and Kai Dombrowski",
-      description: "In this episode of Slices: The Deep Dish Swift Podcast, Kai and Malin chat with Danijela Vrzan, iOS Developer, technical writer, speaker at the Deep Dish Swift Conference, and an overall terrific person.",
+      headline: "Slices: The Deep Dish Swift Podcast",
+      description: "Chat with Malin and Kai about my talk at Deep Dish Swift conference, windows phones, and Croatian food.",
       url: "https://podcasts.apple.com/ca/podcast/slices-the-deep-dish-swift-podcast/id1670026071?i=1000601927719"
     ),
     Podcast(
-      headline: "This is HOW you can become an iOS Developer",
-      name: "The Mayank Show",
-      website: "https://www.youtube.com/c/mayankIndia",
-      host: "Mayank Gupta",
-      description: "In this episode, Mayank and I talk about my professional experiences and perspective on iOS industry. We talk about attending WWDC 2022 without a ticket and how someone can become an iOS Developer irrespective of the field they are currently in.",
+      headline: "Do iOS Panel hosted by Antoine van der Lee",
+      description: "In this panel, Tim, Jeremy and I are interviewed by Antoine and answer the questions: What can we expect of future Swift versions? Should you still learn UIKit as a new engineer?",
+      url: "https://www.youtube.com/watch?v=JBGf0Pegs5E"
+    ),
+    Podcast(
+      headline: "The Mayank Show - This is how you can become an iOS Developer",
+      description: "Mayank and I talk about attending WWDC 2022 without a ticket and how someone can become an iOS Developer.",
       url: "https://www.youtube.com/watch?v=gZvGtbaDJp8"
     ),
     Podcast(
-      headline: "Coffee Chats",
-      name: "Empower Apps",
-      website: "https://www.empowerapps.show/",
-      host: "Leo Dion",
-      description: "In this episode of Empower Apps podcast, Leo and I talk about the importance of meeting with people 1-on-1. We also talk about my experience of meeting with folks at WWDC 2022.",
+      headline: "Empower Apps - Coffee Chats",
+      description: "Leo and I talk about the importance of meeting with people 1-on-1 and my experience of meeting folks at WWDC 2022.",
       url: "https://www.youtube.com/watch?v=AbK1n_WHsZM"
     ),
     Podcast(
-      headline: "WWDC expectations and predictions Twitter Space",
-      name: "AppForce1",
-      website: "https://appforce1.net",
-      host: "Jeroen Leenarts",
-      description: "In this episode, Jeroen and Stefan have hosted Mikaela, Malin, Josh, Jordi, Rudrank and me to talk about our expectations and predictions for WWDC 2022. This episode was hosted as a Twitter Space and published as a podcast episode.",
+      headline: "AppForce1 - WWDC expectations and predictions Twitter Space",
+      description: "Jeroen and Stefan have hosted Mikaela, Malin, Josh, Jordi, Rudrank and me to talk about our expectations and predictions for WWDC 2022.",
       url: "https://appforce1.net/podcast/shownotes/?episode=WWDC+expectations+and+predictions+Twitter+Space"
     ),
     Podcast(
-      headline: "1st a civil engineer then a software engineer",
-      name: "AppForce1",
-      website: "https://appforce1.net",
-      host: "Jeroen Leenarts",
-      description: "In this episode of AppForce1 podcast, Jeroen and I talk about my career as a software developer and why I decided to move away from Civil Engineering. We talk about writing articles for raywenderlich.com and programming in general.",
+      headline: "AppForce1 - 1st a civil engineer then a software engineer",
+      description: "Jeroen and I talk about my career as a software developer and why I decided to move away from Civil Engineering.",
       url: "https://appforce1.net/podcast/shownotes/?episode=Danijela+Vrzan%2C+1st+a+civil+engineer+then+a+software+engineer"
     ),
     Podcast(
-      headline: "A creative mind",
-      name: "Everyday Robots",
-      website: "https://everydayrobots.tech/",
-      host: "Jonathan Ruiz",
-      description: "In this episode, Jonathan and I talk about getting into iOS Development and learning how to code. We talk about SwiftUI, UIKit, and about writing articles for raywenderlich.com.",
+      headline: "Everyday Robots - A creative mind",
+      description: "Chat with Jonathan about getting into iOS Development and learning how to code. We talk about SwiftUI, UIKit, and writing articles for raywenderlich.com.",
       url: "https://everydayrobots.tech/posts/ep78/"
+    ),
+    Podcast(
+      headline: "iOS Chats - iOS Chat with Danijela Vrzan",
+      description: "In this iOS Chat, Filip and I talk about my career switch from Civil Engineering to becoming an iOS Developer, about attending first ever raywenderlich.com iOS bootcamp, and more.",
+      url: "https://nemecek.be/chats/danijela-vrzan"
     )
   ]
 }

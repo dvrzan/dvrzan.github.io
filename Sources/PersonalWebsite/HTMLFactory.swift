@@ -252,11 +252,6 @@ private struct PortfolioPage: Component {
       H1(Constants.Portfolio.podcastTitle)
       LargeDivider()
       PodcastList()
-
-      //Interviews
-      H1(Constants.Portfolio.interviewTitle)
-      LargeDivider()
-      InterviewList()
     }
     .class("portfolio-page")
   }
@@ -293,35 +288,6 @@ private struct ConferenceList: Component {
   }
 }
 
-// MARK: Interviews
-private struct InterviewList: Component {
-  var body: Component {
-    //List of interviews
-    List(Interview.interviews) { interview in
-      Div {
-        //Interview title and URL
-        H2(
-          Link(interview.headline, url: interview.url)
-            .linkTarget(.blank)
-        )
-
-        //Interview information (name, host and website)
-        Paragraph {
-          Link("➔ \(interview.name) by \(interview.host)", url: interview.website)
-            .linkTarget(.blank)
-        }
-
-        //Interview description
-        Paragraph {
-          Text(interview.description)
-        }
-        .class("portfolio-description")
-      }
-    }
-    .class("portfolio-section")
-  }
-}
-
 // MARK: Podcasts
 private struct PodcastList: Component {
   var body: Component {
@@ -333,12 +299,6 @@ private struct PodcastList: Component {
           Link(podcast.headline, url: podcast.url)
             .linkTarget(.blank)
         )
-
-        //Podcast information (name, host and website)
-        Paragraph {
-          Link("➔ \(podcast.name) by \(podcast.host)", url: podcast.website)
-            .linkTarget(.blank)
-        }
 
         //Podcast description
         Paragraph {
