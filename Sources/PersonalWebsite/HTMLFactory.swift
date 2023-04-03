@@ -15,29 +15,29 @@ import ReadingTimePublishPlugin
 private struct SiteHeader<Site: Website>: Component {
   var context: PublishingContext<Site>
   var selectedSelectionID: Site.SectionID?
-
+  
   var body: Component {
     Header {
       Wrapper {
         //Header banner image
         Link(url: Constants.URL.homeURL) {
-            Image(Constants.Image.header)
-                .accessibilityLabel("Danijela Vrzan text logo header")
+          Image(Constants.Image.header)
+            .accessibilityLabel("Danijela Vrzan text logo header")
             .class("banner-img")
         }
-
+        
         //Header title
         Paragraph {
           Text(Constants.Header.title)
         }
         .class("banner-title")
-
+        
         //Header subtitle
         Paragraph {
           Text(Constants.Header.subtitle)
         }
         .class("banner-subtitle")
-
+        
         //Navigation
         if Site.SectionID.allCases.count > 1 {
           navigation
@@ -45,13 +45,13 @@ private struct SiteHeader<Site: Website>: Component {
       }
     }
   }
-
+  
   // MARK: Navigation
   private var navigation: Component {
     Navigation {
       List(Site.SectionID.allCases) { sectionID in
         let section = context.sections[sectionID]
-
+        
         return Link(section.title, url: section.path.absoluteString)
           .class(sectionID == selectedSelectionID ? "selected" : "")
       }
@@ -64,30 +64,30 @@ private struct SiteHeader<Site: Website>: Component {
 private struct ItemList<Site: Website>: Component {
   var items: [Item<Site>]
   var site: Site
-
+  
   var body: Component {
     //List of all items (blogs)
     List(items) { item in
       Div {
         //Blog title with link
         H1(Link(item.title, url: item.path.absoluteString))
-
+        
         //Small divider
         SmallDivider()
-
+        
         Paragraph {
           //Blog metadata (reading time and date)
           ItemMetadata(item: item, site: site)
           //List of tags for the blog
           ItemTagList(item: item, site: site)
         }
-
+        
         //Blog short description
         Paragraph(item.description)
           .class("item-description")
-
+        
         //Read more
-          H3(Link(Constants.Components.readMore, url: item.path.absoluteString))
+        H3(Link(Constants.Components.readMore, url: item.path.absoluteString))
       }
     }
     .class("item-list")
@@ -98,7 +98,7 @@ private struct ItemList<Site: Website>: Component {
 private struct RecentItemList<Site: Website>: Component {
   var items: [Item<Site>]
   var site: Site
-
+  
   var body: Component {
     List(items.filter({ post in
       let date = Date()
@@ -110,23 +110,23 @@ private struct RecentItemList<Site: Website>: Component {
       Div {
         //Blog title with link
         H1(Link(item.title, url: item.path.absoluteString))
-
+        
         //Small divider
         SmallDivider()
-
+        
         Paragraph {
           //Blog metadata (reading time and date)
           ItemMetadata(item: item, site: site)
           //List of tags for the blog
           ItemTagList(item: item, site: site)
         }
-
+        
         //Blog short decription
         Paragraph(item.description)
           .class("item-description")
-
+        
         //Read more
-          H3(Link(Constants.Components.readMore, url: item.path.absoluteString))
+        H3(Link(Constants.Components.readMore, url: item.path.absoluteString))
       }
     }
     .class("item-list")
@@ -137,22 +137,22 @@ private struct RecentItemList<Site: Website>: Component {
 private struct ItemMetadata<Site: Website>: Component {
   var item: Item<Site>
   var site: Site
-
+  
   //Format for the date (ex. 24 Jun, 2022)
   var formattedDate: String {
     let formatter = DateFormatter()
     formatter.dateFormat = "d MMM, y"
     return formatter.string(from: item.date)
   }
-
+  
   var body: Component {
     Paragraph {
       //Date the blog was published
       Text(formattedDate)
-
+      
       //Divider (circle dot)
-        Text(Constants.Components.circleDot)
-
+      Text(Constants.Components.circleDot)
+      
       //Reading time
       Text("\(item.readingTime.minutes) minute read")
     }
@@ -164,7 +164,7 @@ private struct ItemMetadata<Site: Website>: Component {
 private struct ItemTagList<Site: Website>: Component {
   var item: Item<Site>
   var site: Site
-
+  
   var body: Component {
     List(item.tags) { tag in
       Link(tag.string, url: site.path(for: tag).absoluteString)
@@ -179,12 +179,12 @@ private struct SectionContent<Site: Website>: Component {
   var sectionID: Site.SectionID?
   var context: PublishingContext<Site>
   var items: [Item<Site>]
-
+  
   var body: Component {
     guard let sectionID = sectionID as? PersonalWebsite.SectionID else {
       return ErrorPage404()
     }
-
+    
     //Switch between different website sections
     switch sectionID {
     case .about:
@@ -211,13 +211,13 @@ private struct SiteFooter: Component {
       Paragraph {
         Text(Constants.Footer.copyright)
       }
-
+      
       //Publish mention
       Paragraph {
         Text(Constants.Footer.generatedUsing)
         Link(Constants.Footer.publish, url: Constants.Footer.publishURL)
           .linkTarget(.blank)
-          
+        
         Text(" ")
         Link("RSS.", url: Constants.URL.rss)
           .linkTarget(.blank)
@@ -243,11 +243,27 @@ struct ErrorPage404: Component {
 private struct PortfolioPage: Component {
   var body: Component {
     Div {
+      //Intro title (Hello)
+      H1(Constants.Portfolio.introTitle)
+        .class("home-intro-title")
+      LargeDivider()
+      
+      Paragraph {
+        Text("Organizing a conference, meetup or looking for speakers for your next event? I'd love to have a chat about it!")
+      }
+      .class("portfolio-intro")
+      
+      Paragraph {
+        Text("I've been speaking at conferences around the world on all things Swift and iOS Development since 2021. Below is a list of all my conference talks.")
+      }
+      .class("portfolio-intro")
+      .class("portfolio-intro-last")
+      
       //Conferences
       H1(Constants.Portfolio.conferenceTitle)
       LargeDivider()
       ConferenceList()
-
+      
       //Podcasts
       H1(Constants.Portfolio.podcastTitle)
       LargeDivider()
@@ -270,18 +286,11 @@ private struct ConferenceList: Component {
           : Link(conference.talkTitle, url: conference.talkURL)
             .linkTarget(.blank)
         )
-
+        
         //Conference information (name, date, place, website)
         Paragraph {
-          Link("➔ \(conference.name) - \(conference.dateAndCity)", url: conference.website)
-            .linkTarget(.blank)
+          Text("\(conference.name) - \(conference.dateAndCity)")
         }
-
-        //Conference talk description
-        Paragraph {
-          Text(conference.talkDescription)
-        }
-        .class("portfolio-description")
       }
     }
     .class("portfolio-section")
@@ -299,7 +308,7 @@ private struct PodcastList: Component {
           Link(podcast.headline, url: podcast.url)
             .linkTarget(.blank)
         )
-
+        
         //Podcast description
         Paragraph {
           Text(podcast.description)
@@ -318,9 +327,9 @@ private struct AboutPage: Component {
       //Intro title (Hello)
       H1(Constants.About.introTitle)
         .class("home-intro-title")
-
+      
       LargeDivider()
-
+      
       Div {
         //Introduction - company I work at, website, and years of experience
         Paragraph {
@@ -332,17 +341,17 @@ private struct AboutPage: Component {
           .linkTarget(.blank)
           Text(Constants.About.introAboutExperience)
         }
-
+        
         //First paragraph - about me (experience)
         Paragraph {
           Text(Constants.About.firstParagraph)
         }
-
+        
         //Second paragraph - free time
         Paragraph {
           Text(Constants.About.secondParagraph)
         }
-
+        
         //Image Toronto nature
         Image(
           url: Constants.Image.torontoNature,
@@ -352,9 +361,9 @@ private struct AboutPage: Component {
         .accessibilityLabel("Five photos of Toronto's ravines and natural parks showing rivers, forests, and flowers turned into one image collage.")
       }
       .class("about-me-text")
-
+      
       MiddleDivider()
-
+      
       //Contact title
       Paragraph {
         Text(Constants.About.contactTitle)
@@ -365,34 +374,34 @@ private struct AboutPage: Component {
         Text(Constants.About.contactTitleEnd)
       }
       .class("about-me-contact-info")
-
+      
       //Contact me
       Paragraph {
         //Twitter
         Link(url: Constants.URL.twitter) {
           Image(url: Constants.Image.twitter, description: "Twitter logo")
-                .accessibilityLabel("Twitter logo")
+            .accessibilityLabel("Twitter logo")
         }
         .linkTarget(.blank)
-
+        
         //Linkedin
         Link(url: Constants.URL.linkedin) {
           Image(url: Constants.Image.linkedin, description: "LinkedIn logo")
-                .accessibilityLabel("LinkedIn logo")
+            .accessibilityLabel("LinkedIn logo")
         }
         .linkTarget(.blank)
-
+        
         //Github
         Link(url: Constants.URL.github) {
           Image(url: Constants.Image.github, description: "Github logo")
-                .accessibilityLabel("Github logo")
+            .accessibilityLabel("Github logo")
         }
         .linkTarget(.blank)
-
+        
         //Kodeco
         Link(url: Constants.URL.kodeco) {
           Image(url: Constants.Image.kodeco, description: "Kodeco logo")
-                .accessibilityLabel("Kodeco logo")
+            .accessibilityLabel("Kodeco logo")
         }
         .linkTarget(.blank)
       }
@@ -407,7 +416,7 @@ private struct AboutPage: Component {
 // MARK: - HTML Factory
 
 struct MyHTMLFactory<Site: Website>: HTMLFactory {
-
+  
   // MARK: Index Page
   func makeIndexHTML(for index: Index, context: PublishingContext<Site>) throws -> HTML {
     HTML(
@@ -416,25 +425,25 @@ struct MyHTMLFactory<Site: Website>: HTMLFactory {
       .body {
         //Header
         SiteHeader(context: context, selectedSelectionID: nil)
-
+        
         Wrapper {
           H1(Constants.IndexPage.recentPosts)
             .class("home-recent-posts-title")
           Paragraph {
             Text(Constants.IndexPage.intro)
           }
-
+          
           //Feed.rss subscription
           Paragraph {
             Link(url: Constants.URL.rss) {
-                Image(Constants.Image.rss)
-                    .accessibilityLabel("")
+              Image(Constants.Image.rss)
+                .accessibilityLabel("")
               Text(Constants.IndexPage.subscribe)
             }
             .linkTarget(.blank)
           }
           .class("rss")
-
+          
           //List of recent blog posts (last month)
           RecentItemList(
             items: context.allItems(
@@ -444,14 +453,14 @@ struct MyHTMLFactory<Site: Website>: HTMLFactory {
             site: context.site
           )
         }
-
+        
         //Footer
         SiteFooter()
       }
     )
   }
-
-
+  
+  
   // MARK: - Make Section
   // Sections: Pages that can be navigated using navigation
   func makeSectionHTML(for section: Section<Site>, context: PublishingContext<Site>) throws -> HTML {
@@ -461,18 +470,18 @@ struct MyHTMLFactory<Site: Website>: HTMLFactory {
       .body {
         //Header
         SiteHeader(context: context, selectedSelectionID: section.id)
-
+        
         //Section content
         Wrapper {
           SectionContent(sectionID: section.id, context: context, items: section.items)
         }
-
+        
         //Footer
         SiteFooter()
       }
     )
   }
-
+  
   // MARK: Make Item
   // Item: One blog post
   func makeItemHTML(for item: Item<Site>, context: PublishingContext<Site>) throws -> HTML {
@@ -489,7 +498,7 @@ struct MyHTMLFactory<Site: Website>: HTMLFactory {
             ItemMetadata(item: item, site: context.site)
           }
           .class("article-metadata")
-
+          
           //Blog body
           Article {
             Div(item.body)
@@ -497,13 +506,13 @@ struct MyHTMLFactory<Site: Website>: HTMLFactory {
           }
         }
         .class("item-page")
-
+        
         //Footer
         SiteFooter()
       }
     )
   }
-
+  
   // MARK: Make Page
   // Pages: Pages that cannot be navigated using navigation
   func makePageHTML(for page: Page, context: PublishingContext<Site>) throws -> HTML {
@@ -517,7 +526,7 @@ struct MyHTMLFactory<Site: Website>: HTMLFactory {
       }
     )
   }
-
+  
   // MARK: Make Tag List
   // Tag List Page: Page that shows a list of all tags
   func makeTagListHTML(for page: TagListPage, context: PublishingContext<Site>) throws -> HTML? {
@@ -528,7 +537,7 @@ struct MyHTMLFactory<Site: Website>: HTMLFactory {
       .body {
         //Header
         SiteHeader(context: context, selectedSelectionID: nil)
-
+        
         //List of all tags
         Wrapper {
           H1(Constants.Tags.browseAll)
@@ -547,7 +556,7 @@ struct MyHTMLFactory<Site: Website>: HTMLFactory {
       }
     )
   }
-
+  
   // MARK: Make Tag Details Page
   // Tag Details Page: Page that shows a list of posts with a specified <tag>
   func makeTagDetailsHTML(for page: TagDetailsPage, context: PublishingContext<Site>) throws -> HTML? {
@@ -558,7 +567,7 @@ struct MyHTMLFactory<Site: Website>: HTMLFactory {
       .body {
         //Header
         SiteHeader(context: context, selectedSelectionID: nil)
-
+        
         Wrapper {
           //Specified <tag> name
           H1 {
@@ -567,13 +576,14 @@ struct MyHTMLFactory<Site: Website>: HTMLFactory {
               .class("tag")
               .class("\(page.tag.string.replacingOccurrences(of: " ", with: ""))-tag")
           }
-
+          
           //Link to browse all tags
-          Link(Constants.Tags.browseAll,
-               url: context.site.tagListPath.absoluteString
+          Link(
+            Constants.Tags.browseAll,
+            url: context.site.tagListPath.absoluteString
           )
           .class("browse-all")
-
+          
           //List of blogs with a specified <tag>
           ItemList(
             items: context.items(
@@ -584,7 +594,7 @@ struct MyHTMLFactory<Site: Website>: HTMLFactory {
             site: context.site
           )
         }
-
+        
         //Footer
         SiteFooter()
       }
