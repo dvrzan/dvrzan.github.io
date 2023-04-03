@@ -7,7 +7,7 @@
 
 import Foundation
 
-//MARK: - Conference
+//MARK: - Conferences & Meetups
 struct Conference {
   let past: Bool
   let name: String
@@ -15,8 +15,6 @@ struct Conference {
   let dateAndCity: String
   let talkTitle: String
   let talkDescription: String
-  let image: String
-  let imageAlt: String
   let talkURL: String
 
   static let conferences = [
@@ -27,8 +25,6 @@ struct Conference {
         dateAndCity: "May 2023 - Chicago",
         talkTitle: "Algorithms - where no developer wants to go",
         talkDescription: "We need to iterate over a collection of elements, so we write a for loop. It's simple, easy, and it works. And we know the syntax. We don't even think about it. The code flows right through our fingertips. We hold on to familiar. But we're also curious. We learn and investigate every day. Let's satisfy our curiosity and go on an adventure to explore the unfamiliar.",
-        image: "",
-        imageAlt: "",
         talkURL: ""
     ),
     Conference(
@@ -38,8 +34,6 @@ struct Conference {
       dateAndCity: "January 2023 - Singapore",
       talkTitle: "Improve User Experience with Firebase Dynamic Links",
       talkDescription: "Learn how Firebase Dynamic Links can help you improve the user experience of your app. Dynamic Links work on top of Universal Links and survive the installation process.",
-      image: "",
-      imageAlt: "",
       talkURL: "https://www.youtube.com/watch?v=fGrjUeJq0xs"
     ),
     Conference(
@@ -49,8 +43,6 @@ struct Conference {
       dateAndCity: "November 2022 - Amsterdam, NL",
       talkTitle: "Swift your personal website using Publish",
       talkDescription: "It's become a norm to own a personal website. For showcasing your portfolio to future employers or sharing knowledge writing blogs; there are many options to choose from. Publish is a framework created by John Sundell that allows you to build static websites using Swift. In this talk, you'll learn everything you wanted to know about Publish to get started building your own website. It's so Swift!",
-      image: "",
-      imageAlt: "",
       talkURL: "https://www.youtube.com/watch?v=0gPyM-xKRvM"
     ),
     Conference(
@@ -60,8 +52,15 @@ struct Conference {
       dateAndCity: "September 2022 - Aberystwyth, United Kingdom",
       talkTitle: "Swift your personal website using Publish",
       talkDescription: "",
-      image: "",
-      imageAlt: "",
+      talkURL: ""
+    ),
+    Conference(
+      past: true,
+      name: "CocoaHeads Hamburg",
+      website: "https://twitter.com/cocoaheads_hh",
+      dateAndCity: "June 2022 - Remote Edition",
+      talkTitle: "Server driven UI with JudoSDK",
+      talkDescription: "",
       talkURL: ""
     ),
     Conference(
@@ -71,8 +70,6 @@ struct Conference {
       dateAndCity: "January 2022 - Remote Edition",
       talkTitle: "VIP, not a VIPER, Clean Swift Architecture",
       talkDescription: "VIP and VIPER, while having the same basic components, are quite different in their implementation. They both follow Uncle Bob's Clean Architecture principles and often tend to be mixed up due to their name similarities. This talk will introduce you to the VIP architecture and its principles. While specifically made for UIKit apps to fix the MVC problem (Massive View Controllers), we'll take a look at how we could implement it in SwiftUI apps.",
-      image: "",
-      imageAlt: "",
       talkURL: "https://www.youtube.com/watch?v=Szlgqnk6gHg"
     ),
     Conference(
@@ -82,8 +79,6 @@ struct Conference {
       dateAndCity: "November 2021 - Remote Edition",
       talkTitle: "There's no IF or ELSE. It's all about YOU.",
       talkDescription: "This talk is my personal story of how I decided to switch my career from Civil Engineering to iOS Development; with no previous programming experience. Following a structured timeline, I talk about some personal successes and all the fears and failures I had to overcome. Finally, I share all the lessons I learned along the way and inspire others to take action. Changing your career doesn’t mean you have failed.",
-      image: "",
-      imageAlt: "",
       talkURL: "https://vimeo.com/646517989"
     ),
     Conference(
@@ -93,39 +88,11 @@ struct Conference {
       dateAndCity: "October 2021 - Leeds, United Kingdom",
       talkTitle: "There's no IF or ELSE. It's all about YOU.",
       talkDescription: "",
-      image: "../../images/portfolio/conferences/2021/swiftleeds-talk.jpeg",
-      imageAlt: "Danijela on stage at SwiftLeeds conference giving a talk with a large panel of her slides in the background.",
       talkURL: ""
     )
   ]
 }
 
-//MARK: - Meetup
-struct Meetup {
-  let past: Bool
-  let name: String
-  let website: String
-  let dateAndCity: String
-  let talkTitle: String
-  let talkDescription: String
-  let image: String
-  let imageAlt: String
-  let talkURL: String
-
-  static let meetups = [
-      Meetup(
-        past: true,
-        name: "CocoaHeads Hamburg",
-        website: "https://twitter.com/cocoaheads_hh",
-        dateAndCity: "June 2022 - Remote Edition",
-        talkTitle: "Server driven UI with JudoSDK",
-        talkDescription: "",
-        image: "",
-        imageAlt: "",
-        talkURL: ""
-      )
-    ]
-}
 
 //MARK: - Interview
 struct Interview {
@@ -171,7 +138,7 @@ struct Podcast {
       name: "Slices: The Deep Dish Swift Podcast",
       website: "https://deepdishswift.com",
       host: "Malin Sundberg and Kai Dombrowski",
-      description: "In this episode of Slices: The Deep Dish Swift Podcast, Kai and Malin chat with Danijela Vrzan, iOS Developer, technical writer, speaker at the Deep Dish Swift Conference, and an overall terrific person",
+      description: "In this episode of Slices: The Deep Dish Swift Podcast, Kai and Malin chat with Danijela Vrzan, iOS Developer, technical writer, speaker at the Deep Dish Swift Conference, and an overall terrific person.",
       url: "https://podcasts.apple.com/ca/podcast/slices-the-deep-dish-swift-podcast/id1670026071?i=1000601927719"
     ),
     Podcast(

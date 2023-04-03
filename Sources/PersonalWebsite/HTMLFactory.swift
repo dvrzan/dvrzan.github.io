@@ -217,6 +217,10 @@ private struct SiteFooter: Component {
         Text(Constants.Footer.generatedUsing)
         Link(Constants.Footer.publish, url: Constants.Footer.publishURL)
           .linkTarget(.blank)
+          
+        Link("RSS", url: Constants.URL.rss)
+          .linkTarget(.blank)
+          .class("rss")
       }
     }
   }
@@ -243,11 +247,6 @@ private struct PortfolioPage: Component {
       H1(Constants.Portfolio.conferenceTitle)
       LargeDivider()
       ConferenceList()
-
-      //Meetups
-      H1(Constants.Portfolio.meetupTitle)
-      LargeDivider()
-      MeetupList()
 
       //Podcasts
       H1(Constants.Portfolio.podcastTitle)
@@ -288,49 +287,6 @@ private struct ConferenceList: Component {
           Text(conference.talkDescription)
         }
         .class("portfolio-description")
-
-        //Conference image if exists
-        if !conference.image.isEmpty {
-          Image(url: conference.image, description: conference.imageAlt)
-            .class("portfolio-image")
-        }
-      }
-    }
-    .class("portfolio-section")
-  }
-}
-
-// MARK: Meetups
-private struct MeetupList: Component {
-  var body: Component {
-    //List of conferences
-      List(Meetup.meetups) { meetup in
-      Div {
-        //Conference talk title and URL (if exists)
-        H2(
-          meetup.talkURL == ""
-          ? Text(meetup.talkTitle)
-          : Link(meetup.talkTitle, url: meetup.talkURL)
-            .linkTarget(.blank)
-        )
-
-        //Conference information (name, date, place, website)
-        Paragraph {
-          Link("➔ \(meetup.name) - \(meetup.dateAndCity)", url: meetup.website)
-            .linkTarget(.blank)
-        }
-
-        //Conference talk description
-        Paragraph {
-          Text(meetup.talkDescription)
-        }
-        .class("portfolio-description")
-
-        //Conference image if exists
-        if !meetup.image.isEmpty {
-          Image(url: meetup.image, description: meetup.imageAlt)
-            .class("portfolio-image")
-        }
       }
     }
     .class("portfolio-section")
