@@ -218,9 +218,9 @@ private struct SiteFooter: Component {
         Link(Constants.Footer.publish, url: Constants.Footer.publishURL)
           .linkTarget(.blank)
           
-        Link("RSS", url: Constants.URL.rss)
+        Text(" ")
+        Link("RSS.", url: Constants.URL.rss)
           .linkTarget(.blank)
-          .class("rss")
       }
     }
   }

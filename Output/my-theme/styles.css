@@ -660,6 +660,14 @@ footer {
   color: #6C7693;
 }
 
+footer p a {
+    text-decoration: none;
+}
+
+footer p a:hover {
+    text-decoration: underline;
+    color: #AA1945;
+}
 
 
 /*
