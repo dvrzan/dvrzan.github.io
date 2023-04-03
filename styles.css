@@ -232,7 +232,7 @@ body {
 }
 
 h1 {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   font-size: 32px;
   color: #000;
 }
@@ -553,6 +553,22 @@ nav li a.selected {
  Portfolio Page
  */
 
+.portfolio-intro {
+  font-size: 18px;
+}
+
+.portfolio-intro-last {
+  margin-bottom: 40px;
+}
+
+/*.portfolio-intro img {*/
+/*  max-width: 90%;*/
+/*  border-radius: 20px;*/
+/*  display: block;*/
+/*  margin: auto;*/
+/*  margin-top: 20px;*/
+/*}*/
+
 .portfolio-section {
   margin-left: 20px;
 }
@@ -587,13 +603,6 @@ nav li a.selected {
 
 .portfolio-section li a:hover {
   color: #AA1945;
-}
-
-.portfolio-image {
-  width: 600px;
-  max-width: 80%;
-  margin-bottom: 20px;
-  border-radius: 20px;
 }
 
 
