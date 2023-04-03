@@ -20,10 +20,8 @@ enum Constants {
     }
 
     enum Portfolio {
-        static let conferenceTitle = "Conferences"
-        static let meetupTitle = "Meetups"
-        static let podcastTitle = "Podcasts"
-        static let interviewTitle = "Interviews"
+        static let conferenceTitle = "Conferences & Meetups"
+        static let podcastTitle = "Podcasts & Interviews"
     }
 
     enum About {

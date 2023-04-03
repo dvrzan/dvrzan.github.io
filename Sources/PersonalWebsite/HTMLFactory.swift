@@ -264,7 +264,7 @@ private struct ConferenceList: Component {
     List(Conference.conferences) { conference in
       Div {
         //Conference talk title and URL (if exists)
-        H2(
+        H3(
           conference.talkURL == ""
           ? Text(conference.talkTitle)
           : Link(conference.talkTitle, url: conference.talkURL)
@@ -295,7 +295,7 @@ private struct PodcastList: Component {
     List(Podcast.podcasts) { podcast in
       Div {
         //Podcast title and URL
-        H2(
+        H3(
           Link(podcast.headline, url: podcast.url)
             .linkTarget(.blank)
         )
