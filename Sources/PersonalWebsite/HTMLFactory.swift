@@ -429,20 +429,6 @@ struct MyHTMLFactory<Site: Website>: HTMLFactory {
         Wrapper {
           H1(Constants.IndexPage.recentPosts)
             .class("home-recent-posts-title")
-          Paragraph {
-            Text(Constants.IndexPage.intro)
-          }
-          
-          //Feed.rss subscription
-          Paragraph {
-            Link(url: Constants.URL.rss) {
-              Image(Constants.Image.rss)
-                .accessibilityLabel("")
-              Text(Constants.IndexPage.subscribe)
-            }
-            .linkTarget(.blank)
-          }
-          .class("rss")
           
           //List of recent blog posts (last month)
           RecentItemList(

@@ -347,8 +347,7 @@ header a {
   text-decoration: none;
 }
 
-.banner-img {
-  width: 600px;
+header .banner-img {
   max-width: 80%;
   margin-bottom: 6px;
 }
@@ -447,7 +446,8 @@ nav li a.selected {
 }
 
 .home-recent-posts-title {
-  font-size: 35px;
+  font-size: 40px;
+  margin-bottom: 20px;
 }
 
 .rss {
@@ -516,6 +516,7 @@ nav li a.selected {
 .tag {
   display: inline-block;
   margin-right: 5px;
+  margin-bottom: 10px;
 }
 
 .tag-list a,
@@ -685,6 +686,7 @@ nav li a.selected {
 
 footer {
   color: #6C7693;
+  margin-bottom: 40px;
 }
 
 footer p a {

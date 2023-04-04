@@ -15,8 +15,6 @@ enum Constants {
   
   enum IndexPage {
     static let recentPosts = "Recent Posts"
-    static let subscribe = "Subscribe to never miss an article!"
-    static let intro = "I started writing articles as my personal repository of knowledge for concepts and issues I've struggled with or wanted to learn more about. Writing and diving deep into a topic is a good practical way to learn something. I'm sharing my findings and learnings with you so that you can also learn with me. "
   }
   
   enum Portfolio {
@@ -43,7 +41,7 @@ enum Constants {
   }
   
   enum Footer {
-    static let copyright = "Copyright © 2022-2023 Danijela Vrzan. All Rights Reserved."
+    static let copyright = "Copyright © 2023 Danijela Vrzan. All Rights Reserved."
     static let generatedUsing = "Built in Swift using "
     static let publish = "Publish."
     static let publishURL = "https://github.com/johnsundell/publish"
