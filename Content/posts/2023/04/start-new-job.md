@@ -39,7 +39,7 @@ There are always going to be some emails, I like to call **spam**, that you'll r
 
 Create filters for GitHub and Jira emails as well and let them automatically move to a separate folder.
 
-## 3. Smart people write it down
+## 3. Write it down
 
 I'm one of those people who like to keep everything in their head. Do not recommend. I rarely forget anything, but it's years of practice. Although I don't keep notes for my personal life, I do put events in my calendar.
 
