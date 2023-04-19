@@ -11,7 +11,7 @@ You're working on your app and you want to see if your changes look good. You ru
 
 You have to enter your login credentials every time you run your app to get past the login screen. That can get annoying very quickly.
 
-In some cases, you can implement a logic to skip the login screen entirely during development. But sometimes, you need to log in.
+In some cases, you can implement logic to skip the login screen entirely during development. But sometimes, you need to log in.
 
 ## Xcode breakpoints
 
