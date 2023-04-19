@@ -103,11 +103,11 @@ Because both  `username` and `password` are `@State` properties, you need to dir
 
 Make sure to check the **Automatically continue after evaluating actions** so your app continues executing after the breakpoint. You don't want to pause the execution of your app here.
 
-![Xcode edit breakpoint window](/images/posts/2023/04/login-xcode-breakpoint-01.png "Xcode edit breakpoint window")
+![Xcode edit breakpoint window](https://www.danijelavrzan.com/images/posts/2023/04/login-xcode-breakpoint-01.png "Xcode edit breakpoint window")
 
 That's it! Now run the app, tap the login button and your login credentials will populate automatically. 
 
-![Login button populates credentials automatically](/images/posts/2023/04/login-xcode-breakpoint-02.gif "Login button populates credentials automatically")
+![Login button populates credentials automatically](https://www.danijelavrzan.com/images/posts/2023/04/login-xcode-breakpoint-02.gif "Login button populates credentials automatically")
 
 It's likely you'll use the same credentials when working on something in your app, so this saves you a lot of typing time. If you need to use different credentials and you know you'll have to type them in multiple times, just change their values in the breakpoint.
 
@@ -115,7 +115,7 @@ It's likely you'll use the same credentials when working on something in your ap
 
 If you have a UIKit app with `UITextField`, your breakpoint looks a bit different. Instead of using the `wrappedValue` you need to use the `.text` value of the text field. 
 
-![Xcode edit breakpoint window](/images/posts/2023/04/login-xcode-breakpoint-03.png "Xcode edit breakpoint window")
+![Xcode edit breakpoint window](https://www.danijelavrzan.com/images/posts/2023/04/login-xcode-breakpoint-03.png "Xcode edit breakpoint window")
 
 ## Log in automatically without tapping the button
 
