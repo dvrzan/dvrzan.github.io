@@ -17,10 +17,10 @@ struct Conference {
 
   static let conferences = [
     Conference(
-        past: false,
+        past: true,
         name: "DeepDishSwift",
         dateAndCity: "May 2023 - Chicago, US",
-        talkTitle: "UPCOMING: Algorithms - where no developer wants to go",
+        talkTitle: "Algorithms - where no developer wants to go",
         talkURL: ""
     ),
     Conference(
