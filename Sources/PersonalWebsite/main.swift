@@ -47,5 +47,5 @@ try PersonalWebsite().publish(using: [
   .generateHTML(withTheme: .myTheme),
   .generateRSSFeed(including: [.posts]),
   .generateSiteMap(),
-  .deploy(using: .gitHub("dvrzan/dvrzan.github.io", branch: "main", useSSH: false))
+  .deploy(using: .gitHub("dvrzan/dvrzan.github.io", branch: "main", useSSH: true))
 ])
