@@ -21,11 +21,11 @@ String Catalog makes it easy to manage all your strings in one place and make su
 
 We'll localize this small app for ordering books:
 
-![iPhone showing Buy Books screen in an app](/images/posts/2023/06/string-catalog-01.png "iPhone showing Buy Books screen in an app")
+![iPhone showing Buy Books screen in an app](https://www.danijelavrzan.com/images/posts/2023/06/string-catalog-01.png "iPhone showing Buy Books screen in an app")
 
 Localizing your app is as easy as creating a new file under **File** -> **New** -> **File...** and selecting **String Catalog** under **Resources**. Name your new file and once you click **Create**, that's it!
 
-![Xcode screen with an Empty String Catalog warning](/images/posts/2023/06/string-catalog-02.png "Xcode screen with an Empty String Catalog warning")
+![Xcode screen with an Empty String Catalog warning](https://www.danijelavrzan.com/images/posts/2023/06/string-catalog-02.png "Xcode screen with an Empty String Catalog warning")
 
 Almost. 
 
@@ -33,13 +33,13 @@ String Catalog generates and updates your localizable strings on build time. If 
 
 Build the project in Xcode and you'll see all your strings automatically added to the table.
 
-![String Catalog in Xcode with populated strings](/images/posts/2023/06/string-catalog-03.png "String Catalog in Xcode with populated strings")
+![String Catalog in Xcode with populated strings](https://www.danijelavrzan.com/images/posts/2023/06/string-catalog-03.png "String Catalog in Xcode with populated strings")
 
 ## Build Settings
 
 String Catalog uses a technology in the Swift compiler to extract localizable Swift strings. For this reason, make sure you've enabled the build setting **Use Compiler to Extract Swift Strings** under **Localization**:
 
-![Use Compiler to Extract Swift Strings build setting](/images/posts/2023/06/string-catalog-04.png "Use Compiler to Extract Swift Strings build setting")
+![Use Compiler to Extract Swift Strings build setting](https://www.danijelavrzan.com/images/posts/2023/06/string-catalog-04.png "Use Compiler to Extract Swift Strings build setting")
 
 ## Localizable String
 
@@ -109,7 +109,7 @@ If string was already added to the String Catalog, it will be automatically remo
 
 To localize your app in another language, click the **+** button at the bottom left of the table and choose a new language. It will add the new language and populate all the strings for you. 
 
-![String Catalog in Xcode with populated strings in Croatian language](/images/posts/2023/06/string-catalog-05.png "String Catalog in Xcode with populated strings in Croatian language")
+![String Catalog in Xcode with populated strings in Croatian language](https://www.danijelavrzan.com/images/posts/2023/06/string-catalog-05.png "String Catalog in Xcode with populated strings in Croatian language")
 
 It also shows you the percentage of your localized strings and updates the status to `NEW`, until all strings have been reviewed.
 
@@ -163,19 +163,19 @@ Link(
 
 "Tap to learn more!" works well for an iPhone or an Apple Watch, but users can't tap on their Macs. In the String Catalog, you can **right-click** on a table row and add a **Vary by Device**. This will add a new entry where you can specify a different string for a Mac, or any other Apple device on the list.
 
-![String Catalog in Xcode with vary by device option](/images/posts/2023/06/string-catalog-06.png "String Catalog in Xcode with vary by device option")
+![String Catalog in Xcode with vary by device option](https://www.danijelavrzan.com/images/posts/2023/06/string-catalog-06.png "String Catalog in Xcode with vary by device option")
 
 ### Vary by Plural
 
 It's never been easier to localize plural words too. **Right-click** the table row and add **Vary by Plural**. 
 
-![String Catalog in Xcode with vary by plural option](/images/posts/2023/06/string-catalog-07.png "String Catalog in Xcode vary by plural option")
+![String Catalog in Xcode with vary by plural option](https://www.danijelavrzan.com/images/posts/2023/06/string-catalog-07.png "String Catalog in Xcode vary by plural option")
 
 In English language, every plural word is the same - "books". However, Croatian is not that simple. There are different variants in the plural. For a few books, or 2, 3 and 4, the plural word is different. For 5 - 10 books the word is the same as for a single book. 
 
 It's confusing, let me show you.
 
-![String Catalog in Xcode with vary by plural option](/images/posts/2023/06/string-catalog-08.png "String Catalog in Xcode vary by plural option")
+![String Catalog in Xcode with vary by plural option](https://www.danijelavrzan.com/images/posts/2023/06/string-catalog-08.png "String Catalog in Xcode vary by plural option")
 
 Apple made sure to add all the different variants for different languages. It's awesome how easy it is to localize your app now!
 
