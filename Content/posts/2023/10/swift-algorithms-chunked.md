@@ -89,7 +89,7 @@ The app looks like this:
 
 Chunked algorithm has a few different variations. You can break your data into equal chunks or define a predicate, depending on the use case. 
 
-If you want to learn more about the algorithm itself, how it works and how it's designed, check the [official documentation]([Chunked](https://github.com/apple/swift-algorithms/blob/main/Guides/Chunked.md) ) to learn more.
+If you want to learn more about the algorithm itself, how it works and how it's designed, check the [official documentation](https://github.com/apple/swift-algorithms/blob/main/Guides/Chunked.md) to learn more.
 
 > It's worth mentioning the algorithm has a complexity of **O(n)** where **n** is the number of elements in the collection. It's very efficient!
 
@@ -103,9 +103,7 @@ It’s important to mention the collection has to be sorted for chunked to work.
 
 ### Using .chunked(by:)
 
-We'll create `travelsChunked` to store the new collection. 
-
-Chunked algorithm breaks the base collection into subsequences of type `ArraySlice`.  It's what allows the chunked to be fast and efficient. While `ArraySlice` has the same interface as an `Array` and same operations can be performed on both, we can't use it in our UI. We need to transform them into arrays. We'll use `.map()` for that.
+We'll create `travelsChunked` to store the new collection and chunk the `travels` array by comparing consecutive dates by their month. 
 
 ```swift
 static var travelsChunked: [[Travel]] {
@@ -116,7 +114,9 @@ static var travelsChunked: [[Travel]] {
 }
 ```
 
-We chunked the `travels` array by comparing consecutive dates by their month. 
+Chunked algorithm breaks the base collection into subsequences of type `ArraySlice`.  It's what allows the chunked to be fast and efficient. `ArraySlice` has the same interface as `Array` and generally same operations can be performed on both. 
+
+However, long-term storage of an `ArraySlice` is strongly discouraged. It holds a reference to the entire storage of the larger array and can cause memory leaks. We used `.map()` to transform it into an array instead.
 
 Visually, it looks like this:
 
