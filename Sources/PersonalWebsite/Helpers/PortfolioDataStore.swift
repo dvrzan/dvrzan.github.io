@@ -18,6 +18,20 @@ struct Conference {
   static let conferences = [
     Conference(
         past: true,
+        name: "SwiftConnection",
+        dateAndCity: "September 2023 - Paris, France",
+        talkTitle: "String Catalog: Better Way to Localize Your Apps",
+        talkURL: "https://www.youtube.com/watch?v=7XVhDu74v0c"
+    ),
+    Conference(
+        past: true,
+        name: "SwiftTO",
+        dateAndCity: "August 2023 - Toronto, Canada",
+        talkTitle: "Improve your code with the Swift Algorithms package",
+        talkURL: "https://www.youtube.com/watch?v=IXlA7FQo-DQ"
+    ),
+    Conference(
+        past: true,
         name: "DeepDishSwift",
         dateAndCity: "May 2023 - Chicago, US",
         talkTitle: "Algorithms - where no developer wants to go",
@@ -83,6 +97,16 @@ struct Podcast {
   let url: String
 
   static let podcasts = [
+    Podcast(
+        headline: "🎙️ MTCJ: SwiftTO 2023 Speaker Series",
+        description: "This week Tim sits down with Danijela Vrzan, iOS developer, bootcamp mentor and conference speaker. They discuss her career pivot to becoming an iOS engineer, her life in Croatia and migration with her husband to Canada. They discuss the Kodeco bootcamps and how Danijela became a mentor. They also dig into building website in Swift.",
+        url: "https://www.youtube.com/watch?v=kWoArujt2bQ"
+    ),
+    Podcast(
+        headline: "🎙️ The Swift Ascent Podcast",
+        description: "In this episode, Ann and Craig talk with Danijela about how she got started in iOS development. What made her get into iOS and her journey along the way? We also go to hear her advice on how she would get started now and things she would change when she was learning.",
+        url: "https://podcasts.apple.com/ca/podcast/danijela-vrzan/id1678225194?i=1000605101491"
+    ),
     Podcast(
       headline: "🎙️ Slices: The Deep Dish Swift Podcast",
       description: "Chat with Malin and Kai about my talk at Deep Dish Swift conference, windows phones, and Croatian food.",
