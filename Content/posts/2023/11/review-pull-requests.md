@@ -24,6 +24,7 @@ In this post, we'll take a look at how to approach reviewing the PR. However, it
 Written communication often lacks tone and context. Reviewers can use positive language and emojis to make their comments sound friendly. But even that can be misunderstood if you're on the receiving side. Consider the intention behind the words and don't jump to conclusions about the reviewer's attitude.
 
 Whenever you're reading someone else's comments on your work, never assume bad intentions. Not only during PR reviews, but in general. If someone is being mean on purpose, call them out. A mean person is always mean and that doesn't go unnoticed in the team. But that's a different issue altogether.
+
 ## Your tone and language
 
 When approaching the review, consider how you write your comments and suggestions. While the tone of the conversation definitely depends on the person reading the comment, consider how you write the comments as well. 
@@ -31,6 +32,7 @@ When approaching the review, consider how you write your comments and suggestion
 You might know more about the topic and add some suggestions to improve the code. There could be some silly mistakes that were missed but should still be pointed out. That's all part of the review process. 
 
 PR reviews are not only to point issues and mistakes, try to add some encouraging comments as well if someone has done something exceptionally well. A small encouragement and a nice word go a long way!
+
 ## Put asside time to review assigned PRs
 
 This is a good practice to consider. No one likes to wait long time for their PRs to be reviewed just because the reviewers are not paying attention. 
@@ -48,16 +50,19 @@ There's a macOS menu bar app called [SwiftBar](https://github.com/swiftbar/Swift
 ![SwiftBar menu app showing 1 PR in the menu and detailed information about it](https://www.danijelavrzan.com/images/posts/2023/11/review-pull-requests-01.png "SwiftBar menu app showing 1 PR in the menu and detailed information about it")
 
 Get the GitHub repository plugin and adjust it to work for your repositories. When someone assigns a PR to you on the repositories you're watching, it will let you know in the menu bar and show the number of PRs. Once you review a PR, the number will go down. It's really handy!
+
 ## Reviewing the PR
 
 Before you start reviewing the PR, make sure the PR is ready to be reviewed. While it's on the PR author to make sure that's the case, sometimes you'll get assigned to a PR that's not quite yet ready to be reviewed. Ask for any missing information and come back to it later.
 
 Now's the time to start the review process.
+
 ### Grammar mistakes
 
 Grammar mistakes can happen to anyone.
 
 It's okay to comment on grammar mistakes you see in the code. Code should be easily readable and sometimes a missing letter can completely change the meaning of the word. If you spot them, call them out.
+
 ### Naming
 
 Naming objects and variables in the code is hard. Really.
@@ -65,6 +70,7 @@ Naming objects and variables in the code is hard. Really.
 When you're writing code, a name you give to a variable might make sense to you in that specific moment. But the meaning can be completely lost on another person. 
 
 If you're reading someone else's code and the name doesn't make sense to you and you can't infer the meaning from the context, let the author know. It's likely someone else will have the same issue as you. Suggest a different name if you have any other ideas or talk with the author and come to an agreement. 
+
 ### Understanding the code
 
 Naming conventions and grammar mistakes are a few things you can start with when doing a code review, but you'll also have to understand the logic.
@@ -76,6 +82,7 @@ In any way, you need to understand what you're reviewing. At least, to the best 
 Ask for help. Message the PR author directly and ask them to walk you through the code. It's fast and it will give you the context you could be missing. There's no shame in asking for help.
 
 This is especially useful for large PRs.
+
 ### Code improvement suggestions
 
 If you can spot a line of code that can be improved, suggest it to the author and explain why you think it should be changed. Maybe you've learned something new recently and can suggest a good improvement to the code. Or maybe the new language version came out recently and changed how the code is written.
@@ -89,11 +96,13 @@ Don't request a code change just because you prefer to do it some other way your
 If the PR you're reviewing has a UI component to it, check if the app's UI looks like the design. There should be a link to the design in the PR or the work ticket itself. If it's not, ask the code author to provide the link. 
 
 If you notice something wasn't done correctly, mention it to the author so they know to correct it.
+
 ### Tests and code coverage
 
 It's likely you'll have a test coverage report on the PR itself, once the CI has finished running. However, check if tests have been added or updated in the PR. Sometimes, people forget to add tests. Especially if CI passes and code coverage for the PR is satisfied. 
 
 If you notice tests are missing or a specific edge case hasn't been tested, mention it in the review.
+
 ## Final Thoughts
 
 Reviewing code is hard. But it's a great learning opportunity. It's also a good place to catch any issues in the code and reduce potential bugs in the code. We all make mistakes.
