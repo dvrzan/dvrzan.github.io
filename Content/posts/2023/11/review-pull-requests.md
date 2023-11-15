@@ -113,6 +113,6 @@ It's okay to review and approve the PR with no comments if you haven't noticed a
 
 ***
 
-Please feel free to reach out on [Twitter](https://twitter.com/dvrzan) if you have any questions, comments, or feedback.
+Please feel free to reach out on [X (Twitter)](https://twitter.com/dvrzan) or [Mastodon](https://iosdev.space/@dvrzan) if you have any questions, comments, or feedback.
 
 Thank you for reading and happy coding!

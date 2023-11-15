@@ -1,5 +1,5 @@
 ---
-date: 2023-11-13 08:45
+date: 2023-11-14 08:45
 description: Enums are a data type that allow you to define your own values and work with them in a type-safe way. In this article, we'll create a TabView and utilize enums to define the data we need, in a type-safe way.
 image: /images/posts/2023/11/create-tabview-with-enums.png
 tags: swift, swiftUI
@@ -133,6 +133,6 @@ If you want to learn more about enums, the official [Swift documentation](https:
 
 ***
 
-Please feel free to reach out on [Twitter](https://twitter.com/dvrzan) if you have any questions, comments, or feedback.
+Please feel free to reach out on [X (Twitter)](https://twitter.com/dvrzan) or [Mastodon](https://iosdev.space/@dvrzan) if you have any questions, comments, or feedback.
 
 Thank you for reading and happy coding!
