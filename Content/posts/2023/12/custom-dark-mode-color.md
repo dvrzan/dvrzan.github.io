@@ -1,11 +1,11 @@
 ---
 date: 2023-12-07 08:45
 description: When developing apps in SwiftUI, we're given a set of components that allow us to support both light and dark modes without a lot of work. But, there might be occasions where you want a different dark mode color for your app. Like dark blue.
-image: /images/posts/2023/12/custom-dark-mode-colors.png
+image: /images/posts/2023/12/custom-dark-mode-color.png
 tags: swift, swiftUI, design
 ---
 
-# Add custom dark mode colors to your app
+# Add custom dark mode color to your app
 
 Today, it's quite common for apps to support both light and dark color modes. In fact, if your app is only available in light mode, it's likely dark mode is a highly requested feature.
 
@@ -17,13 +17,13 @@ When using default system colors, the white color gets converted to black color,
 
 This is how an app would look like in dark mode with default system colors:
 
-![Three iPhone screens with a regular view, a form, and a list in default dark mode colors](/images/posts/2023/12/custom-dark-mode-colors-01.png "Three iPhone screens with a regular view, a form, and a list in default dark mode colors")
+![Three iPhone screens with a regular view, a form, and a list in default dark mode colors](/images/posts/2023/12/custom-dark-mode-color-01.png "Three iPhone screens with a regular view, a form, and a list in default dark mode colors")
 
 But, there might be occasions where you want a different dark mode color for your app. Like **dark blue** for example, which is a popular option often seen in apps.
 
 An app could look like this in dark mode with custom dark blue colors:
 
-![Three iPhone screens with a regular view, a form, and a list in custom dark mode colors](/images/posts/2023/12/custom-dark-mode-colors-02.png "Three iPhone screens with a regular view, a form, and a list in custom dark mode colors")
+![Three iPhone screens with a regular view, a form, and a list in custom dark mode colors](/images/posts/2023/12/custom-dark-mode-color-02.png "Three iPhone screens with a regular view, a form, and a list in custom dark mode colors")
 
 > Any time you're using custom colors, you lose all the good stuff that automatically comes with system colors. Make sure your colors follow Apple's Human Interface Guidelines and use good contrast and accessibility features. I suggest reading the [Accessibility's Color and Effects ](https://developer.apple.com/design/human-interface-guidelines/accessibility#Color-and-effects)  and [Color](https://developer.apple.com/design/human-interface-guidelines/color) sections of the guide to learn more.
 
@@ -37,9 +37,11 @@ Add the following three colors to your `Assets.xcassets` folder:
 - Background
 	- Any Appearance (Light) - `#FFFFFF`
 	- Dark - `#0E141B`
+    
 - ListBackground
 	- Any Appearance (Light)  - `#F2F2F7`
 	- Dark - `#0E141B`
+    
 - ListRowBackground
 	- Any Appearance (Light)  - `#FFFFFF`
 	- Dark - `#1C1F24`
@@ -114,18 +116,18 @@ struct ListView: View {
     var body: some View {
         NavigationStack {
             List {
-				NavigationLink {
-					SomeView()
-				} label: {...}
+                NavigationLink {
+                    SomeView()
+                } label: {...}
 
-				NavigationLink {
-					SomeOtherView()
-				} label: {...}
+                NavigationLink {
+                    SomeOtherView()
+                } label: {...}
 
                 Section {
-	                NavigationLink {
-						SomeDifferentView()
-					} label: {...}
+                    NavigationLink {
+                        SomeDifferentView()
+                    } label: {...}
                 } header: {
                     Text("Header")
                 }
@@ -156,22 +158,22 @@ struct ListView: View {
     var body: some View {
         NavigationStack {
             List {
-				NavigationLink {
-					SomeView()
-				} label: {...}
-				// Add background color to the list row
-				.listRowBackground(Color.listRowBackground)
-
-				NavigationLink {
-					SomeOtherView()
-				} label: {...}
-				// Add background color to the list row
-				.listRowBackground(Color.listRowBackground)
-
+                NavigationLink {
+                    SomeView()
+                } label: {...}
+                // Add background color to the list row
+                .listRowBackground(Color.listRowBackground)
+                
+                NavigationLink {
+                    SomeOtherView()
+                } label: {...}
+                // Add background color to the list row
+                .listRowBackground(Color.listRowBackground)
+                
                 Section {
-	                NavigationLink {
-						SomeDifferentView()
-					} label: {...}
+                    NavigationLink {
+                        SomeDifferentView()
+                    } label: {...}
                 } header: {
                     Text("Header")
                 }
@@ -187,7 +189,7 @@ struct ListView: View {
 }
 ```
 
-To change the background color of the list row, add the `.listRowBackground()` modifier to the row itself. If you have multiple rows, you need to add it to every row. When you have a `Section`  in the code, you can add the modifier there and it will apply to every row in that section.
+To change the background color of the list row, add the `listRowBackground()` modifier to the row itself. If you have multiple rows, you need to add it to every row. When you have a `Section`  in the code, you can add the modifier there and it will apply to every row in that section.
 
 That's it! There's not a lot of code here, but a lot of figuring out what modifiers to use and where to apply them.
 
@@ -196,6 +198,7 @@ That's it! There's not a lot of code here, but a lot of figuring out what modifi
 System default background colors are a great start when developing your apps. But sometimes you want to change them and add your own custom colors. 
 
 If you do decide to use your own colors, always make sure the colors have good contrast. 
+
 
 ***
 
