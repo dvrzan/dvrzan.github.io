@@ -17,13 +17,13 @@ When using default system colors, the white color gets converted to black color,
 
 This is how an app would look like in dark mode with default system colors:
 
-![Three iPhone screens with a regular view, a form, and a list in default dark mode colors](/images/posts/2023/12/custom-dark-mode-color-01.png "Three iPhone screens with a regular view, a form, and a list in default dark mode colors")
+![Three iPhone screens with a regular view, a form, and a list in default dark mode colors](https://www.danijelavrzan.com/images/posts/2023/12/custom-dark-mode-color-01.png "Three iPhone screens with a regular view, a form, and a list in default dark mode colors")
 
 But, there might be occasions where you want a different dark mode color for your app. Like **dark blue** for example, which is a popular option often seen in apps.
 
 An app could look like this in dark mode with custom dark blue colors:
 
-![Three iPhone screens with a regular view, a form, and a list in custom dark mode colors](/images/posts/2023/12/custom-dark-mode-color-02.png "Three iPhone screens with a regular view, a form, and a list in custom dark mode colors")
+![Three iPhone screens with a regular view, a form, and a list in custom dark mode colors](https://www.danijelavrzan.com/images/posts/2023/12/custom-dark-mode-color-02.png "Three iPhone screens with a regular view, a form, and a list in custom dark mode colors")
 
 > Any time you're using custom colors, you lose all the good stuff that automatically comes with system colors. Make sure your colors follow Apple's Human Interface Guidelines and use good contrast and accessibility features. I suggest reading the [Accessibility's Color and Effects ](https://developer.apple.com/design/human-interface-guidelines/accessibility#Color-and-effects)  and [Color](https://developer.apple.com/design/human-interface-guidelines/color) sections of the guide to learn more.
 
