@@ -1,7 +1,7 @@
 ---
 date: 2023-12-13 08:45
 description: Discover how to use SwiftUI's ContentUnavailableView to effortlessly handle empty views in your app. It's easy to use, customizable, and has a pre-defined view for an empty search state. Available in iOS 17.0+.
-image: /images/posts/2023/12/content-unavailable-view.png
+image: https://www.danijelavrzan.com/images/posts/2023/12/content-unavailable-view.png
 tags: swiftUI
 ---
 
@@ -53,7 +53,7 @@ Add the empty search state with  `ContentUnavailableView.search(text: searchText
 
 Add it as an overlay on the `List` while the user is typing and if search is returning no results.
 
-![List with data on the left and content unavailable view with a search instance on the right](/images/posts/2023/12/content-unavailable-view-01.png "List with data on the left and content unavailable view with a search instance on the right")
+![List with data on the left and content unavailable view with a search instance on the right](https://www.danijelavrzan.com/images/posts/2023/12/content-unavailable-view-01.png "List with data on the left and content unavailable view with a search instance on the right")
 
 It looks great! No need to create custom error views anymore. It adds a system image and a default description for you.
 
@@ -99,7 +99,7 @@ struct ListView: View {
 
 If network call fails and no data is returned, we show a custom view, which in this case is a `Label`, custom `description`, and an `action`. Both `description` and `action` are optional in the above initializer.
 
-![List with data on the left and custom content unavailable view on the right](/images/posts/2023/12/content-unavailable-view-02.png "List with data on the left and custom content unavailable view on the right")
+![List with data on the left and custom content unavailable view on the right](https://www.danijelavrzan.com/images/posts/2023/12/content-unavailable-view-02.png "List with data on the left and custom content unavailable view on the right")
 
 You can also use more simple initializer with **title**, an optional **description** and an optional **image**. You don't need to create custom views, but there's the flexibility of customization.
 
