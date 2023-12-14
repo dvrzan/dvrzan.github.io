@@ -59,7 +59,7 @@ It looks great! No need to create custom error views anymore. It adds a system i
 
 ## Custom empty states
 
-We can also create custom unavailable views with any custom view or a more simple ones with a string, and an image. It depends on your use case.
+We can also create custom unavailable views with any custom view or a more simple ones with a string and an image. It depends on your use case.
 
 Let's take a look at an example where we're fetching data from the network and showing it in a list. 
 
