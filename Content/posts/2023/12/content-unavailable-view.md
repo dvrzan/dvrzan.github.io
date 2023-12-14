@@ -1,7 +1,7 @@
 ---
 date: 2023-12-14 08:45
 description: Discover how to use SwiftUI's ContentUnavailableView to effortlessly handle empty views in your app. It's easy to use, customizable, and has a pre-defined view for an empty search state. Available in iOS 17.0+.
-image: https://www.danijelavrzan.com/images/posts/2023/12/content-unavailable-view.png
+image: /images/posts/2023/12/content-unavailable-view.png
 tags: swiftUI
 ---
 
