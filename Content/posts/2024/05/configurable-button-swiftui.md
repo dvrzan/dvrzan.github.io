@@ -13,7 +13,7 @@ We'll take that same approach to build a new configurable button with different 
 
 Imagine you're implementing a feature to claim a coupon. User enters a coupon in the text field and taps the button. You want your button to have different states during the claim process that reflects the network call.
 
-![Four buttons showing different state with different design](/images/posts/2024/05/configurable-button-swiftui-01.png "Four buttons showing different state with different design")
+![Four buttons showing different state with different design](https://www.danijelavrzan.com/images/posts/2024/05/configurable-button-swiftui-01.png "Four buttons showing different state with different design")
 
 It starts in a `normal` state. Once the user taps the button, the claim process begins and the button changes to `loading` state. When the network call succeeds, the button is in the `confirmed` state. The` disabled` state can be triggered for the network error or unsuccessful claim.
 
@@ -223,7 +223,7 @@ struct ContentView: View {
 
 The final result:
 
-![TextField and a configurable Button changing states](/images/posts/2024/05/configurable-button-swiftui-02.gif "TextField and a configurable Button changing states")
+![TextField and a configurable Button changing states](https://www.danijelavrzan.com/images/posts/2024/05/configurable-button-swiftui-02.gif "TextField and a configurable Button changing states")
 
 Pretty cool!
 
