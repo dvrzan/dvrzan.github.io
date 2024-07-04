@@ -333,12 +333,6 @@ private struct AboutPage: Component {
       Div {
         //Introduction - company I work at, website, and years of experience
         Paragraph {
-          Text(Constants.About.introAboutFirst)
-          Link(
-            Constants.About.introAboutCompanyLink,
-            url: Constants.URL.company
-          )
-          .linkTarget(.blank)
           Text(Constants.About.introAboutExperience)
         }
         
@@ -367,10 +361,7 @@ private struct AboutPage: Component {
       //Contact title
       Paragraph {
         Text(Constants.About.contactTitle)
-        Link(
-          Constants.About.contactLink,
-          url: Constants.URL.mailTo
-        )
+        Text(Constants.About.contactMail)
         Text(Constants.About.contactTitleEnd)
       }
       .class("about-me-contact-info")
