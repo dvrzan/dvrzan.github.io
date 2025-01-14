@@ -420,6 +420,8 @@ struct MyHTMLFactory<Site: Website>: HTMLFactory {
         Wrapper {
           H1(Constants.IndexPage.recentPosts)
             .class("home-recent-posts-title")
+        
+          H3(Constants.IndexPage.stayTuned)
           
           //List of recent blog posts (last month)
           RecentItemList(

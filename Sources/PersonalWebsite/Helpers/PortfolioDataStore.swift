@@ -18,16 +18,30 @@ struct Conference {
   static let conferences = [
     Conference(
         past: true,
-        name: "🎦 SwiftConnection",
+        name: "NSSpain",
+        dateAndCity: "September 2024 - Logroño, Spain",
+        talkTitle: "🎦 Best-in-class Pull Request",
+        talkURL: "https://vimeo.com/showcase/11503067/video/1011641324"
+    ),
+    Conference(
+        past: true,
+        name: "iOSDevUK",
+        dateAndCity: "September 2024 - Aberystwyth, UK",
+        talkTitle: "Best-in-class Pull Request",
+        talkURL: ""
+    ),
+    Conference(
+        past: true,
+        name: "SwiftConnection",
         dateAndCity: "September 2023 - Paris, France",
-        talkTitle: "String Catalog: Better Way to Localize Your Apps",
+        talkTitle: "🎦 String Catalog: Better Way to Localize Your Apps",
         talkURL: "https://www.youtube.com/watch?v=7XVhDu74v0c"
     ),
     Conference(
         past: true,
-        name: "🎦 SwiftTO",
+        name: "SwiftTO",
         dateAndCity: "August 2023 - Toronto, Canada",
-        talkTitle: "Improve your code with the Swift Algorithms package",
+        talkTitle: "🎦 Improve your code with the Swift Algorithms package",
         talkURL: "https://www.youtube.com/watch?v=IXlA7FQo-DQ"
     ),
     Conference(

@@ -15,6 +15,7 @@ enum Constants {
   
   enum IndexPage {
     static let recentPosts = "Recent Posts"
+    static let stayTuned = "No recent posts. Stay tuned for more to come or check the 'Posts' section for older articles."
   }
   
   enum Portfolio {
@@ -27,7 +28,7 @@ enum Constants {
     static let introTitle = "Hi, I'm Danijela! 👋"
     static let introAboutExperience = "I'm an iOS Developer and I've been making apps since 2020."
     static let firstParagraph = "I was a Civil Engineer for two years when I decided it wasn't the right career choice for me. I picked up my laptop and decided to learn how to code. Being able to create something out of nothing was what got me interested in programming. I find creativity in the process of thinking about a problem and finding a way to solve it. I went back to University to get my Computer Science degree, and after graduating, moved from 🇭🇷 Croatia to 🇨🇦 Canada."
-    static let secondParagraph = "When not working, I write technical articles and when not writing code, I love speaking about it. I speak at conferences around the world to pass the knowledge I've learned. In my free time, you can find me playing video games, lifting heavy weights, hiking, and trying out new restaurants."
+    static let secondParagraph = "When not working, I write technical articles and when not writing code, I love speaking about it. I speak at conferences around the world to pass the knowledge I've learned. In my free time, you can find me playing video games, lifting heavy weights, running, hiking, and enjoying good food."
     static let contactTitle = "Feel free to contact me at "
     static let contactMail = "'contact at danijelavrzan dot com'"
     static let contactTitleEnd = " or take a look at my work below"
@@ -39,7 +40,7 @@ enum Constants {
   }
   
   enum Footer {
-    static let copyright = "Copyright © 2021-2024 Danijela Vrzan. All Rights Reserved."
+    static let copyright = "Copyright © 2021-2025 Danijela Vrzan. All Rights Reserved."
     static let generatedUsing = "Built in Swift using "
     static let publish = "Publish."
     static let publishURL = "https://github.com/johnsundell/publish"
