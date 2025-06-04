@@ -797,7 +797,7 @@ footer p a:hover {
 }
 
 .webdevelopment-tag {
-  background-color: #008040;
+  background-color: #945200;
 }
 
 .publish-tag {
@@ -826,4 +826,8 @@ footer p a:hover {
 
 .design-tag {
     background-color: #f26d50;
+}
+
+.indiedev-tag {
+    background-color: #008040;
 }

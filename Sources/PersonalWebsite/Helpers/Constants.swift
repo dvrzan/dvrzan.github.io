@@ -47,13 +47,13 @@ enum Constants {
   }
   
   enum Image {
-    static let header = "/images/logo.png"
-    static let rss = "/images/utils/rss.png"
-    static let torontoNature = "/images/about/toronto-nature.png"
-    static let twitter = "/images/about/contact/twitter.png"
-    static let linkedin = "/images/about/contact/linkedin.png"
-    static let github = "/images/about/contact/github.png"
-    static let kodeco = "/images/about/contact/kodeco.png"
+    static let header = "https://www.danijelavrzan.com/images/logo.png"
+    static let rss = "https://www.danijelavrzan.com/images/utils/rss.png"
+    static let torontoNature = "https://www.danijelavrzan.com/images/about/toronto-nature.png"
+    static let twitter = "https://www.danijelavrzan.com/images/about/contact/twitter.png"
+    static let linkedin = "https://www.danijelavrzan.com/images/about/contact/linkedin.png"
+    static let github = "https://www.danijelavrzan.com/images/about/contact/github.png"
+    static let kodeco = "https://www.danijelavrzan.com/images/about/contact/kodeco.png"
   }
   
   enum URL {
