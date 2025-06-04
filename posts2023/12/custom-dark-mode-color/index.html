@@ -1,0 +1,92 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"/><meta property="og:site_name" content="Danijela's blog"/><link rel="canonical" href="https://www.danijelavrzan.com/posts/2023/12/custom-dark-mode-color"/><meta name="twitter:url" content="https://www.danijelavrzan.com/posts/2023/12/custom-dark-mode-color"/><meta property="og:url" content="https://www.danijelavrzan.com/posts/2023/12/custom-dark-mode-color"/><title>Add custom dark mode color to your app | Danijela's blog</title><meta name="twitter:title" content="Add custom dark mode color to your app | Danijela's blog"/><meta property="og:title" content="Add custom dark mode color to your app | Danijela's blog"/><meta name="description" content="When developing apps in SwiftUI, we're given a set of components that allow us to support both light and dark modes without a lot of work. But, there might be occasions where you want a different dark mode color for your app. Like dark blue."/><meta name="twitter:description" content="When developing apps in SwiftUI, we're given a set of components that allow us to support both light and dark modes without a lot of work. But, there might be occasions where you want a different dark mode color for your app. Like dark blue."/><meta property="og:description" content="When developing apps in SwiftUI, we're given a set of components that allow us to support both light and dark modes without a lot of work. But, there might be occasions where you want a different dark mode color for your app. Like dark blue."/><meta name="twitter:card" content="summary_large_image"/><link rel="stylesheet" href="/styles.css" type="text/css"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/images/favicon.png" type="image/png"/><link rel="alternate" href="/feed.rss" type="application/rss+xml" title="Subscribe to Danijela's blog"/><meta name="twitter:image" content="https://www.danijelavrzan.com/images/posts/2023/12/custom-dark-mode-color.png"/><meta property="og:image" content="https://www.danijelavrzan.com/images/posts/2023/12/custom-dark-mode-color.png"/></head><head><script src="https://cdn.telemetrydeck.com/websdk/telemetrydeck.min.js" data-app-id="47BA20EC-6342-4CAA-88C2-3B4AD29DB8B9"></script></head><body><header><div class="wrapper"><a href="https://www.danijelavrzan.com"><img src="https://www.danijelavrzan.com/images/logo.png" aria-label="Danijela Vrzan text logo header" class="banner-img"/></a><p class="banner-title">iOS DEVELOPER</p><p class="banner-subtitle">WRITER. SPEAKER.</p><nav><ul><li><a href="/posts" class="selected">Posts</a></li><li><a href="/speaking">Speaking</a></li><li><a href="/about">About</a></li></ul></nav></div></header><div class="wrapper item-page"><div class="article-metadata"><ul class="tag-list"><li><a href="/tags/swift" class="swift-tag">swift</a></li><li><a href="/tags/swiftui" class="swiftUI-tag">swiftUI</a></li><li><a href="/tags/design" class="design-tag">design</a></li></ul><p class="item-metadata">7 Dec, 2023 • 5 minute read</p></div><article><div class="content"><h1>Add custom dark mode color to your app</h1><p>Today, it's quite common for apps to support both light and dark color modes. In fact, if your app is only available in light mode, it's likely dark mode is a highly requested feature.</p><p>When developing apps in SwiftUI, we're given a set of components and tools that allow us to support both light and dark modes without a lot of work. If you're using default fonts and system colors, you get this feature in your app out-of-the-box.</p><h2>Default dark mode system colors</h2><p>When using default system colors, the white color gets converted to black color, or what sometimes is referred to as "true black".</p><p>This is how an app would look like in dark mode with default system colors:</p><img src="https://www.danijelavrzan.com/images/posts/2023/12/custom-dark-mode-color-01.png "Three iPhone screens with a regular view, a form, and a list in default dark mode colors"" alt="Three iPhone screens with a regular view, a form, and a list in default dark mode colors"/><p>But, there might be occasions where you want a different dark mode color for your app. Like <strong>dark blue</strong> for example, which is a popular option often seen in apps.</p><p>An app could look like this in dark mode with custom dark blue colors:</p><img src="https://www.danijelavrzan.com/images/posts/2023/12/custom-dark-mode-color-02.png "Three iPhone screens with a regular view, a form, and a list in custom dark mode colors"" alt="Three iPhone screens with a regular view, a form, and a list in custom dark mode colors"/><blockquote><p>Any time you're using custom colors, you lose all the good stuff that automatically comes with system colors. Make sure your colors follow Apple's Human Interface Guidelines and use good contrast and accessibility features. I suggest reading the <a href="https://developer.apple.com/design/human-interface-guidelines/accessibility#Color-and-effects">Accessibility's Color and Effects</a> and <a href="https://developer.apple.com/design/human-interface-guidelines/color">Color</a> sections of the guide to learn more.</p></blockquote><p>Let's implement a custom dark mode color in our app - <strong>dark blue</strong>.</p><h2>Color assets</h2><p>First, we need to create the <strong>Color Assets</strong>.</p><p>Add the following three colors to your <code>Assets.xcassets</code> folder:</p><ul><li>Background<ul><li>Any Appearance (Light) - <code>#FFFFFF</code></li><li>Dark - <code>#0E141B</code><ul></ul></li></ul></li></ul><ul><li>ListBackground<ul><li>Any Appearance (Light) - <code>#F2F2F7</code></li><li>Dark - <code>#0E141B</code><ul></ul></li></ul></li></ul><ul><li>ListRowBackground<ul><li>Any Appearance (Light) - <code>#FFFFFF</code></li><li>Dark - <code>#1C1F24</code></li></ul></li></ul><p>We'll use <strong>Background</strong> for the <code>ScrollView</code> and all other general <code>Views</code>. <strong>ListBackground</strong> and <strong>ListRowBackground</strong> are specifically for the <code>List</code> and <code>Form</code>. These two views are both scrollable views. But the difference is they both have rows or sections which need to have a different background color.</p><p>Both <strong>Background</strong> and <strong>ListBackground</strong> have the same dark mode color, but the <strong>ListBackground</strong> is not pure white in light mode. It's light gray.</p><p>I chose the above colors to my liking, but you're welcome to update them to your preference. Light mode colors are mimicking the default light mode system colors. Only the dark mode colors are different.</p><h2>View Background</h2><p>Adding background color to regular views, like <code>VStack</code> and <code>HStack</code> is simple. All you need to do is add <code>background()</code> modifier to the top most view in your view hierarchy.</p><p>In this example, the top most view is a <code>VStack</code>:</p><pre><code><span class="keyword">struct</span> ContentView: <span class="type">View</span> {
+    <span class="keyword">var</span> body: <span class="keyword">some</span> <span class="type">View</span> {
+        <span class="type">VStack</span> {
+            <span class="type">HStack</span> {
+                <span class="type">VStack</span> {...}
+            }
+
+            <span class="type">VStack</span> {...}
+        }
+        .<span class="call">padding</span>()
+        <span class="comment">// Add background color to the VStack</span>
+        .<span class="call">background</span>(<span class="type">Color</span>.<span class="property">background</span>)
+    }
+}
+</code></pre><p>That's it! This will apply a custom background to your entire view.</p><h2>ScrollView Background</h2><p><code>ScrollView</code> is a bit different and requires an additional modifier to change the background.</p><p>We can take the above <strong>ContentView</strong> and embed the <code>VStack</code> in the <code>ScrollView</code>:</p><pre><code><span class="keyword">struct</span> ContentView: <span class="type">View</span> {
+    <span class="keyword">var</span> body: <span class="keyword">some</span> <span class="type">View</span> {
+        <span class="type">ScrollView</span> {
+            <span class="type">VStack</span> {
+                <span class="type">HStack</span> {
+                    <span class="type">VStack</span> {...}
+                }
+
+                <span class="type">VStack</span> {...}
+            }
+        }
+        .<span class="call">padding</span>()
+        <span class="comment">// Add background color to the ScrollView</span>
+        .<span class="call">scrollContentBackground</span>(.<span class="dotAccess">hidden</span>)
+        .<span class="call">background</span>(<span class="type">Color</span>.<span class="property">background</span>)
+    }
+}
+</code></pre><p>Before we apply a custom background to any scrollable view, we need to remove the default background of that view with <code>scrollContentBackground(.hidden)</code> modifier.</p><p>Applying <code>background()</code> without removing the default background of the scrollable view will not have any results.</p><h2>List and Form Background</h2><p><code>List</code> and <code>Form</code> are also scrollable views, so the same principle applies. Add the <code>scrollContentBackground(.hidden)</code> and <code>background()</code> modifiers at the end of the list:</p><pre><code><span class="keyword">struct</span> ListView: <span class="type">View</span> {
+    <span class="keyword">var</span> body: <span class="keyword">some</span> <span class="type">View</span> {
+        <span class="type">NavigationStack</span> {
+            <span class="type">List</span> {
+                <span class="type">NavigationLink</span> {
+                    <span class="type">SomeView</span>()
+                } label: {...}
+
+                <span class="type">NavigationLink</span> {
+                    <span class="type">SomeOtherView</span>()
+                } label: {...}
+
+                <span class="type">Section</span> {
+                    <span class="type">NavigationLink</span> {
+                        <span class="type">SomeDifferentView</span>()
+                    } label: {...}
+                } header: {
+                    <span class="type">Text</span>(<span class="string">"Header"</span>)
+                }
+            }
+            .<span class="call">navigationTitle</span>(<span class="string">"Settings"</span>)
+            <span class="comment">// Add background color to the List</span>
+            .<span class="call">scrollContentBackground</span>(.<span class="dotAccess">hidden</span>)
+            .<span class="call">background</span>(<span class="type">Color</span>.<span class="property">listBackground</span>)
+        }
+    }
+}
+</code></pre><p>The only difference in this case is the color we're applying. We're using the <code>ListBackground</code> color so the view looks good in light mode as well.</p><p>Remember to always use this pair of modifiers when working with any scrollable view, like <code>ScrollView</code>, <code>List</code> and <code>Form</code>.</p><p>Next, we need to change the background color of the list row as well.</p><h3>List and Form Row Background</h3><p><code>List</code> and <code>Form</code> both have rows that use different background colors then the rest of the view.</p><p>We need to change that color as well or the default system color will be used which doesn't go well with our new dark blue color.</p><pre><code><span class="keyword">struct</span> ListView: <span class="type">View</span> {
+    <span class="keyword">var</span> body: <span class="keyword">some</span> <span class="type">View</span> {
+        <span class="type">NavigationStack</span> {
+            <span class="type">List</span> {
+                <span class="type">NavigationLink</span> {
+                    <span class="type">SomeView</span>()
+                } label: {...}
+                <span class="comment">// Add background color to the list row</span>
+                .<span class="call">listRowBackground</span>(<span class="type">Color</span>.<span class="property">listRowBackground</span>)
+                
+                <span class="type">NavigationLink</span> {
+                    <span class="type">SomeOtherView</span>()
+                } label: {...}
+                <span class="comment">// Add background color to the list row</span>
+                .<span class="call">listRowBackground</span>(<span class="type">Color</span>.<span class="property">listRowBackground</span>)
+                
+                <span class="type">Section</span> {
+                    <span class="type">NavigationLink</span> {
+                        <span class="type">SomeDifferentView</span>()
+                    } label: {...}
+                } header: {
+                    <span class="type">Text</span>(<span class="string">"Header"</span>)
+                }
+                <span class="comment">// Add background color to the list row</span>
+                .<span class="call">listRowBackground</span>(<span class="type">Color</span>.<span class="property">listRowBackground</span>)
+            }
+            .<span class="call">navigationTitle</span>(<span class="string">"Settings"</span>)
+            <span class="comment">// Add background color to the List</span>
+            .<span class="call">scrollContentBackground</span>(.<span class="dotAccess">hidden</span>)
+            .<span class="call">background</span>(<span class="type">Color</span>.<span class="property">listBackground</span>)
+        }
+    }
+}
+</code></pre><p>To change the background color of the list row, add the <code>listRowBackground()</code> modifier to the row itself. If you have multiple rows, you need to add it to every row. When you have a <code>Section</code> in the code, you can add the modifier there and it will apply to every row in that section.</p><p>That's it! There's not a lot of code here, but a lot of figuring out what modifiers to use and where to apply them.</p><h2>Final Thoughts</h2><p>System default background colors are a great start when developing your apps. But sometimes you want to change them and add your own custom colors.</p><p>If you do decide to use your own colors, always make sure the colors have good contrast.</p><hr><p>Please feel free to reach out on <a href="https://twitter.com/dvrzan">X (Twitter)</a> or <a href="https://iosdev.space/@dvrzan">Mastodon</a> if you have any questions, comments, or feedback.</p><p>Thank you for reading and happy coding!</p></div></article></div><footer><p>Copyright © 2021-2025 Danijela Vrzan. All Rights Reserved.</p><p>Built in Swift using <a href="https://github.com/johnsundell/publish" target="_blank">Publish.</a> <a href="https://www.danijelavrzan.com/feed.rss" target="_blank">RSS.</a></p></footer></body></html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"/><meta property="og:site_name" content="Danijela's blog"/><link rel="canonical" href="https://www.danijelavrzan.com/posts/2022/07/how-to-test-custom-codable"/><meta name="twitter:url" content="https://www.danijelavrzan.com/posts/2022/07/how-to-test-custom-codable"/><meta property="og:url" content="https://www.danijelavrzan.com/posts/2022/07/how-to-test-custom-codable"/><title>How to test custom Codable initializer | Danijela's blog</title><meta name="twitter:title" content="How to test custom Codable initializer | Danijela's blog"/><meta property="og:title" content="How to test custom Codable initializer | Danijela's blog"/><meta name="description" content="Sometimes, when parsing a JSON, you need to implement a custom Codable initializer. Because of that custom logic, you're no longer using the default implementation. It's a good idea to test your code."/><meta name="twitter:description" content="Sometimes, when parsing a JSON, you need to implement a custom Codable initializer. Because of that custom logic, you're no longer using the default implementation. It's a good idea to test your code."/><meta property="og:description" content="Sometimes, when parsing a JSON, you need to implement a custom Codable initializer. Because of that custom logic, you're no longer using the default implementation. It's a good idea to test your code."/><meta name="twitter:card" content="summary_large_image"/><link rel="stylesheet" href="/styles.css" type="text/css"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/images/favicon.png" type="image/png"/><link rel="alternate" href="/feed.rss" type="application/rss+xml" title="Subscribe to Danijela's blog"/><meta name="twitter:image" content="https://www.danijelavrzan.com/https://www.danijelavrzan.com/images/posts/2022/07/how-to-test-custom-codable.png"/><meta property="og:image" content="https://www.danijelavrzan.com/https://www.danijelavrzan.com/images/posts/2022/07/how-to-test-custom-codable.png"/></head><head><script src="https://cdn.telemetrydeck.com/websdk/telemetrydeck.min.js" data-app-id="47BA20EC-6342-4CAA-88C2-3B4AD29DB8B9"></script></head><body><header><div class="wrapper"><a href="https://www.danijelavrzan.com"><img src="https://www.danijelavrzan.com/images/logo.png" aria-label="Danijela Vrzan text logo header" class="banner-img"/></a><p class="banner-title">iOS DEVELOPER</p><p class="banner-subtitle">WRITER. SPEAKER.</p><nav><ul><li><a href="/posts" class="selected">Posts</a></li><li><a href="/speaking">Speaking</a></li><li><a href="/about">About</a></li></ul></nav></div></header><div class="wrapper item-page"><div class="article-metadata"><ul class="tag-list"><li><a href="/tags/unit-test" class="unittest-tag">unit test</a></li><li><a href="/tags/codable" class="codable-tag">codable</a></li></ul><p class="item-metadata">26 Jul, 2022 • 4 minute read</p></div><article><div class="content"><h1>How to test custom Codable initializer</h1><p>Sometimes, when parsing a <strong>JSON</strong>, you need to implement a custom <code>Codable</code> initializer. Whether <code>Decodable</code> or <code>Encodable</code>, depends on the use-case.</p><p>Because of that custom logic, you're no longer using the default implementation. It's a good idea to test your code.</p><h2>Custom Decodable initializer</h2><p>Consider the following struct with a custom decodable initializer:</p><pre><code><span class="keyword">struct</span> Conference: <span class="type">Codable</span> {
+  <span class="keyword">let</span> name: <span class="type">String</span>
+  <span class="keyword">let</span> city: <span class="type">String</span>
+  <span class="keyword">let</span> country: <span class="type">String</span>
+  <span class="keyword">let</span> date: <span class="type">String</span>
+  <span class="keyword">let</span> days: <span class="type">Int</span>
+  <span class="keyword">let</span> isOnline: <span class="type">Bool</span>
+
+  <span class="keyword">enum</span> CodingKeys: <span class="type">String</span>, <span class="type">CodingKey</span> {
+    <span class="keyword">case</span> name, city, country, date, days, isOnline
+  }
+
+  <span class="keyword">init</span>(from decoder: <span class="type">Decoder</span>) <span class="keyword">throws</span> {
+    <span class="keyword">let</span> container = <span class="keyword">try</span> decoder.<span class="call">container</span>(keyedBy: <span class="type">CodingKeys</span>.<span class="keyword">self</span>)
+    name = <span class="keyword">try</span> container.<span class="call">decode</span>(<span class="type">String</span>.<span class="keyword">self</span>, forKey: .<span class="dotAccess">name</span>)
+    city = <span class="keyword">try</span> container.<span class="call">decode</span>(<span class="type">String</span>.<span class="keyword">self</span>, forKey: .<span class="dotAccess">city</span>)
+    country = <span class="keyword">try</span> container.<span class="call">decode</span>(<span class="type">String</span>.<span class="keyword">self</span>, forKey: .<span class="dotAccess">country</span>)
+    date = <span class="keyword">try</span> container.<span class="call">decode</span>(<span class="type">String</span>.<span class="keyword">self</span>, forKey: .<span class="dotAccess">date</span>)
+    days = <span class="keyword">try</span> container.<span class="call">decode</span>(<span class="type">Int</span>.<span class="keyword">self</span>, forKey: .<span class="dotAccess">days</span>)
+    isOnline = (<span class="keyword">try</span>? container.<span class="call">decode</span>(<span class="type">Bool</span>.<span class="keyword">self</span>, forKey: .<span class="dotAccess">isOnline</span>)) ?? <span class="keyword">false</span>
+  }
+}
+</code></pre><p>Instead of creating an optional with a default value, you create a custom decoder for <code>isOnline</code> in the initializer. If the key is missing, give it a default value of <code>false</code>.</p><h2>Mock the data</h2><p>First, you need to create a mock data for the <code>Conference</code>. If you try to create a conference, you'll see you can't initialize a <code>Conference</code> object using its properties:</p><img src="https://www.danijelavrzan.com/images/posts/2022/07/testing-custom-codable-01.png "Initializing a struct with a custom codable initializer has no stored properties to define"" alt="Initializing a struct with a custom codable initializer has no stored properties to define"/><p>When you create custom decodable initializer, you lose the <strong>memberwise initializer</strong>.</p><h2>Memberwise initializer</h2><p>Structure types automatically get a default initializer, called <strong>memberwise initializer</strong>. It's generated by compiler based on structure's stored properties or <em>members</em>. But, if you define custom initializer, you lose the default memberwise initializer.</p><blockquote><p>You can learn more about memberwise initializers in the Apple's <a href="https://docs.swift.org/swift-book/LanguageGuide/Initialization.html">Swift Language Guide</a>.</p></blockquote><p>Luckily, there's an easy solution. To preserve the memberwise initializer, you need to move the initializer to an <strong>extension</strong>:</p><pre><code><span class="keyword">extension</span> <span class="type">Conference</span> {
+    <span class="keyword">init</span>(from decoder: <span class="type">Decoder</span>) <span class="keyword">throws</span> {
+      <span class="keyword">let</span> container = <span class="keyword">try</span> decoder.<span class="call">container</span>(keyedBy: <span class="type">CodingKeys</span>.<span class="keyword">self</span>)
+      name = <span class="keyword">try</span> container.<span class="call">decode</span>(<span class="type">String</span>.<span class="keyword">self</span>, forKey: .<span class="dotAccess">name</span>)
+      city = <span class="keyword">try</span> container.<span class="call">decode</span>(<span class="type">String</span>.<span class="keyword">self</span>, forKey: .<span class="dotAccess">city</span>)
+      country = <span class="keyword">try</span> container.<span class="call">decode</span>(<span class="type">String</span>.<span class="keyword">self</span>, forKey: .<span class="dotAccess">country</span>)
+      date = <span class="keyword">try</span> container.<span class="call">decode</span>(<span class="type">String</span>.<span class="keyword">self</span>, forKey: .<span class="dotAccess">date</span>)
+      days = <span class="keyword">try</span> container.<span class="call">decode</span>(<span class="type">Int</span>.<span class="keyword">self</span>, forKey: .<span class="dotAccess">days</span>)
+      isOnline = (<span class="keyword">try</span>? container.<span class="call">decode</span>(<span class="type">Bool</span>.<span class="keyword">self</span>, forKey: .<span class="dotAccess">isOnline</span>)) ?? <span class="keyword">false</span>
+    }
+}
+</code></pre><p>Now you have both your custom initializer and the memberwise initializer:</p><img src="https://www.danijelavrzan.com/images/posts/2022/07/testing-custom-codable-02.png "Memberwise initializer is preserved when moving custom initializer to an extension"" alt="Memberwise initializer is preserved when moving custom initializer to an extension"/><p>With this, you can create some mock data:</p><pre><code><span class="keyword">struct</span> Seed {
+    <span class="keyword">static let</span> conference = <span class="type">Conference</span>(
+        name: <span class="string">"iOSDevUK"</span>,
+        city: <span class="string">"Aberystwyth"</span>,
+        country: <span class="string">"United Kingdom"</span>,
+        date: <span class="string">"04/09/2022"</span>,
+        days: <span class="number">4</span>,
+        isOnline: <span class="keyword">false</span>
+    )
+}
+</code></pre><h2>Mock the JSON</h2><p>To test if your custom decodable implementation works, you also need to mock the JSON data:</p><pre><code><span class="keyword">private let</span> conferenceData = <span class="type">Data</span>(<span class="string">"""
+{
+    "name": "iOSDevUK",
+    "city": "Aberystwyth",
+    "country": "United Kingdom",
+    "date": "04/09/2022",
+    "days": 4
+}
+"""</span>.<span class="property">utf8</span>)
+</code></pre><h2>Unit test</h2><p>Pass the JSON data to the <code>JSONDecoder.decode(_:from:)</code> and test whether the decoded output is equal to the expected <code>conference</code> seed:</p><pre><code><span class="keyword">func</span> test_customDecoding_returnsExpectedValue() {
+    <span class="comment">//Given</span>
+    <span class="keyword">let</span> conference = <span class="type">Seed</span>.<span class="property">conference</span>
+
+    <span class="comment">//When</span>
+    <span class="keyword">let</span> decodedConference = <span class="keyword">try</span>? <span class="type">JSONDecoder</span>().<span class="call">decode</span>(<span class="type">Conference</span>.<span class="keyword">self</span>, from: conferenceData)
+
+    <span class="comment">//Then</span>
+    <span class="call">XCTAssertEqual</span>(
+        decodedConference,
+        conference,
+        <span class="string">"Decoded JSON doesn't match the given Conference() object"</span>
+    )
+}
+</code></pre><p>Now, Xcode will complain once more:</p><img src="https://www.danijelavrzan.com/images/posts/2022/07/testing-custom-codable-03.png "When asserting two values are equal, add Equatable conformance"" alt="When asserting two values are equal, add Equatable conformance"/><p>Because you're testing for equality, you need to add the <code>Equatable</code> conformance to the <code>Conference</code> struct:</p><pre><code><span class="keyword">struct</span> Conference: <span class="type">Codable</span>, <span class="type">Equatable</span> {
+  ...
+}
+</code></pre><p>That's it! You should have a passing unit test for your custom decodable initializer.</p><blockquote><p>Make sure your conference seed and the JSON you're testing with have identical data. If one value is incorrect, the test will fail.</p></blockquote><h2>Failing test</h2><p>If your test fails, <code>XCTAssertEqual</code> doesn't really give any useful information on why and where the test failed:</p><img src="https://www.danijelavrzan.com/images/posts/2022/07/testing-custom-codable-04.png "XCTAssert fails and shows a lengthy error"" alt="XCTAssert fails and shows a lengthy error"/><p>Imagine testing against an array of data or a large nested JSON. It would be impossible to look where the test failed.</p><p>Krzysztof Zabłocki (<a href="https://twitter.com/merowing_">@merowing_</a>), created a pretty cool library to help you identify the difference between two instances, conveniently called <a href="https://github.com/krzysztofzablocki/Difference">Difference</a>.</p><p>When you import the library to your project, instead of the obscure error message, you'll see this:</p><img src="https://www.danijelavrzan.com/images/posts/2022/07/testing-custom-codable-05.png "XCTAssert error when using a library called Difference"" alt="XCTAssert error when using a library called Difference"/><p>Pretty cool, right? I use the library in my projects and I can tell you it helps a lot when you have large JSON files. Thank you Krzysztof!</p><hr><p>Please feel free to reach out on <a href="https://twitter.com/dvrzan">Twitter</a> if you have any questions, comments, or feedback.</p><p>Thank you for reading and happy coding!</p></div></article></div><footer><p>Copyright © 2021-2025 Danijela Vrzan. All Rights Reserved.</p><p>Built in Swift using <a href="https://github.com/johnsundell/publish" target="_blank">Publish.</a> <a href="https://www.danijelavrzan.com/feed.rss" target="_blank">RSS.</a></p></footer></body></html>
